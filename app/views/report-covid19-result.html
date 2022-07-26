@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "includes/breadcrumbs.html" %}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">
+            Report a COVID-19 rapid lateral flow test result
+            </h1>
+
+            <p class="govuk-body">
+                Use this service to report the result from a free NHS rapid lateral flow test:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    every time you do a test, no matter what it is - positive, negative or void
+                </li>
+                <li>
+                    within 24 hours of getting the result
+                </li>
+            </ul>
+
+            {{ govukWarningText({
+                text: "You cannot use this service to report results from a test kit you’ve paid for.",
+                iconFallbackText: "Warning"
+            }) }}
+
+            {% set detailsContent %}
+                <p class="govuk-body">
+                You must report a positive test result within 5 days of developing symptoms.
+                </p>
+                
+                <p class="govuk-body">
+                    If you test negative but still have symptoms, you should take another test for the next 2 days.
+                </p>
+
+                <p class="govuk-body">
+                    If you report a positive result, you should be contacted within 24 hours by an NHS Covid-19 specialist to assess if you are eligible for anti-viral medication. Make sure you provide your NHS number, postcode and phone number so you can be contacted.
+                </p>
+
+                <p class="govuk-body">
+                    If you are not contacted within 24 hours, you should call your GP, 111, or your specialist clinician who can make an urgent referral.
+                </p>
+            {% endset%}
+
+            {{ govukDetails({
+                summaryText: "If you're eligible for Covid-19 treatments",
+                html: detailsContent
+            }) }}
+
+            <h2 class="govuk-heading-m">
+                Before you start
+            </h2>
+
+            <p class="govuk-body">
+                To use this service, you need:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                    the QR code or ID number printed on the free NHS test strip
+                </li>
+                <li>
+                    a mobile phone number so we can text you to confirm we’ve got your result
+                </li>
+            </ul>
+
+            {{ govukInsetText({
+                html: "This service is also available <a href='#' class='govuk-link' rel='noopener noreferrer'>in Welsh (Cymraeg)</a>."
+            }) }}
+
+            {{ govukButton({
+                text: "Start now",
+                href: "#",
+                classes: "govuk-!-margin-bottom-9",
+                isStartButton: true
+            }) }}
+
+            {% set expiryTabContent %}
+                <p class="govuk-body">
+                    Check the expiry date on the box the test came in. If your test is out of date:
+                </p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        Ldo not report the result
+                    </li>
+                    <li>
+                        take a new test from a box that is still in date
+                    </li>
+                    <li>
+                        dispose of any tests that are out of date - recycle what you can and put the rest in your general rubbish bin
+                    </li>
+                </ul>
+            {% endset %}
+
+            {% set helpTabContent %}
+                <h3 class="govuk-heading-m">
+                    Get help to report your free NHS test
+                </h3>
+                <p class="govuk-body">
+                    If you cannot use the online service, call 119 (free from mobiles and landlines).
+                </p>
+                <p class="govuk-body">
+                    Lines are open:
+                </p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>
+                        Monday to Friday (including <a href="https://www.gov.uk/bank-holidays" class="govuk-link">bank holidays</a>), 8am to 6pm
+                    </li>
+                    <li>
+                        Saturday and Sunday, 9am to 1pm
+                    </li>
+                </ul>
+
+                <p class="govuk-body">119 provides support in 200 languages.</p>
+                <p class="govuk-body"><a href="https://signvideo.co.uk/nhs119/" class="govuk-link">SignVideo</a> is a free online British Sign Language (BSL) interpreter service for 119.</p>
+                <p class="govuk-body">
+                    You can use the free <a href="https://www.bemyeyes.com/" class="govuk-link" rel="noopener noreferrer">Be My Eyes app</a> to get help from trained NHS Test and Trace staff. Download the app, go to 'Specialized Help' and select 'NHS Test & Trace' in the 'Personal Health' category.
+                </p>
+
+                <h3 class="govuk-heading-m">
+                    If you have a problem with your test kit
+                </h3>
+                <p class="govuk-body">If anything in your free NHS COVID-19 test kit was missing or damaged, or you were harmed using the test kit, <a href="https://www.gov.uk/guidance/coronavirus-covid-19-test-kit-give-feedback-or-report-harm" class="govuk-link" rel="noopener noreferrer">report the problem online</a>  or call 119.</p>
+                <p class="govuk-body">Do not use the test kit if any part of it is missing or damaged, or if the test kit is out of date.</p>
+            {% endset %}
+
+            {{ govukTabs({
+                items: [
+                    {
+                        label: "Check the expiry date",
+                        id: "expiry",
+                        panel: {
+                            html: expiryTabContent
+                        }
+                    },
+                    {
+                        label: "Get help with your free test",
+                        id: "help",
+                        panel: {
+                            html: helpTabContent
+                        }
+                    }
+                ]
+            }) }}
+
+            <a href="https://www.gov.uk/government/publications/coronavirus-covid-19-testing-privacy-information" class="govuk-link">Find out how the NHS uses your data</a>
+
+        </div>
+        {# end 2/3 column #}
+    </div>
+    {# end grid row #}
+
+{% endblock %}
