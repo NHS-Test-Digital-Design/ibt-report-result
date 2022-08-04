@@ -1,3 +1,4 @@
+{% set pageTitle = "Report a free NHS COVID-19 rapid lateral flow test result" %}
 {% extends "layout.html" %}
 
 {% block beforeContent %}
@@ -8,7 +9,7 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-xl">
-            Report a free NHS COVID-19 rapid lateral flow test result
+                {{ pageTitle }}
             </h1>
 
             <p class="govuk-body">
@@ -47,7 +48,7 @@
             {% endset%}
 
             {{ govukDetails({
-                summaryText: "If you're eligible for Covid-19 treatments",
+                summaryText: "If you're eligible for COVID-19 treatments",
                 html: detailsContent
             }) }}
 
