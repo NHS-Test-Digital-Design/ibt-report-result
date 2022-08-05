@@ -5,7 +5,7 @@ const router = express.Router()
 router.post('/work-answer', function (req, res) {
     var work = req.session.data['test-for-work']
     if (work == "yes"){
-        res.redirect('report-result/about-work')
+        res.redirect('report-result/test-reason')
     } else {
         res.redirect('/report-result/test-reason')
     }
