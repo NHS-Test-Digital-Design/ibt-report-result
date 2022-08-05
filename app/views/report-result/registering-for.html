@@ -1,0 +1,33 @@
+{% set pageTitle = " Who are you reporting a result for?" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+    <form class="form" action="country" method="post">
+        {{ govukRadios({
+            idPrefix: "who-reporting-for",
+            name: "who-reporting-for",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+                }
+            },
+            items: [
+                {
+                    value: "myself",
+                    text: "Myself"
+                },
+                {
+                    value: "someoneElse",
+                    text: "Someone else"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}

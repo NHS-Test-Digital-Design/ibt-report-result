@@ -19,3 +19,15 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.max-350{
+    max-width: 350px;
+}
+
+.block{
+    display: block;
+}
+
+.id-pic{
+    @include govuk-responsive-padding(4, "top");
+    @include govuk-responsive-padding(4, "bottom");
+}

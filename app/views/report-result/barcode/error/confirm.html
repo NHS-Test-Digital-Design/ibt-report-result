@@ -1,0 +1,61 @@
+{% set pageTitle = "What's the test strip ID number? " %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+            {
+                text: "The format of this test strip ID is incorrect. You can only report a test you got free from the NHS.",
+                href: "#test-id-number"
+            }
+        ]
+    }) }}
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+        {{ pageTitle }} 
+    </h1>
+
+    <p class="govuk-body">
+        The ID number is printed on the test strip under the QR code.
+    </p>
+
+    <img src="/public/images/teststripnew.svg" alt="Image of a test strip showing the test strip ID printed under the QR code" class="max-350 block id-pic"/>
+    
+    {{ govukButton({
+        text: "Scan test strip QR code",
+        classes: "govuk-button--secondary govuk-!-margin-top-4"
+    }) }}
+
+    <form class="form" action="#" method="post">
+        {{ govukInput({
+            id: "test-id-number-e03",
+            name: "test-id-number-e03",
+            classes: "govuk-!-width-two-thirds",
+            errorMessage: {
+                text: "Confirm the test strip ID number"
+            },
+            label: {
+                text: "Test strip ID number"
+            },
+            hint: {
+                text: "You can only report a free NHS test" 
+            }
+        }) }}
+        {{ govukInput({
+            id: "test-id-number-confirm-e03",
+            name: "test-id-number-confirm-e03",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+                text: "Confirm test strip ID number "
+            }
+        }) }}
+        
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}

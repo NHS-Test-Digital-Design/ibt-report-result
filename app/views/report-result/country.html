@@ -1,0 +1,53 @@
+
+{% if data ['who-reporting-for'] == "someoneElse"%}
+    {% set pageTitle = "Where in the UK do they live?" %}
+    {% set hintText = "<p class='govuk-body'>If they do not live in the UK, select the country where they're staying while they're in the UK. </p>"%}
+    {% else %}
+    {% set pageTitle = "Where in the UK do you live?" %}
+    {% set hintText = "<p class='govuk-body'>If you do not live in the UK, select the country you are staying in while you're in the UK.</p>"%}
+{% endif %}
+
+{% extends "layout_question.html" %}
+
+{% block content %}
+    <form class="form" action="test-for-work" method="post">
+        {{ govukRadios({
+            idPrefix: "where-do-you-they-live",
+            name: "where-do-you-they-live",
+            fieldset: {
+                legend: {
+                    text:  pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+                }
+            },
+            hint: {
+                html: hintText
+            },
+            items: [
+                {
+                    value: "england",
+                    text: "England"
+                },
+                {
+                    value: "scotland",
+                    text: "Scotland"
+                },
+                {
+                    value: "ni",
+                    text: "Northern Ireland"
+                },
+                {
+                    value: "wales",
+                    text: "Wales"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% set pageTitle = "When was the test taken?" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+        {{ pageTitle }} 
+    </h1>
+    {{ govukInsetText({
+        text: "Report a result as soon as possible on the day the test is taken (and no later than 24 hours). "
+    }) }}
+
+    <form class="form" action="#" method="post">
+        {{ govukRadios({
+            idPrefix: "date-taken",
+            name: "date-taken",
+            fieldset: {
+                legend: {
+                    text: "Select a date",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                }
+            },
+            items: [
+                {
+                    value: "today",
+                    text: "Today, 09 August 2022"
+                },
+                {
+                    value: "yesterday",
+                    text: "Yesterday, 08 August 2022"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}

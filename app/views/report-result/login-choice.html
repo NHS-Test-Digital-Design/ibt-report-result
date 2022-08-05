@@ -1,0 +1,30 @@
+{% set pageTitle = "Sign in or create an account" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        Creating an account takes 2 minutes. It uses <a href="https://www.nhs.uk/nhs-services/online-services/nhs-login/" class="govuk-link" target="_blank" rel="noopener noreferrer">NHS login (opens in new tab)</a>. You may already have NHS login, for example if you use the NHS App.
+    </p>
+
+    {{ govukInsetText({
+        text: "Using an account is quicker because your details are saved for next time."
+    }) }}
+
+    <div class="govuk-button-group govuk-!-margin-top-6">
+        {{ govukButton({
+            text: "Create account",
+            href: "https://access.login.nhs.uk/enter-email"
+        }) }}
+        {{ govukButton({
+            text: "Sign in",
+            href: "https://access.login.nhs.uk/enter-email",
+            classes: "govuk-button--secondary"
+        }) }}
+    </div>
+
+    <a href="registering-for" class="govuk-link">Continue without an account </a>
+{% endblock %}

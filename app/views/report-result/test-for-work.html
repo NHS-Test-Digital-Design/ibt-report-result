@@ -1,0 +1,41 @@
+{% if data ['who-reporting-for'] == "someoneElse"%}
+    {% set pageTitle = "Did they take this test for their job?" %}
+    {% else %}
+    {% set pageTitle = "Did you take this test for your job?" %}
+{% endif %}
+
+{% extends "layout_question.html" %}
+
+{% block content %}
+    <form class="form" action="/work-answer" method="post">
+        {{ govukRadios({
+            idPrefix: "test-for-work",
+            name: "test-for-work",
+            fieldset: {
+                legend: {
+                    text:  pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+                }
+            },
+            hint: {
+                html: "<p class='govuk-body'>This also applies to temporary staff and volunteers</p>"
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes"
+                },
+                {
+                    value: "no",
+                    text: "No"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}

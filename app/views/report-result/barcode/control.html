@@ -1,0 +1,54 @@
+{% set pageTitle = "What's the test strip ID number? " %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+        {{ pageTitle }} 
+    </h1>
+    {{ govukInsetText({
+        text: "Check the expiry date on the box the test came in. Do not report the result if the test is out of date. Take a new test from a box that is still in date. Dispose of any tests that are out of date."
+    }) }}
+
+    <p class="govuk-body">
+        The ID number is printed on the test strip (near the QR code). 
+    </p>
+
+    {% set picture %}
+        <img src="/public/images/self-test-strip-id.png" alt="Image of a test strip showing the test strip ID printed under the QR code" class="govuk-!-width-full"/>
+    {% endset %}
+    {{ govukDetails({
+        summaryText: "What does a test strip ID or QR code look like? ",
+        html: picture
+    }) }}
+
+    {{ govukButton({
+        text: "Scan test strip QR code",
+        classes: "govuk-button--secondary govuk-!-margin-top-4"
+    }) }}
+
+    <form class="form" action="#" method="post">
+        {{ govukInput({
+            id: "test-id-number",
+            name: "test-id-number",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+                text: "Test strip ID number"
+            }
+        }) }}
+        {{ govukInput({
+            id: "test-id-number-confirm",
+            name: "test-id-number-confirm",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+                text: "Confirm test strip ID number "
+            }
+        }) }}
+        
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}

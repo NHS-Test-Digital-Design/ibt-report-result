@@ -1,0 +1,52 @@
+{% set pageTitle = "Tell us why you took this test" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+    <form class="form" action="#" method="post">
+        {{ govukRadios({
+            idPrefix: "why-took-test",
+            name: "why-took-test",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+                }
+            },
+            items: [
+                {
+                    value: "symptoms",
+                    text: "I have symptoms and am eligible for COVID-19 treatments"
+                },
+                {
+                    value: "education",
+                    text: "To go to a place of education"
+                },
+                {
+                    value: "stillPositive",
+                    text: "To check if my test result is still positive "
+                },
+                {
+                    value: "socialCare",
+                    text: "For getting care or support from social care services"
+                },
+                {
+                    value: "asked",
+                    text: "I have been asked to take a test by a healthcare professional "
+                },
+                {
+                    divider: "or"
+                },
+                {
+                    value: "another",
+                    text: "Another reason (for example, to follow NHS advice or Government guidance)"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}

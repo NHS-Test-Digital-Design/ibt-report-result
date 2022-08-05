@@ -37,7 +37,9 @@ module.exports = function (env) {
     documentation.
 
   ------------------------------------------------------------------ */
-
+    filters.date = function(today){
+      return new Date().getFullYear()
+    }
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
