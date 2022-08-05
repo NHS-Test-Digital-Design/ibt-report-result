@@ -1,4 +1,16 @@
-{% set pageTitle = "Tell us why you took this test" %}
+
+{% if data ['who-reporting-for'] == "someoneElse"%}
+    {% set pageTitle = "Tell us why they took this test" %}
+    {% set pronoun1 = "They" %}
+    {% set pronoun2 = "their" %}
+    {% set pronoun3 = "are" %}
+    {% else %}
+    {% set pageTitle = "Tell us why you took this test" %}
+    {% set pronoun1 = "I" %}
+    {% set pronoun2 = "my" %}
+    {% set pronoun3 = "am" %}
+{% endif %}
+
 {% extends "layout_question.html" %}
 
 {% block content %}
@@ -16,7 +28,7 @@
             items: [
                 {
                     value: "symptoms",
-                    text: "I have symptoms and am eligible for COVID-19 treatments"
+                    text: pronoun1 + " have symptoms and " + pronoun3 + " eligible for COVID-19 treatments"
                 },
                 {
                     value: "education",
@@ -24,7 +36,7 @@
                 },
                 {
                     value: "stillPositive",
-                    text: "To check if my test result is still positive "
+                    text: "To check if " + pronoun2 + " test result is still positive"
                 },
                 {
                     value: "socialCare",
@@ -32,7 +44,7 @@
                 },
                 {
                     value: "asked",
-                    text: "I have been asked to take a test by a healthcare professional "
+                    text: pronoun1 + " have been asked to take a test by a healthcare professional"
                 },
                 {
                     divider: "or"

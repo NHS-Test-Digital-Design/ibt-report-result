@@ -15,9 +15,9 @@ router.post('/work-answer', function (req, res) {
 router.post('/date-answer', function (req, res) {
     var date = req.session.data['date-taken']
     if (date == "yesterday"){
-        res.redirect('report-result/barcode/control')
+        res.redirect('report-result/barcode/option-a')
     } else {
-        res.redirect('/report-result/barcode/challenger')
+        res.redirect('/report-result/barcode/option-b')
     }
 })
 
