@@ -2,7 +2,7 @@
 {% extends "layout_question.html" %}
 
 {% block content %}
-    <form class="form" action="#" method="post">
+    <form class="form" action="test-date" method="post">
         {{ govukRadios({
             idPrefix: "why-took-test",
             name: "why-took-test",
@@ -39,7 +39,8 @@
                 },
                 {
                     value: "another",
-                    text: "Another reason (for example, to follow NHS advice or Government guidance)"
+                    text: "Another reason (for example, to follow NHS advice or Government guidance)",
+                    checked: true
                 }
             ]
         }) }}

@@ -58,6 +58,27 @@
 {% if useAutoStoreData %}
   {% block footer %}
     {{ govukFooter({
+      navigation: [
+        {
+          title: "Research",
+          columns: 1,
+          width: "two-thirds",
+          items: [
+            {
+              href: "/report-result/barcode/challenger",
+              text: "Challenger"
+            },
+            {
+              href: "/report-result/barcode/control",
+              text: "control"
+            },
+            {
+              href: "/report-result/barcode/error/not-nhs",
+              text: "non NHS error"
+            }
+          ]
+        }
+      ],
       meta: {
         items: [
           {
