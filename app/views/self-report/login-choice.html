@@ -1,0 +1,57 @@
+{% set version = "v28" %}
+{% set pageTitle = "Sign in or create an account" %}
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+  <a class="govuk-back-link" href="/report-covid19-result">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">{{ pageTitle }}</h1>
+
+      <p class="govuk-body">Creating an account takes 2 minutes.
+        It uses <a href="https://www.nhs.uk/nhs-services/online-services/nhs-log-in/" target="_blank" rel="noreferrer">NHS login (opens in a new tab)</a>. You may already have NHS login, for example if you use the NHS App.</p>
+      <div class="govuk-inset-text">Using an account saves you time whenever you report results. You can also report for people you live with, including children.</div>
+
+
+
+
+
+          <div class="govuk-button-group">
+            <form class="form" method="post" action="/share-result-lateral-flow/{{version}}/user-account/login-email-create">
+            <button class="govuk-button" data-module="govuk-button" action="/share-result-lateral-flow/{{version}}/user-account/login-email-create">
+              Create account
+            </button>
+            </form>
+
+            <form class="form" method="post" action="/share-result-lateral-flow/{{version}}/user-account/login-email-signin">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" action="/share-result-lateral-flow/{{version}}/user-account/login-email-create">
+              Sign in
+            </button>
+            </form>
+          </div>
+
+        
+          <p class="govuk-body-s"><a href="/share-result-lateral-flow/{{version}}/whos-taking-the-test" tabindex="3">Continue without an account</a></p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
