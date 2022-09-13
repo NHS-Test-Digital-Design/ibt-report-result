@@ -1,0 +1,52 @@
+{% set pageTitle = "What's the test strip ID number? " %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+        {{ pageTitle }}
+    </h1>
+
+    <div class="govuk-inset-text">
+      Check the expiry date on the box the test came in. Do not report the result if the test is out of date. Take a new test from a box that is still in date.
+    </div>
+
+    <p class="govuk-body">
+        The ID number is printed on the test strip under the QR code.
+    </p>
+
+    <img src="/public/images/teststripnew.svg" alt="Image of a test strip showing the test strip ID printed under the QR code" class="max-350 block id-pic"/>
+
+    {{ govukButton({
+        text: "Scan test strip QR code",
+        classes: "govuk-button--secondary govuk-!-margin-top-4"
+    }) }}
+
+    <form class="form" action="error/not-nhs" method="post">
+        {{ govukInput({
+            id: "test-id-number",
+            name: "test-id-number",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+                text: "Test strip ID number"
+            },
+            hint: {
+                text: "You can only report a free NHS test"
+            }
+        }) }}
+        {{ govukInput({
+            id: "test-id-number-confirm",
+            name: "test-id-number-confirm",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+                text: "Confirm test strip ID number "
+            }
+        }) }}
+
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}
