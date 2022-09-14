@@ -23,10 +23,18 @@ router.post('/date-answer', function (req, res) {
 
 module.exports = router
 
+router.post('/registering-for', function (req, res) {
+    var date = req.session.data['whos-taking-the-test']
+    if (date == "whos-taking-the-test-1"){
+        res.redirect('report-result/barcode/option-a')
+    } else {
+        res.redirect('/report-result/barcode/option-b')
+    }
+})
 
 // Run this code when a form is submitted to 'country'
 router.post('/self-report/country', function (req, res) {
-    var country = req.session.data['country']
+    var country = req.session.data['where-do-you-live']
     if (country == "england"){
         res.redirect('self-report/england/test-for-work')
     } else if (country == "scotland") {
