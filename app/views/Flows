@@ -14,7 +14,7 @@ test-reason
 
 test-date
 
-barcode
+barcode > camera-access > photo
 
 name
 
@@ -42,4 +42,16 @@ check-answers
 
 >>>>begin Digital Reader
 
-using-mobile
+mobile
+
+device-information
+
+photo-guidance
+
+photo-permissions
+
+take-Photo
+
+photo-confirmed
+
+positive-result-photo
