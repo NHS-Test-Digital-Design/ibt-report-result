@@ -21,7 +21,6 @@ router.post('/date-answer', function (req, res) {
     }
 })
 
-module.exports = router
 
 router.post('/registering-for', function (req, res) {
     var date = req.session.data['whos-taking-the-test']
@@ -33,7 +32,7 @@ router.post('/registering-for', function (req, res) {
 })
 
 // Run this code when a form is submitted to 'country'
-router.post('/self-report/country', function (req, res) {
+router.post('/country-answer', function (req, res) {
     var country = req.session.data['where-do-you-live']
     if (country == "england"){
         res.redirect('self-report/england/test-for-work')
@@ -47,3 +46,5 @@ router.post('/self-report/country', function (req, res) {
         res.redirect('order-lateral-flow-kits/condition')
     }
 })
+
+module.exports = router
