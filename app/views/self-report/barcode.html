@@ -4,14 +4,14 @@
 {% block content %}
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
-        {{ pageTitle }} 
+        {{ pageTitle }}
     </h1>
     {{ govukInsetText({
         text: "Check the expiry date on the box the test came in. Do not report the result if the test is out of date. Take a new test from a box that is still in date. Dispose of any tests that are out of date."
     }) }}
 
     <p class="govuk-body">
-        The ID number is printed on the test strip (near the QR code). 
+        The ID number is printed on the test strip (near the QR code).
     </p>
 
     {% set picture %}
@@ -27,7 +27,7 @@
         classes: "govuk-button--secondary govuk-!-margin-top-4"
     }) }}
 
-    <form class="form" action="#" method="post">
+    <form class="form" action="/self-report/name" method="post">
         {{ govukInput({
             id: "test-id-number",
             name: "test-id-number",
@@ -44,7 +44,7 @@
                 text: "Confirm test strip ID number "
             }
         }) }}
-        
+
 
         {{ govukButton({
             text: "Continue",

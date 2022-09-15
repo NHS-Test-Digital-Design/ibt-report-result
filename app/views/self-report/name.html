@@ -13,8 +13,7 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         {% if data['whos-taking-the-test'] == "someone-else" %}
@@ -24,7 +23,7 @@
         {% endif %}
       </h1>
 
-      <form action="/share-result-lateral-flow/{{version}}/dob" method="post">
+      <form action="/self-report/date-of-birth" method="post">
 
         <fieldset class="govuk-fieldset" aria-describedby="name-hint">
 

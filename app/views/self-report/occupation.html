@@ -5,10 +5,12 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
 
 
-    <form action="/share-result-lateral-flow/{{version}}/postcode-lookup" method="post">
+
+    <form action="/self-report/postcode-lookup" method="post">
+
+
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="occupation-hint">
@@ -32,7 +34,7 @@
           <label class="govuk-label" for="occupation">
             Occupation
           </label>
-          <div id="occupation-container" class="govuk-!-margin-top-1"></div>
+          <input class="govuk-input" id="event-name" name="event-name" type="text">
 
        </fieldset>
       </div>
@@ -42,7 +44,7 @@
         </label>
         <input class="govuk-input govuk-!-width-three-quarters" id="employer" name="employer" type="text" value="{{ data['employer'] }}">
       </div> -->
-
+<br>
       <button class="govuk-button" type="submit" data-module="govuk-button">
         Continue
       </button>

@@ -4,7 +4,7 @@
 {% extends "layout_question.html" %}
 
 {% block beforeContent %}
-
+<form action="/test-date" method="post">
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -35,14 +35,14 @@
     <h3 class="govuk-heading-s">Select a date</h3>
     <div class="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="country-1" name="country" type="radio" value="England" {{ checked("country", "England") }}>
-        <label class="govuk-label govuk-radios__label" for="country-1">
+        <input class="govuk-radios__input" id="date-1" name="date-of-test" type="radio" value="Today" {{ checked("country", "England") }}>
+        <label class="govuk-label govuk-radios__label" for="date-1">
           Today, 13 September 2022
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="country-4" name="country" type="radio" value="Scotland" {{ checked("country", "Scotland") }}>
-        <label class="govuk-label govuk-radios__label" for="country-4">
+        <input class="govuk-radios__input" id="date-2" name="date-of-test" type="radio" value="Yesterday" {{ checked("country", "Scotland") }}>
+        <label class="govuk-label govuk-radios__label" for="date-2">
           Yesterday, 12 September 2022
         </label>
       </div>
@@ -54,8 +54,8 @@
     <br>
     <br>
     <button class="govuk-button" data-module="govuk-button">Continue</button>
-  </div>
 
 
+</form>
 
 {% endblock %}

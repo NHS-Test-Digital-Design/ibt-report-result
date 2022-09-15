@@ -37,13 +37,80 @@ router.post('/country-answer', function (req, res) {
     if (country == "england"){
         res.redirect('self-report/england/test-for-work')
     } else if (country == "scotland") {
-        res.redirect('order-lateral-flow-kits/scotland/eligibility-scotland')
+        res.redirect('self-report/scotland/test-for-work')
     } else if (country == "ni"){
-        res.redirect('order-lateral-flow-kits/ni/eligibility-ni')
+        res.redirect('self-report/ni/test-for-work')
     } else if (country == "wales"){
-        res.redirect('order-lateral-flow-kits/wales/eligibility-wales')
+        res.redirect('self-report/wales/test-for-work')
     } else {
-        res.redirect('order-lateral-flow-kits/condition')
+        res.redirect('self-report/england/test-for-work')
+    }
+})
+
+
+
+router.post('/test-job', function (req, res) {
+    var date = req.session.data['test-for-job']
+    if (date == "whos-taking-the-test-1"){
+        res.redirect('/self-report/england/test-reason')
+    } else {
+        res.redirect('/self-report/england/test-reason')
+    }
+})
+
+
+
+router.post('/test-reason', function (req, res) {
+    var country = req.session.data['where-do-you-live']
+    if (country == "england"){
+        res.redirect('self-report/england/test-date')
+    } else if (country == "scotland") {
+        res.redirect('self-report/scotland/test-date')
+    } else if (country == "ni"){
+        res.redirect('self-report/ni/test-date')
+    } else if (country == "wales"){
+        res.redirect('self-report/wales/test-date')
+    } else {
+        res.redirect('self-report/england/test-date')
+    }
+})
+
+
+router.post('/test-date', function (req, res) {
+    var date = req.session.data['day-of-test']
+    if (date == "whos-taking-the-test-1"){
+        res.redirect('/self-report/barcode')
+    } else {
+        res.redirect('/self-report/barcode')
+    }
+})
+
+
+router.post('/gender', function (req, res) {
+    var country = req.session.data['gender']
+    if (country == "gender-1"){
+        res.redirect('self-report/ethnic-group')
+    } else if (country == "gender-2") {
+        res.redirect('self-report/ethnic-group')
+    } else {
+        res.redirect('self-report/ethnic-group')
+    }
+})
+
+router.post('/ethnic-group', function (req, res) {
+    var country = req.session.data['ethnic-group']
+    if (country == "ethnic-group-1"){
+        res.redirect('self-report/occupation')
+    } else if (country == "ethnic-group-2") {
+        res.redirect('self-report/occupation')
+    } else if (country == "ethnic-group-3"){
+        res.redirect('self-report/occupation')
+    } else if (country == "ethnic-group-4"){
+        res.redirect('self-report/occupation')
+    } else if (country == "ethnic-group-5"){
+        res.redirect('self-report/occupation')
+    } else {
+        res.redirect('self-report/occupation')
     }
 })
 
