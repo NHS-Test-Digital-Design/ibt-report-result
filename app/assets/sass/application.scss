@@ -31,6 +31,285 @@ $govuk-assets-path: '/govuk/assets/';
     @include govuk-responsive-padding(4, "top");
     @include govuk-responsive-padding(4, "bottom");
 }
+
+.external-panel {
+  text-decoration: none;
+}
+
+.responsive-image {
+  height: auto;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.responsive-image-center {
+  height: auto;
+  width: 54%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.responsive-image-long {
+  height: auto;
+  width: 80%;
+}
+
+@media (min-width: 48.0625em) {
+  .responsive-image {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .responsive-image-long {
+    width: 38%;
+  }
+  .responsive-image-center {
+    height: auto;
+    width: 44%;
+    margin: 0;
+  }
+}
+
+.family-account-home-button {
+  width: 100%;
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  background-color: #f8f8f8;
+  border: 1px solid #d7dde0;
+  padding: 1rem;
+  cursor: pointer
+}
+
+.govuk-notification-banner {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: 30px;
+    border: 5px solid #1d70b8;
+    background-color: #1d70b8;
+  }
+
+  .govuk-notification-banner__header {
+    padding: 2px 5px 5px 5px;
+    border-bottom: 1px solid transparent;
+}
+
+.govuk-notification-banner__heading {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.11111;
+    padding: 0;
+}
+
+.govuk-notification-banner__title {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+
+.govuk-notification-banner__content {
+    color: #0b0c0c;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.govuk-notification-banner {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+}
+
+.govuk-panel-lft-result {
+  background: #0065bb !important;
+}
+
+.govuk-panel-card {
+  background: #0065bb !important;
+  text-align: left !important;
+}
+
+.govuk-panel-card-body {
+
+}
+
+.govuk-panel-card  p, .govuk-panel-card  li, .govuk-panel-card  a {
+  color: #fff !important;
+}
+
+.govuk-panel-card  button {
+  background-color: #fff;
+  box-shadow: 0 2px 0 #000;
+  color: #0065bb !important;
+  font-weight: bold;
+}
+
+.govuk-panel-card  button:hover {
+  background-color: black;
+  color: white !important;
+}
+
+.govuk-panel-card  a:hover {
+  color: black !important;
+}
+
+
+.button-styled-link {
+    cursor: pointer;
+    border: none;
+    color: #1d70b8;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.button-styled-link:hover {
+    color: #003078
+}
+
+.button-styled-link:visited {
+    color: #4c2c92
+}
+
+.button-styled-link:active,
+.button-styled-link:focus {
+    color: #0b0c0c;
+    outline: 0
+}
+
+.expand-header-menu:after {
+  content: '';
+  position: absolute;
+  left: 3.7em;
+  top: 40%;
+	width: 0;
+	height: 0;
+	border-width: 0 5px 7px 5px;
+	border-color: transparent transparent #FFFFFF transparent;
+	border-style: solid;
+	transform: rotate(180deg);
+}
+
+.recommended-box {
+    padding: 1em;
+    border: 3px dashed #b1b4b6;
+}
+
+.recommended-box-green {
+  padding: 1em;
+  border: 3px dashed #00703c;
+}
+
+.checkmark-box {
+    display: flex;
+    align-items: center;
+}
+
+.checkmark-green {
+    border-radius: 50%;
+    background-color:#00703c;
+    height: 1.3em;
+    width: 1.3em;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin-right: .4em;
+}
+
+.checkmark-white {
+  border-radius: 50%;
+  background-color:#ffffff;
+  height: 1.4em;
+  width: 1.4em;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: .4em;
+}
+
+.checkmark-black {
+  border-radius: 50%;
+  height: 1.4em;
+  width: 1.4em;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+  justify-content: center;
+  margin-right: .4em;
+}
+.checkmark-black.bold {
+  border: 2px solid #000;
+}
+
+.checkmark-list li {
+  list-style-type: none;
+  position: relative;
+}
+.checkmark-list::before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  height: 1.4em;
+  width: 1.4em;
+  left: -50px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+  justify-content: center;
+}
+.checkmark-list.list-one::before {
+  background: url('../images/checklist1.svg');
+}
+.checkmark-list.list-two::before {
+  background: url('../images/checklist2.svg');
+}
+
+.info-summary > p {
+  padding: 15px 30px 15px 10px;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+.info-summary div {
+  padding: 10px 10px 10px 0;
+  border-top: 1px solid #b1b4b6;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+.info-summary div p {
+  padding: 10px 0 0 0;
+}
+
+@media (min-width: 40.0625em) {
+  .info-summary > p {
+    display: inline-block;
+  }
+  .info-summary div p {
+    padding: 10px 30px 0 0;
+    display: inline-block;
+  }
+}
+
 // for photo-error-infographic screen
 
 .photo-guide-photos {
