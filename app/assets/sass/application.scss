@@ -409,3 +409,523 @@ $govuk-assets-path: '/govuk/assets/';
 .panel-photo-pass {
  background-image:url("/public/images//icon-thick-tick-large.png");
 }
+
+// Digital Reader - camera UI for taking a photo and playing it back to user //
+
+// Native camera //
+
+#cameraFileInput {
+  display: none;
+}
+
+#pictureFromCamera {
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
+}
+
+#photo-playback {
+  display: none;
+}
+
+// End Native camera //
+
+.camera-test-result {
+  width: 100%;
+}
+
+.camera-test-result.canvas {
+  height: 470px;
+}
+
+.camera-test-result .camera-overlay {
+  position: absolute; background-color: rgba(0,0,0,.6);
+}
+
+.camera-test-result .camera-overlay-a11y {
+  position: absolute; background-color: rgba(0,0,0,.6);
+}
+
+.camera-test-result .camera-overlay.right {
+  right: 0;
+  width: 32%; height: 100%;
+}
+.camera-test-result .camera-overlay.left {
+  left: 0;
+  width: 32%; height: 100%;
+}
+.camera-test-result .camera-overlay.top {
+  top: 0;
+  width: 36%; height: 6%;
+}
+.camera-test-result .camera-overlay.bottom {
+  bottom: 0;
+  width: 36%; height: 6%;
+}
+
+.camera-test-result .camera-overlay-a11y.right {
+  right: 0;
+  width: 32%; height: 100%;
+}
+.camera-test-result .camera-overlay-a11y.left {
+  left: 0;
+  width: 32%; height: 100%;
+}
+.camera-test-result .camera-overlay-a11y.top {
+  top: 0;
+  width: 36%; height: 1%;
+}
+.camera-test-result .camera-overlay-a11y.bottom {
+  bottom: 0;
+  width: 36%; height: 11%;
+}
+
+@media (min-width: 600px) {
+  // .camera-test-result.wrapper {
+  //   transform: scaleX(-1);
+  // }
+  .camera-test-result .camera-overlay.right {
+    width: 39%; height: 100%;
+  }
+  .camera-test-result .camera-overlay.left {
+    width: 39%; height: 100%;
+  }
+  .camera-test-result .camera-overlay.top {
+    width: 22%; height: 5%;
+  }
+  .camera-test-result .camera-overlay.bottom {
+    width: 22%; height: 5%;
+  }
+}
+
+@media (min-width: 600px) {
+  // .camera-test-result.wrapper {
+  //   transform: scaleX(-1);
+  // }
+  .camera-test-result .camera-overlay-a11y.right {
+    width: 39%; height: 100%;
+  }
+  .camera-test-result .camera-overlay-a11y.left {
+    width: 39%; height: 100%;
+  }
+  .camera-test-result .camera-overlay-a11y.top {
+    width: 22%; height: 5%;
+  }
+  .camera-test-result .camera-overlay-a11y.bottom {
+    width: 22%; height: 5%;
+  }
+}
+
+@media (min-width: 760px) {
+  // .camera-test-result.wrapper {
+  //   transform: scaleX(-1);
+  // }
+  .camera-test-result .camera-overlay.right {
+    width: 37%; height: 100%;
+  }
+  .camera-test-result .camera-overlay.left {
+    width: 37%; height: 100%;
+  }
+  .camera-test-result .camera-overlay.top {
+    width: 26%; height: 0%;
+  }
+  .camera-test-result .camera-overlay.bottom {
+    width: 26%; height: 0%;
+  }
+}
+
+@media (min-width: 760px) {
+  // .camera-test-result.wrapper {
+  //   transform: scaleX(-1);
+  // }
+  .camera-test-result .camera-overlay-a11y.right {
+    width: 37%; height: 100%;
+  }
+  .camera-test-result .camera-overlay-a11y.left {
+    width: 37%; height: 100%;
+  }
+  .camera-test-result .camera-overlay-a11y.top {
+    width: 26%; height: 0%;
+  }
+  .camera-test-result .camera-overlay-a11y.bottom {
+    width: 26%; height: 0%;
+  }
+}
+
+@media (min-width: 890px) {
+  // .camera-test-result.wrapper {
+  //   transform: scaleX(-1);
+  // }
+  .camera-test-result .camera-overlay.right {
+    width: 39%; height: 100%;
+  }
+  .camera-test-result .camera-overlay.left {
+    width: 39%; height: 100%;
+  }
+  .camera-test-result .camera-overlay.top {
+    width: 22%; height: 5%;
+  }
+  .camera-test-result .camera-overlay.bottom {
+    width: 22%; height: 5%;
+  }
+}
+
+@media (min-width: 890px) {
+  // .camera-test-result.wrapper {
+  //   transform: scaleX(-1);
+  // }
+  .camera-test-result .camera-overlay-a11y.right {
+    width: 39%; height: 100%;
+  }
+  .camera-test-result .camera-overlay-a11y.left {
+    width: 39%; height: 100%;
+  }
+  .camera-test-result .camera-overlay-a11y.top {
+    width: 22%; height: 5%;
+  }
+  .camera-test-result .camera-overlay-a11y.bottom {
+    width: 22%; height: 5%;
+  }
+}
+
+@media (min-width: 930px) {
+  // .camera-test-result.wrapper {
+  //   transform: scaleX(-1);
+  // }
+  .camera-test-result .camera-overlay.right {
+    width: 40%; height: 100%;
+  }
+  .camera-test-result .camera-overlay.left {
+    width: 40%; height: 100%;
+  }
+  .camera-test-result .camera-overlay.top {
+    width: 20%; height: 7%;
+  }
+  .camera-test-result .camera-overlay.bottom {
+    width: 20%; height: 7%;
+  }
+}
+
+@media (min-width: 930px) {
+  // .camera-test-result.wrapper {
+  //   transform: scaleX(-1);
+  // }
+  .camera-test-result .camera-overlay-a11y.right {
+    width: 40%; height: 100%;
+  }
+  .camera-test-result .camera-overlay-a11y.left {
+    width: 40%; height: 100%;
+  }
+  .camera-test-result .camera-overlay-a11y.top {
+    width: 20%; height: 7%;
+  }
+  .camera-test-result .camera-overlay-a11y.bottom {
+    width: 20%; height: 7%;
+  }
+}
+
+@media (min-width: 1000px) {
+  // .camera-test-result.wrapper {
+  //   transform: scaleX(-1);
+  // }
+  .camera-test-result .camera-overlay.right {
+    width: 42%; height: 100%;
+  }
+  .camera-test-result .camera-overlay.left {
+    width: 42%; height: 100%;
+  }
+  .camera-test-result .camera-overlay.top {
+    width: 16%; height: 11%;
+  }
+  .camera-test-result .camera-overlay.bottom {
+    width: 16%; height: 11%;
+  }
+}
+
+@media (min-width: 1000px) {
+  // .camera-test-result.wrapper {
+  //   transform: scaleX(-1);
+  // }
+  .camera-test-result .camera-overlay-a11y.right {
+    width: 42%; height: 100%;
+  }
+  .camera-test-result .camera-overlay-a11y.left {
+    width: 42%; height: 100%;
+  }
+  .camera-test-result .camera-overlay-a11y.top {
+    width: 16%; height: 2%;
+  }
+  .camera-test-result .camera-overlay-a11y.bottom {
+    width: 16%; height: 21%;
+  }
+}
+
+@media (min-width: 1030px) {
+  .camera-test-result.wrapper {
+    transform: scaleX(-1);
+  }
+}
+
+// start digital reader button //
+
+.image-overlay__button {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    // bottom: 3%;
+    bottom: 18%;
+    z-index: 1;
+    height: 10%;
+    aspect-ratio: 1/1;
+}
+
+.camera-button {
+    width: 100%;
+    height: 100%;
+    position:relative
+}
+
+.camera-button:focus {
+  @include govuk-focused-text;
+}
+
+
+.camera-button__circle {
+    top: 4px;
+    left: 4px;
+    bottom: 4px;
+    right: 4px;
+    background-color: #fff;
+    opacity:1
+}
+
+.camera-button__circle, .camera-button__ring {
+    position: absolute;
+    border-radius: 100%;
+    -webkit-transition: all .25s;
+    transition:all .25s
+}
+
+.camera-button__ring {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #fff;
+    opacity:.8
+}
+
+.camera-button:active .camera-button__ring {
+    opacity:1
+}
+
+.camera-button:active .camera-button__circle {
+    opacity:.5
+}
+
+
+.govuk-visually-hidden, .govuk-visually-hidden-focusable {
+position: absolute!important;
+width: 1px!important;
+height: 1px!important;
+margin: 0!important;
+overflow: hidden!important;
+clip: rect(0 0 0 0)!important;
+-webkit-clip-path: inset(50%)!important;
+clip-path: inset(50%)!important;
+white-space: nowrap!important;
+}
+
+
+// End digital reader button //
+
+
+
+//Accessibility
+
+.invisible-link .govuk-accordion__open-all {
+  display: none;
+}
+
+.accessibility-needs-label {
+  width: 100%;
+}
+
+@media (min-width: 48.0625em) {
+  .accessibility-needs-label {
+    width: auto;
+  }
+}
+
+.versions {
+  background: white;
+  border: 2px solid $govuk-link-colour;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 1em;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.autocomplete__wrapper * {
+  @include govuk-typography-common();
+}
+
+.gem-c-modal-dialogue {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  // overflow-y: scroll;
+  outline: 0;
+}
+
+.gem-c-modal-dialogue__overlay {
+  position: fixed;
+  overflow-x: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .8;
+  background: #0b0c0c;
+  pointer-events: none;
+  touch-action: none;
+}
+
+@media (min-width: 40.0625em) {
+  .gem-c-modal-dialogue__box {
+      position: relative;
+      top: inherit;
+      right: inherit;
+      bottom: inherit;
+      left: inherit;
+      width: auto;
+      max-width: 640px;
+      height: auto;
+      margin: 30px auto;
+      border: 2px solid #0b0c0c;
+  }
+}
+
+.gem-c-modal-dialogue__box {
+  display: block;
+  position: fixed;
+  background: #fff;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+}
+
+@media (min-width: 40.0625em) {
+  .gem-c-modal-dialogue__box {
+    top: 15vh;
+    height: auto;
+    margin: auto;
+    position: relative;
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+}
+
+.gem-c-modal-dialogue__header {
+  padding: 9px 15px 10px;
+  color: #fff;
+  background: #0b0c0c;
+}
+
+.gem-c-modal-dialogue__content-scanner {
+  padding: 15px 3.4em;
+  background: #fff;
+}
+
+.gem-c-modal-dialogue__content {
+  padding: 15px;
+  background: #fff;
+}
+
+@media (min-width: 40.0625em) {
+  .gem-c-modal-dialogue__box {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.3157894737;
+  }
+  .gem-c-modal-dialogue__content,
+  .gem-c-modal-dialogue__content-scanner {
+    padding: 15px;
+  }
+}
+
+.gem-c-modal-dialogue__close-button,
+a.gem-c-modal-dialogue__close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  color: #fff;
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  font-family: "GDS Transport",arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 1.3;
+}
+
+.gem-c-modal-dialogue__close-button:active,
+.gem-c-modal-dialogue__close-button:visited,
+.gem-c-modal-dialogue__close-button:focus,
+.gem-c-modal-dialogue__close-button:hover,
+a.gem-c-modal-dialogue__close-button:active,
+a.gem-c-modal-dialogue__close-button:visited,
+a.gem-c-modal-dialogue__close-button:focus,
+a.gem-c-modal-dialogue__close-button:hover {
+  background: none;
+  color: #fff;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.mobile-optimised-link {
+  text-align: center;
+}
+
+@media (min-width: 40.0625em) {
+  .mobile-optimised-link {
+    text-align: left;
+  }
+}
