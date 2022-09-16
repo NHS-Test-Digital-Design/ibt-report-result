@@ -114,4 +114,14 @@ router.post('/ethnic-group', function (req, res) {
     }
 })
 
+
+router.post('/take-photo', function (req, res) {
+    var date = req.session.data['take-photo']
+    if (date == "cancel"){
+        res.redirect('/digital-reader/photo-guidance')
+    } else {
+        res.redirect('/digital-reader/photo-guidance')
+    }
+})
+
 module.exports = router
