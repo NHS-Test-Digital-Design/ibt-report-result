@@ -3,8 +3,7 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+
 
         <div>
           <!-- The `label` is attached to the hidden file input -->
@@ -24,12 +23,13 @@
         </div>
 
         <div id="photo-playback">
-          <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Check and upload your photo</h1>
-          <p class="govuk-body"><strong>To take a good photo, make sure:</strong></p>
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Check the photo</h1>
+          <p class="govuk-body"><strong>Make sure:</strong></p>
           <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-5">
-            <li>you hold your phone/tablet flat and steady, directly above the test strip</li>
+            <li>All 4 corners of the test strip are in the outline</li>
             <li>the photo is in focus with no shadows or bright lights on it</li>
-            <li>no personal information is in the photo, for example bank details</li>
+            <li>the photo is taken directly from above (not at an angle)</li>
+            <li>no personal information is in the photo, for example paperwork showing your name, address, date of birth or bank details</li>
           </ul>
             <!-- displays the picture uploaded from the native camera -->
             <img id="pictureFromCamera" />
@@ -38,7 +38,7 @@
               If you prefer, you can <a href="choose-result" class="govuk-link">tell us the result</a>.
             <p>
             <a id="snap-2" href="photo-confirmed" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-              Upload photo
+              Submit photo
             </a>
 
             <label for="cameraFileInput">
@@ -51,12 +51,15 @@
                 style="text-decoration:none;"
                 class="govuk-button govuk-button--secondary govuk-!-margin-bottom-8"
                 data-module="govuk-button">
-                  Re-take your photo
+                  Take photo again
                 </a>
             </label>
 
           </div>
 
+          <div class="govuk-inset-text">
+          <a href="/self-report/choose-result">I do not want the service to read my result</a>
+ </div>
     </div>
   </div>
 {% endblock %}
