@@ -124,4 +124,16 @@ router.post('/take-photo', function (req, res) {
     }
 })
 
+router.post('/choose-result', function (req, res) {
+    var country = req.session.data['test-result']
+    if (country == "test-result-1"){
+        res.redirect('self-report/NI/SR-Negative')
+    } else if (country == "test-result-2") {
+        res.redirect('self-report/NI/SR-Negative')
+    } else {
+        res.redirect('self-report/NI/SR-Negative')
+    }
+})
+
+
 module.exports = router
