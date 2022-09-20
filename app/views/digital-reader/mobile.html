@@ -3,11 +3,11 @@
 
 {% block content %}
 
-<form action="/digital-reader/device-information" method="post">
+<form action="/digital-reader/photo-guidance" method="post">
 
 
 
-      <form action="/IBT/lfd-digital-reader/feature-design/LSR-302-infographics/device-information" method="post">
+      <form action="/digital-reader/photo-guidance" method="post">
 
         <div class="govuk-form-group">
               <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
@@ -20,7 +20,7 @@
                 Before taking a photo
               </h2>
               <p class="govuk-body">Wait 30 minutes to take a photo after taking the test, or you may get an incorrect result.</p>
-              <p class="govuk-body">If you prefer, you can <a href="https://nhsuk-antibody-testing-service.herokuapp.com/share-result-lateral-flow/v29/choose-result">tell us the result without taking a photo</a>.</p>
+              <p class="govuk-body">If you prefer, you can <a href="/self-report/choose-result">tell us the result without taking a photo</a>.</p>
 
           </div>
 
@@ -39,6 +39,5 @@
 
       </form>
 
-</div>
-</div>
+
 {% endblock %}
