@@ -79,9 +79,9 @@ router.post('/test-reason', function (req, res) {
 router.post('/test-date', function (req, res) {
     var date = req.session.data['day-of-test']
     if (date == "whos-taking-the-test-1"){
-        res.redirect('/self-report/barcode')
+        res.redirect('/self-report/name')
     } else {
-        res.redirect('/self-report/barcode')
+        res.redirect('/self-report/name')
     }
 })
 
