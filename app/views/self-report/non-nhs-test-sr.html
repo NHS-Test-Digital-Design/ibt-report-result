@@ -1,0 +1,27 @@
+{% set pageTitle = "You cannot report your test result  " %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+        {{ pageTitle }}
+
+    </h1>
+
+
+
+    <p class="govuk-body">
+      We do not recognise the test strip ID number: <strong>ABC1234567</strong>
+    </p>
+
+    <p class="govuk-body">
+      This might be because the test is not a free NHS test, for example if you bought it from a pharmacy or retailer, or it was entered incorrectly.
+    </p>
+
+    <p class="govuk-body">
+      If you think you entered the ID number incorrectly you can <a href="/self-report/barcode">try again</a>.
+    </p>
+
+
+
+{% endblock %}
