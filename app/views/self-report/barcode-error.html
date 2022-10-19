@@ -1,0 +1,82 @@
+{% set pageTitle = "What is the test strip ID number? " %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+        {{ pageTitle }}
+    </h1>
+
+    <div class="govuk-inset-text">
+  Check the expiry date on the box the test came in. Do not report the result if the test is out of date. Take a new test from a box that is still in date. Dispose of any tests that are out of date.
+</div>
+
+    <p class="govuk-body">
+        The ID number is printed on the test strip by the QR code.
+    </p>
+
+    <br>
+    <br>
+
+
+    <img src="/public/images/LFD-QR-example.svg" alt="Illustration of rapid lateral flow test highlighting the QR code">
+      <div class="govuk-!-width-full">
+      </div>
+
+      <br>
+      <br>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Scan test strip QR code
+      </button>
+
+  <br>
+  <br>
+
+
+
+
+
+
+
+  <div class="govuk-form-group govuk-form-group--error">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint passport-issued-error">
+
+        <p class="govuk-body">
+          Test strip ID number
+        </p>
+
+
+      <p id="passport-issued-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Test strip ID number must be between 9 and 11 characters.
+      </p>
+      <div class="govuk-date-input" id="passport-issued">
+      </fieldset>
+  </div>
+
+
+    <form class="form" action="/self-report/login-choice" method="post">
+        {{ govukInput({
+            id: "test-id-number",
+            name: "test-id-number",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+                text: ""
+            }
+        }) }}
+        {{ govukInput({
+            id: "test-id-number-confirm",
+            name: "test-id-number-confirm",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+                text: "Confirm test strip ID number "
+            }
+        }) }}
+
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}
