@@ -3,6 +3,10 @@
 
 {% block content %}
 
+<div id="error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" class="govuk-error-summary" style=""><h2 id="error-summary-title" class="govuk-error-summary__title">
+    There is a problem
+  </h2> <div class="govuk-error-summary__body"><ul class="govuk-list govuk-error-summary__list pl-0"><li><a href="#sampleIdConfirm">Confirm the test strip ID number</a></li></ul></div></div>
+
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         {{ pageTitle }}
     </h1>
@@ -39,44 +43,27 @@
 
 
 
+
+
+
+
+
+
   <div class="govuk-form-group govuk-form-group--error">
-    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint passport-issued-error">
-
-        <p class="govuk-body">
-          Test strip ID number
-        </p>
-
-
-      <p id="passport-issued-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Test strip ID number must be between 9 and 11 characters.
-      </p>
-      <div class="govuk-date-input" id="passport-issued">
-      </fieldset>
-  </div>
+  <label class="govuk-label" for="test-strip-ID-error">
+    Test strip ID number
+  </label>
+  <p id="test-strip-ID" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Test strip ID number must be between 9 and 11 characters.
+  </p>
+  <input class="govuk-input govuk-input--error" id="test-strip-ID" name="test-strip-ID-error" type="text" aria-describedby="test-strip-id-error">
+</div>
 
 
-    <form class="form" action="/self-report/login-choice" method="post">
-        {{ govukInput({
-            id: "test-id-number",
-            name: "test-id-number",
-            classes: "govuk-!-width-two-thirds",
-            label: {
-                text: ""
-            }
-        }) }}
-        {{ govukInput({
-            id: "test-id-number-confirm",
-            name: "test-id-number-confirm",
-            classes: "govuk-!-width-two-thirds",
-            label: {
-                text: "Confirm test strip ID number "
-            }
-        }) }}
+<div class="govuk-form-group"><label class="govuk-label" for="sampleIdConfirm">
+      Confirm test strip ID number
+    </label><input id="sampleIdConfirm" name="sampleIdConfirm" spellcheck="false" class="govuk-input"></div>
 
 
-        {{ govukButton({
-            text: "Continue",
-            classes: "govuk-!-margin-top-4"
-        }) }}
-    </form>
+
 {% endblock %}
