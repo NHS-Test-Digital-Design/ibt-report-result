@@ -21,15 +21,19 @@
 
   <div id="photo-playback">
     <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Check the photo</h1>
-    <p class="govuk-body"><strong>Make sure:</strong></p>
+    <!-- displays the picture uploaded from the native camera -->
+  <img id="pictureFromCamera" />
+  <br>
+
+    <p class="govuk-body"><strong>Make sure the photo:</strong></p>
     <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-5">
-      <li>the photo is in focus with no shadows or bright lights on it</li>
-      <li>The photo is taken directly from above (not at an angle)</li>
-      <li>no personal information is in the photo, for example paperwork showing your name, address, date of birth or bank details</li>
+      <li>shows the whole test strip</li>
+      <li>is in focus with no shadows or bright lights on it</li>
+      <li>is taken directly from above (not at an angle)</li>
+      <li>shows no personal information, for example paperwork with your name, address, date of birth or bank details</li>
+
     </ul>
-      <!-- displays the picture uploaded from the native camera -->
-    <img id="pictureFromCamera" />
-    <br>
+
 
     <a id="snap-2" href="photo-confirmed" role="button" draggable="false" class="govuk-button govuk-!-margin-right-4" data-module="govuk-button">
       Submit photo
