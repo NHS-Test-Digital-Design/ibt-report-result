@@ -27,6 +27,7 @@
   <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 </legend>
 
+<form action="/country-answer" method="post">
 <span id="country-hint" class="govuk-body">
     <p>This also applies to temporary staff and volunteers</p>
   <span>
@@ -42,13 +43,13 @@
       <label class="govuk-label govuk-radios__label" for="country-4">
         No
       </label>
-  
+
     </div>
     <br>
     <br>
     <button class="govuk-button" data-module="govuk-button">Continue</button>
   </div>
 
-
+</form>
 
 {% endblock %}
