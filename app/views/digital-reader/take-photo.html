@@ -21,10 +21,11 @@
 
   <div id="photo-playback">
     <h1 class="govuk-heading-l govuk-!-margin-bottom-5">Check the photo</h1>
+
     <!-- displays the picture uploaded from the native camera -->
   <img id="pictureFromCamera" />
   <br>
-
+  <br>
     <p class="govuk-body"><strong>Make sure the photo:</strong></p>
     <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-5">
       <li>shows the whole test strip</li>
@@ -33,6 +34,8 @@
       <li>shows no personal information, for example paperwork with your name, address, date of birth or bank details</li>
 
     </ul>
+
+    <p class="govuk-body">If you prefer, you can still <a href="#" class="govuk-link">tell us the results without taking a photo</a>.</p>
 
 
     <a id="snap-2" href="photo-confirmed" role="button" draggable="false" class="govuk-button govuk-!-margin-right-4" data-module="govuk-button">
@@ -47,15 +50,12 @@
         capture="environment"
         draggable="false"
         style="text-decoration:none;"
-        class="govuk-button govuk-button--secondary govuk-!-margin-bottom-8"
-        data-module="govuk-button">
-          Take photo again
+        
+<a href="#" class="govuk-link govuk-link--no-visited-state">Take photo again</a>
+
         </a>
     </label>
 
-    <div class="govuk-inset-text">
-      <a href="/self-report/choose-result" class="govuk-link">I do not want the service to read my result</a>
-    </div>
 
     </div>
 {% endblock %}
