@@ -29,6 +29,8 @@
 
  <p class="govuk-body">This result has been reported to the NHS.</p>
 
+<p class="govuk-body">Find out <a href="#" class="govuk-link">what to do if you do not agree with this results (open in new tab)</a>.</p>
+
  <div class="govuk-warning-text">
    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
    <strong class="govuk-warning-text__text">
@@ -41,17 +43,22 @@
         <a href="https://gov.wales/self-isolation" target="_blank" rel="noreferrer">Wales</a>
         or <a href="https://www.nidirect.gov.uk/articles/coronavirus-covid-19-self-isolating-and-close-contacts#toc-0" target="_blank" rel="noreferrer">Northern Ireland</a> (open in new tabs)
       {% else %}
-        Self-isolate immediately.
-        Find further self-isolation guidance for
-        <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-and-treatment/when-to-self-isolate-and-what-to-do/" target="_blank" rel="noreferrer">England</a>,
-        <a href="https://www.nhsinform.scot/isolation" target="_blank" rel="noreferrer">Scotland</a>
-        <a href="https://gov.wales/self-isolation" target="_blank" rel="noreferrer">Wales</a>
-        or <a href="https://www.nidirect.gov.uk/articles/coronavirus-covid-19-self-isolating-and-close-contacts#toc-0" target="_blank" rel="noreferrer">Northern Ireland </a>(open in new tabs)
+        You should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19.
+        <a href="https://www.nhs.uk/stay-at-home" target="_blank" rel="noreferrer">Find out more about when to stay at home and what to do (opens in new tab)</a>.
+
+
      {% endif %}
    </strong>
  </div>
 
- <p class="govuk-body">Most people do not need a PCR test to confirm their result.</p>
+<p class="govuk-body"><strong>COVID-19 treatments</strong></p>
+
+<p class="govuk-body">If you're eligible for COVID-19 treatments the NHS will contact you. If you are not contacted within 24 hours call your GP, NHS 111 or your specialist (if you have one). <a href="#" class="govuk-link">Find out more about COVID-19 treatments (opens in new tab)</a>.</p>
+
+<p class="govuk-body"><strong>If you're worried</strong></p>
+
+<p class="govuk-body">If you have <a href="#" class="govuk-link">COVID-19 symptoms (opens in new tab)</a> which are seriously affecting your everyday life, call NHS 111 or your GP. In an emergency call 999.</p>
+
 
  {% if data['whos-taking-the-test'] == "someone-else" %}
     <p class="govuk-body">The person who took the test will need to confirm a positive lateral flow test if they're:</p>
@@ -61,46 +68,36 @@
            <li>asked to do so as part of research</li>
          </ul>
  {% else %}
-    <p class="govuk-body">You will need to confirm a positive lateral flow test if you're:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>applying for Test and Trace or self-isolation support payments (England and Scotland only)</li>
-        <li>eligible for new COVID-19 treatments</li>
-        <li>asked to do so as part of research</li>
-      </ul>
  {% endif %}
 
-  <p><a href="https://www.gov.uk/get-coronavirus-test">Book a PCR test</a></p>
+
 
   {% if data['whos-taking-the-test'] == "someone-else" %}
     <p>They may get any of the main <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/symptoms/">symptoms</a> of COVID-19 in the next few days. If they're
       worried, or their symptoms get worse, they should contact 111 (England and Scotland only) or speak to their GP. In an emergency dial 999.</p>
   {% else %}
-  <p>You may get any of the main <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/symptoms/">symptoms</a> of COVID-19 in the next few days. If you're
-    worried, or your symptoms get worse, you should contact 111 (England and Scotland only) or speak to your GP. In an emergency dial 999.</p>
+
   {% endif %}
 
   <button class="govuk-button" data-module="govuk-button">Report another result</button>
 
-      <div class="govuk-inset-text">
-       <a href="contest-positive">I think the service incorrectly read the result</a>
-      </div>
+
+
 
    <h5 class="govuk-heading-s">Help and advice</h5>
    <p><a href="https://www.gov.uk/find-coronavirus-support" target="_blank" rel="noreferrer">
      {% if data['whos-taking-the-test'] == "someone-else" %}
      <p class="govuk-body">Find out what support they can get if they’re affected by coronavirus.</p>
      {% else %}
-     <p class="govuk-body">Find out what support you can get if you’re affected by coronavirus.</p>
+     <p class="govuk-body">Find out what support you can get if you’re affected by COVID-19 (opens in new tab)<a>.</p>
      {% endif %}
    </a></p>
    {% if data['whos-taking-the-test'] == "someone-else" %}
-   <p><a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-and-treatment/" target="_blank" rel="noreferrer">NHS advice if they have to self isolate</a>
+   <p><a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-and-treatment/help-and-financial-support-while-youre-self-isolating/" target="_blank" rel="noreferrer">NHS advice if they have to self isolate</a>
    {% else %}
-   <p><a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-and-treatment/" target="_blank" rel="noreferrer">NHS advice if you have to self isolate</a>
+
    {% endif %}
-   <p><a href="https://www.covid19.nhs.uk/" target="_blank" rel="noreferrer">Get the free NHS COVID-19 app for England and Wales</a></p>
-   <p><a href="https://covid-19.hscni.net/stop-covid-ni-mobile-app/" target="_blank" rel="noreferrer">Get the free StopCOVID app for Northern Ireland</a></p>
-   <p><a href="https://protect.scot/" target="_blank" rel="noreferrer">Get the free Protect Scotland app</a></p>
+
  </div>
 </div>
 {% endblock %}
