@@ -1,0 +1,110 @@
+{% set version = "digital-read-report" %}
+{% set pageTitle = "You reported a positive coronavirus test result" %}
+
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  <!-- <a class="govuk-back-link" href="/share-result-lateral-flow/{{version}}/choose-result">Back</a> -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="https://www.gov.uk/get-coronavirus-test/" method="post">
+
+
+                   <div class="govuk-panel govuk-panel--confirmation govuk-panel-lft-result">
+                      <h1 class="govuk-panel__title">
+                        {% if data['whos-taking-the-test'] == "someone-else" %}
+                        {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }}'s coronavirus test result is positive
+                        {% else %}
+                        The coronavirus test result is positive
+                        {% endif %}
+                      </h1>
+                      <div class="govuk-panel__body">
+                        {% if data['whos-taking-the-test'] == "someone-else" %}
+                        It’s likely they were infectious when the test was done
+                        {% else %}
+                        It’s likely you were infectious when the test was done
+                        {% endif %}
+                      </div>
+                   </div>
+
+
+          <div>
+          <br>
+
+          <p class="govuk-body">This result has been reported to the NHS.</p>
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              {% if data['whos-taking-the-test'] == "someone-else" %}
+                 They should stay at home and avoid contact with other people for at least 5 days. They should not visit care homes, hospitals or places where they know there are people at higher risk from COVID-19.
+                 <a href="https://gov.wales/guidance-people-symptoms-respiratory-infection-including-covid-19" target="_blank" rel="noreferrer">Find out more about when to stay at home and what to do (opens in new tab)</a>.
+
+               {% else %}
+                 You should stay at home and avoid contact with other people for at least 5 days. Do not visit care homes, hospitals or places where you know there are people at higher risk from COVID-19.
+                 <a href="https://gov.wales/guidance-people-symptoms-respiratory-infection-including-covid-19" target="_blank" rel="noreferrer">Find out more about when to stay at home and what to do (opens in new tab)</a>.
+              {% endif %}
+            </strong>
+          </div>
+
+          <h2 class="govuk-heading-m">
+            COVID-19 treatments
+          </h2>
+
+          <div
+            <p class="govuk-body">
+              {% if data['whos-taking-the-test'] == "someone-else" %}
+              If they test positive for COVID-19 and are eligible for treatment, the National Antiviral Service or their local health board will contact them. If they have not been contacted within 48 hours, call 111.
+                  <a href="https://gov.wales/covid-19-treatments" target="_blank" rel="noreferrer"> Find out more about COVID-19 treatments (opens in new tab)</a>.
+
+              {% else %}
+              If you test positive for COVID-19 and are eligible for treatment, the National Antiviral Service or your local health board will contact you. If you have not been contacted within 48 hours, call 111.
+                  <a href="https://gov.wales/covid-19-treatments" target="_blank" rel="noreferrer"> Find out more about COVID-19 treatments (opens in new tab)</a>.
+              {% endif %}
+            </p>
+          </div>
+
+
+        <br>
+        <br>
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Report another result
+          </button>
+        </div>
+          <div class="govuk-inset-text">
+          <a class="govuk-link" href="https://nhsuk-antibody-testing-service.herokuapp.com/IBT/lfd-digital-reader/feature-design/LSR-348-NI-Updates/SR-NI-DR-Negative-Contest">I think the service incorrectly read the result</a>
+          </div>
+
+
+        <br>
+
+          <h2 class="govuk-heading-m">
+            Help and advice
+          </h2>
+
+          <p class="govuk-body">
+                <a href="https://gov.wales/self-isolation#section-94422" target="_blank" rel="noreferrer">Find out what support there is for people affected by COVID-19 (opens in new tab)</a>.
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
