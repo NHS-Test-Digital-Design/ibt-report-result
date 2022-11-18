@@ -1,0 +1,37 @@
+{% set pageTitle = "You cannot report the test result" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        We do not recognise the test strip ID: ABC1234567
+    </p>
+
+    <h2 class="govuk-heading-m">
+        If you think the test strip ID scanned incorrectly
+    </h2>
+
+    <p class="govuk-body">
+        <a href="#" class="govuk-link">Scan the test strip ID again or enter it manually</a>.
+    </p>
+
+
+    <h2 class="govuk-heading-m">
+        If you paid for your test
+    </h2>
+
+    <p class="govuk-body">
+        You cannot use this service.
+    </p>
+
+    <p class="govuk-body">
+        In England and Wales you can enter a positive result for a test you paid for on the NHS COVID-19 app. This helps with contact tracing. <a href="https://www.gov.uk/government/collections/nhs-covid-19-app" class="govuk-link">Download or update the NHS COVID-19 app</a>.
+    </p>
+
+    <p class="govuk-body">
+        <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/testing/test-results/positive-test-result/" class="govuk-link">Find out what to do if you think you have COVID-19.</a>
+    </p>
+{% endblock %}
