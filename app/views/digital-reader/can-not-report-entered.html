@@ -1,13 +1,21 @@
 {% set pageTitle = "You cannot report the test result" %}
 {% extends "layout_question.html" %}
 
+{% set IDnumber %}
+    {% if data['test-id-number']%}
+    {{ data['test-id-number'] }}
+    {% else %}
+    ABC1234567
+    {% endif %}
+{% endset %}
+
 {% block content %}
     <h1 class="govuk-heading-l">
         {{ pageTitle }}
     </h1>
 
     <p class="govuk-body">
-        We do not recognise the test strip ID: ABC1234567
+        We do not recognise the test strip ID: <strong>{{IDnumber}}</strong>
     </p>
 
     <h2 class="govuk-heading-m">
