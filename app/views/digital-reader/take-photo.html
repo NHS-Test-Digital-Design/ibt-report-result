@@ -35,14 +35,30 @@
 
     </ul>
 
-    <p class="govuk-body">If you prefer, you can still <a href="#" class="govuk-link">tell us the results without taking a photo</a>.</p>
+    <p class="govuk-body">If you prefer, you can still <a href="../self-report/choose-result" class="govuk-link">tell us the results without taking a photo</a>.</p>
 
     <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button">
+      <a id="snap-2" href="photo-confirmed" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+        Upload photo
+      </a>
+    <!--  <button class="govuk-button" data-module="govuk-button">
         Submit photo
-      </button>
+      </button> -->
 
-      <a class="govuk-link" href="#">Take photo again</a>
+      <label for="cameraFileInput">
+          <a
+          role="input"
+          type="file"
+          accept="image/*"
+          capture="environment"
+          draggable="false"
+
+          class="govuk-link">
+            Take photo again
+          </a>
+      </label>
+
+    <!--  <a class="govuk-link" href="#">Take photo again</a> -->
     </div>
 
 
