@@ -3,106 +3,97 @@
 
 {% block content %}
 
-<h1 class="govuk-heading-l">{{ pageTitle }}</h1>
-<form action="/digital-reader/photo-permissions" method="post">
-&nbsp;
-<p class="govuk-body">Follow the instructions to help you get the correct test result.</p>
-<div class="photo-guide-photos" aria-hidden="true">
-  <h2 class="govuk-heading-m">Whole test strip in the photo</h2>
-   <ul>
-       <li>
-         <img src="/public/images/DR-Test-Photo-1.jpg" alt="Good photo. The photo was taken from above and the whole test strip is in the photo.">
-           <div class="result">
-               <p class="approved govuk-body-s">Whole test strip in the photo</p>
-           </div>
-       </li>
-       <li>
-         <img src="/public/images/DR-Test-Photo-2.jpg" alt="Poor photo. The test strip is too far away.">
-           <div class="result">
-               <p class="failed govuk-body-s">Test strip is too far away</p>
-           </div>
-       </li>
-       <li>
-         <img src="/public/images/DR-Test-Photo-3.jpg" alt="Poor photo. The photo was not taken directly from above.">
-           <div class="result">
-               <p class="failed govuk-body-s">Taken at an angle</p>
-           </div>
-       </li>
-   </ul>
-</div>
+  <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+  <p class="govuk-body govuk-!-margin-bottom-8">Follow the instructions to help you get the correct test result.</p>
 
-<div class="photo-guide-photos" aria-hidden="true">
- <h2 class="govuk-heading-m">No shadows</h2>
-  <ul>
-      <li>
-        <img src="/public/images/DR-Test-Photo-4.jpg" alt="Good photo. The test strip is brightly lit and there are no shadows.">
-          <div class="result">
-              <p class="approved govuk-body-s">Brightly lit and no shadows</p>
-          </div>
-      </li>
-      <li>
-        <img src="/public/images/DR-Test-Photo-6.jpg" alt="Poor photo. There are shadows on the test strip.">
-          <div class="result">
-              <p class="failed govuk-body-s">Shadows on test strip</p>
-          </div>
-      </li>
-      <li>
-        <img src="/public/images/DR-Test-Photo-5.jpg" alt="Poor photo. The test strip is too dark.">
-          <div class="result">
-              <p class="failed govuk-body-s">Photo too dark</p>
-          </div>
-      </li>
-  </ul>
-</div>
+  <h2 class="govuk-heading-m govuk-!-margin-top-4">Whole test strip in the photo</h2>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <img src="/public/images/DR-Test-Photo-1.jpg" alt="Good photo. The photo was taken from above and the whole test strip is in the photo." style="width: 100%">
+      <div class="result">
+        <p class="approved-img govuk-body-s">Whole test strip in the photo</p>
+      </div>
+    </div>
 
-<div class="photo-guide-photos" aria-hidden="true">
-<h2 class="govuk-heading-m">Test strip ID clear and in focus</h2>
- <ul>
-     <li>
-       <img src="/public/images/DR-Test-Photo-7.jpg" alt="Good photo. The test strip is clear and in focus.">
-         <div class="result">
-             <p class="approved govuk-body-s">Test strip ID clear and in focus</p>
-         </div>
-     </li>
-     <li>
-       <img src="/public/images/DR-Test-Photo-8.jpg" alt="Poor photo. The test strip is out of focus.">
-         <div class="result">
-             <p class="failed govuk-body-s">Test strip ID out of focus</p>
-         </div>
-     </li>
-     <li>
-       <img src="/public/images/DR-Test-Photo-9.jpg" alt="Poor photo. The test strip ID is not in the photo.">
-         <div class="result">
-             <p class="failed govuk-body-s">Test strip ID not in photo</p>
-         </div>
-     </li>
- </ul>
-</div>
-
-<br>
-
-<div class="govuk-form-group">
-   <h2 class="govuk-heading-m">
-    No personal information
-   </h2>
-
-   <p class="govuk-body">Check there is no personal information in the photo, for example paperwork showing a name, address, date of birth or bank details.</p>
-
-
-</div>
-
-
-<div class="govuk-button-group">
-<button class="govuk-button" data-module="govuk-button">
-Take photo
-</button>
-
-</form>
-
-<a class="govuk-link" href="/self-report/choose-result">Tell us the result without taking a photo</a>
-</div>
-
-
+    <div class="govuk-grid-column-one-third">
+      <img src="/public/images/DR-Test-Photo-2.jpg" alt="Poor photo. The test strip is too far away." style="width: 100%">
+      <div class="result">
+        <p class="failed-img govuk-body-s">Test strip is too far away</p>
+      </div>
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+      <img src="/public/images/DR-Test-Photo-3.jpg" alt="Poor photo. The photo was not taken directly from above." style="width: 100%">
+      <div class="result">
+        <p class="failed-img govuk-body-s">Taken at an angle</p>
+      </div>
     </div>
   </div>
+  {# end grid row #}
+
+
+  <h2 class="govuk-heading-m govuk-!-margin-top-4">No shadows</h2>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <img src="/public/images/DR-Test-Photo-4.jpg" alt="Good photo. The test strip is brightly lit and there are no shadows." style="width: 100%">
+      <div class="result">
+          <p class="approved-img govuk-body-s">Brightly lit and no shadows</p>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <img src="/public/images/DR-Test-Photo-6.jpg" alt="Poor photo. There are shadows on the test strip." style="width: 100%">
+      <div class="result">
+          <p class="failed-img govuk-body-s">Shadows on test strip</p>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <img src="/public/images/DR-Test-Photo-5.jpg" alt="Poor photo. The test strip is too dark." style="width: 100%">
+      <div class="result">
+          <p class="failed-img govuk-body-s">Photo too dark</p>
+      </div>
+    </div>
+  </div>
+  {# end grid row #}
+
+
+  <h2 class="govuk-heading-m govuk-!-margin-top-4">Test strip ID clear and in focus</h2>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <img src="/public/images/DR-Test-Photo-7.jpg" alt="Good photo. The test strip is clear and in focus." style="width: 100%">
+      <div class="result">
+        <p class="approved-img govuk-body-s">Test strip ID clear and in focus</p>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <img src="/public/images/DR-Test-Photo-8.jpg" alt="Poor photo. The test strip is out of focus." style="width: 100%">
+      <div class="result">
+        <p class="failed-img govuk-body-s">Test strip ID out of focus</p>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <img src="/public/images/DR-Test-Photo-9.jpg" alt="Poor photo. The test strip ID is not in the photo." style="width: 100%">
+      <div class="result">
+        <p class="failed-img govuk-body-s">Test strip ID not in photo</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="govuk-heading-m govuk-!-margin-top-8">
+    No personal information
+  </h2>
+  <p class="govuk-body">Check there is no personal information in the photo, for example paperwork showing your name, address, date of birth or bank details.</p>
+
+  <div class="govuk-button-group govuk-!-margin-top-8">
+    {{ govukButton({
+      text: "Take photo",
+      href: "/digital-reader/photo-permissions"
+    }) }}
+    <a class="govuk-link" href="/self-report/choose-result">Tell us the result without taking a photo</a>
+  </div>
+
 {% endblock %}
