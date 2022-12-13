@@ -955,3 +955,25 @@ a.gem-c-modal-dialogue__close-button:hover {
     text-align: left;
   }
 }
+
+// spinningng loader used on photo-confirmed
+ 
+.ccms-loader {
+  border: 12px solid #DEE0E2;
+  border-radius: 50%;
+  border-top-color: #005EA5;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 0.7s linear infinite;
+  animation: spin 0.7s linear infinite;
+  text-align: center;
+  margin: 20px auto 10px;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,11 +1,11 @@
-{% set pageTitle = "You reported a positive coronavirus test" %}
+{% set pageTitle = "You reported [name]'s coronavirus test result as positive" %}
 {% extends "layout_question.html" %}
 
 {% block content %}
 
 {{ govukPanel({
     titleText: pageTitle,
-    html: "It’s likely you were infectious when the test was done",
+    html: "It’s likely they were infectious when the test was done",
     classes: "govuk-!-margin-bottom-8 govuk-panel-lft-result"
 }) }}
 
@@ -14,7 +14,7 @@
 </p>
 
 {{ govukWarningText({
-    html: "You should stay at home and avoid contact with other people for at least 5 days. Do not visit care homes, hospitals or places where you know there are people at higher risk from COVID-19. <a href='https://gov.wales/guidance-people-symptoms-respiratory-infection-including-covid-19' class='govuk-link' target='_blank' rel='noreferrer'>Find out more about when to stay at home and what to do (opens in new tab)</a>.",
+    html: "They should stay at home and avoid contact with other people for at least 5 days. Do not visit care homes, hospitals or places where they know there are people at higher risk from COVID-19. <a href='https://gov.wales/guidance-people-symptoms-respiratory-infection-including-covid-19' class='govuk-link' target='_blank' rel='noreferrer'>Find out more about when to stay at home and what to do (opens in new tab)</a>.",
     iconFallbackText: "Fallback text"
 }) }}
 
@@ -23,7 +23,7 @@
 </h2>
 
 <p class="govuk-body">
-    If you test positive for COVID-19 and are eligible for treatment, the National Antiviral Service or your local health board will contact you. If you have not been contacted within 48 hours, call 111.
+    If they test positive for COVID-19 and are eligible for treatment, the National Antiviral Service or their local health board will contact them. If they have not been contacted within 48 hours, call 111.
     <a href="https://gov.wales/covid-19-treatments" class="govuk-link" rel="noreferrer noopener" target="_blank">Find out more about COVID-19 treatments (opens in new tab)</a>.
 </p>
 
@@ -35,12 +35,12 @@
 
 {% set detail %}
     <p class="govuk-body">
-      If you're eligible for free rapid lateral flow tests, you should take another test and report the result.
+      If the person who took the test is eligible for free rapid lateral flow tests, they should take another test and report the result.
 
     </p>
 
     <p class="govuk-body">
-        Use a new test kit and do not reuse anything from the first test kit.
+        They should use a new test kit and not reuse anything from the first test kit.
     </p>
 
     <h2 class="govuk-heading-m">
@@ -48,7 +48,7 @@
     </h2>
 
     <p class="govuk-body">
-        If you do not have another rapid lateral flow test available, you may be able to order a new test pack online for home delivery.
+        If they do not have another rapid lateral flow test available, they may be able to order a new test pack online for home delivery.
     </p>
 {% endset %}
 

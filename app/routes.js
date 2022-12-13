@@ -135,5 +135,18 @@ router.post('/choose-result', function (req, res) {
     }
 })
 
+router.post('/barcode-answer', function (req, res) {
+    var barcodeid = req.session.data['test-id-number']
+    if (barcodeid == "ERROR000001"){
+        res.redirect('../digital-reader/can-not-report-entered')
+    } else if (barcodeid == "ERROR000002") {
+        res.redirect('../digital-reader/can-not-report-scanned')
+    } else {
+        res.redirect('self-report/login-choice')
+    }
+})
+
+
+
 
 module.exports = router

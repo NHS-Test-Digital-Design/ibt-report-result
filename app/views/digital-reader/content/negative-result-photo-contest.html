@@ -8,34 +8,47 @@
   {% endif %}
 </h1>
 
-<br>
-
 
 <div
   <p class="govuk-body">
     {% if data['whos-taking-the-test'] == "someone-else" %}
       The technology we use to check the result guarantees a high level of accuracy. It's authorised by the UK health regulator, the Medicines and Healthcare products Regulatory Agency (MHRA).
-      <br>
-      <br>
       If {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }} thinks we got your result wrong, they can <a href="https://coronavirus-yellowcard.mhra.gov.uk/" target="_blank" rel="noreferrer">report this to the MHRA (opens in new tab)</a>. On the homepage, they should enter ‘Lateral flow antigen test – uploaded photograph result’ in the search box and select the ‘Start report’ button.
-      <br>
-      <br>
       They should follow the advice below to help stop the spread of the virus.
 
      {% else %}
-      The technology we use to check the result guarantees a high level of accuracy. It's authorised by the UK health regulator, the Medicines and Healthcare products Regulatory Agency (MHRA).
-      <br>
-      <br>
-      If you think we got your result wrong, you can <a href="https://coronavirus-yellowcard.mhra.gov.uk/" target="_blank" rel="noreferrer">report this to the MHRA (opens in new tab)</a>. On the homepage, enter ‘Lateral flow antigen test – uploaded photograph result’ in the search box and select the ‘Start report’ button.
-      <br>
-      <br>
-      You should follow the advice below to help stop the spread of the virus.
+      Our technology can see test lines that are so faint they cannot be seen by the human eye. This may lead to a positive test result that you weren't expecting.
     {% endif %}
   </p>
 </div>
 
-<br>
-<br>
+<div
+  <h2 class="govuk-heading-m">
+    {% if data['whos-taking-the-test'] == "someone-else" %}
+    If {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }} thinks their result was positive
+
+    {% else %}
+    If you think the result is incorrect
+    {% endif %}
+  </h2>
+</div>
+
+<p class="govuk-body">You may get an incorrect result if you took the photo:</p>
+<ul class="govuk-list govuk-list--bullet govuk-!-margin-top-5">
+  <li>without following the instructions on how to take a photo</li>
+  <li>before the test was fully developed (this is explained in your test kit guide)</li>
+
+</ul>
+<div
+  <p class="govuk-body">
+     {% if data['whos-taking-the-test'] == "someone-else" %}
+     They should follow the guidance for the country they're in until they have the new test result.
+
+     {% else %}
+
+    {% endif %}
+  </p>
+</div>
 
 
 <div
@@ -56,11 +69,8 @@
 
      {% else %}
       You should take another rapid lateral flow test today, or as soon as possible, and report the result.
-    {% endif %}
-  </p>
-</div>
-
 <br>
+<<<<<<<< HEAD:app/views/digital-reader/content/negative-result-photo-contest.html
 
 <div
   <h2 class="govuk-heading-s">
@@ -81,6 +91,10 @@
      {% else %}
      Follow the guidance for the country you're in until you have the new test result.
 
+========
+<br>
+      You should assume that you have COVID-19, and follow the guidance for the country you're in until you have the new test result.
+>>>>>>>> 7b9dd78103c27749b0d7715ce460e880b6b9e82e:app/views/digital-reader/positive-result-photo-contest.html
     {% endif %}
   </p>
 </div>
@@ -122,14 +136,40 @@
 
 <div class="govuk-body">
 <ul>
-  <li>Scotland: <a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19/coronavirus-covid-19/" target="_blank" rel="noreferrer">find out when to stay at home and what to do (opens in a new tab)</a></li>
-  <li>Wales: <a href="https://gov.wales/guidance-people-symptoms-respiratory-infection-including-covid-19" target="_blank" rel="noreferrer">find out when to stay at home and what to do (opens in a new tab)</a></li>
-  <li>Northern Ireland: <a href="https://www.nidirect.gov.uk/articles/coronavirus-covid-19-testing-and-isolation-advice" target="_blank" rel="noreferrer">find out when to stay at home and what to do (opens in a new tab)</a></li>
+  <li><a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19/coronavirus-covid-19/" target="_blank" rel="noreferrer">Scotland: find out when to stay at home and what to do</a></li>
+  <li><a href="https://gov.wales/guidance-people-symptoms-respiratory-infection-including-covid-19" target="_blank" rel="noreferrer">Wales: find out when to stay at home and what to do</a></li>
+  <li><a href="https://www.nidirect.gov.uk/articles/coronavirus-covid-19-testing-and-isolation-advice" target="_blank" rel="noreferrer">Northern Ireland: find out when to stay at home and what to do</a></li>
 </ul>
 </div>
 
 <br>
 
+<div
+  <h2 class="govuk-heading-m">
+    {% if data['whos-taking-the-test'] == "someone-else" %}
+    What they should do
+
+    {% else %}
+    Report an incorrect result to the Medicines and Healthcare products Regulatory Agency (MHRA)
+    {% endif %}
+  </h2>
+</div>
+
+<div
+  <p class="govuk-body">
+    {% if data['whos-taking-the-test'] == "someone-else" %}
+      They should take another rapid lateral flow test today, or as soon as possible, and report the result.
+
+     {% else %}
+      If you think we got your result wrong, you can report this to the MHRA. On the homepage, enter ‘Lateral flow antigen test – uploaded photograph result’ in the search box and select the ‘Start report’ button.
+<br>
+<br>
+
+    <a href="https://coronavirus-yellowcard.mhra.gov.uk/" target="_blank" rel="noreferrer">Report an incorrect result to MHRA (opens in new tab)</a>
+    {% endif %}
+  </p>
+</div>
+
 <div class="govuk-body">
-<a href="https://www.nhs.uk/conditions/coronavirus-covid-19/" target="_blank" rel="noreferrer">Get the latest NHS information and advice about COVID-19 (opens in a new tab)</a>
+<a href="https://www.nhs.uk/conditions/coronavirus-covid-19/" target="_blank" rel="noreferrer">Get the latest NHS information and advice about COVID-19 (opens in new tab)</a>
 </div>
