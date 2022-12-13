@@ -1,61 +1,48 @@
-{% set version = "v28" %}
 {% set pageTitle = "When was the test taken?" %}
-
 {% extends "layout_question.html" %}
 
-{% block beforeContent %}
-<form action="/test-date" method="post">
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      alpha
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
-
-  <a class="govuk-back-link" href="/report-covid19-result">Back</a>
-{% endblock %}
-
-
-
 {% block content %}
-
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
-</legend>
-
-<div class="govuk-inset-text">
-  Report a result as soon as possible on the day the test is taken (and no later than 24 hours).
-</div>
-
-  <span>
-    <h3 class="govuk-heading-s">Select a date</h3>
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="date-1" name="date-of-test" type="radio" value="Today" {{ checked("country", "England") }}>
-        <label class="govuk-label govuk-radios__label" for="date-1">
-          Today, 13 September 2022
-        </label>
+<h1 class="govuk-heading-l">
+  {{ pageTitle }}
+</h1>
+<p class="govuk-body">
+  Follow the wait time instructions in your test kit. Reading the test strip before it's fully developed may give an incorrect result.
+</p>
+<p class="govuk-body">
+  Report the result no later than 24 hours after taking the test.
+</p>
+<form action="/test-date" method="post" novalidate>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        When was the test taken?
+      </legend>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="date-taken" name="date-taken" type="radio" value="today">
+          <label class="govuk-label govuk-radios__label" for="date-taken">
+            Today, 24 November 2022
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="date-taken-2" name="date-taken" type="radio" value="yesterday">
+          <label class="govuk-label govuk-radios__label" for="date-taken-2">
+            Yesterday, 23 November 2022
+          </label>
+        </div>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="date-2" name="date-of-test" type="radio" value="Yesterday" {{ checked("country", "Scotland") }}>
-        <label class="govuk-label govuk-radios__label" for="date-2">
-          Yesterday, 12 September 2022
-        </label>
-      </div>
-
-
-
-
-    </div>
-    <br>
-    <br>
-    <button class="govuk-button" data-module="govuk-button">Continue</button>
-
-
+    </fieldset>
+  </div>
+  <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
 </form>
 
 {% endblock %}
+
+
+
+
+
+
+        
