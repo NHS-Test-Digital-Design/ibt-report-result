@@ -1,14 +1,4 @@
-{% set pageTitle %}
-    {% if data['is-out-of-date'] === "yes"%}
-        Out-of-date test
-    {% elseif data['is-out-of-date'] === "dont-know" %}
-        Out-of-date test
-    {% else %}
-        This test is out of date
-    {% endif%}
-{% endset %}
-
-
+{% set pageTitle = "You cannot report this test result" %}
 {% extends "layout_question.html" %}
 
 {% block content %}
@@ -18,7 +8,7 @@
     </h1>
 
     <p class="govuk-body">
-        You should still report this test result if you do not have another test available.
+        The test is out of date.
     </p>
 
     <p class="govuk-body">
@@ -34,10 +24,5 @@
     <p class="govuk-body">
         If you need more tests, you may be eligible to <a href="https://www.gov.uk/order-coronavirus-rapid-lateral-flow-tests" class="govuk-link" rel="noreferrer noopener" target="_blank">order free NHS rapid lateral flow tests (opens in new tab)</a>.
     </p>
-
-    {{ govukButton({
-        text: "Continue",
-        href: "#"
-    }) }}
 
 {% endblock %}
