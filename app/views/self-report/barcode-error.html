@@ -1,16 +1,23 @@
 {% set pageTitle = "What is the test strip ID number? " %}
 {% extends "layout_question.html" %}
-
 {% block content %}
 
 <div id="error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" class="govuk-error-summary" style=""><h2 id="error-summary-title" class="govuk-error-summary__title">
     There is a problem
-  </h2> <div class="govuk-error-summary__body"><ul class="govuk-list govuk-error-summary__list pl-0"><li><a href="#sampleIdConfirm">Test strip ID must be between 9 and 11 characters. You can only report free NHS tests.</a></li></ul></div></div>
+  </h2>
+
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list pl-0">
+        <li>
+        <a href="#sampleIdConfirm">Test strip ID must be between 9 and 11 characters. You can only report free NHS tests.</a>
+      </li>
+      </ul>
+    </div>
+</div>
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         {{ pageTitle }}
     </h1>
-
 
     <p class="govuk-body">
         The ID number is printed on the test strip by the QR code.
@@ -18,48 +25,34 @@
 
     <br>
     <br>
-
-
     <img src="/public/images/LFD-QR-example.svg" arole="img" alt="A rapid lateral flow test showing the QR code at the top of the test. The code shown is LWJ 1 2 2 8 2 2 9 5">
-      <div class="govuk-!-width-full">
-      </div>
 
+    <!--  <div class="govuk-!-width-full">
+      </div> -->
       <br>
       <br>
-
       <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Scan test strip QR code
       </button>
-
   <br>
   <br>
-
-
-
-
-
-
-
-
-
-
-
-
 
   <div class="govuk-form-group govuk-form-group--error">
-  <label class="govuk-label" for="test-strip-ID-error">
-    Test strip ID number
-  </label>
-  <p id="test-strip-ID" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Test strip ID must be between 9 and 11 characters. You can only report free NHS tests.
-  </p>
-  <input class="govuk-input govuk-input--error" id="test-strip-ID" name="test-strip-ID-error" type="text" aria-describedby="test-strip-id-error">
-</div>
+    <label class="govuk-label" for="test-strip-ID">
+      Test strip ID number
+    </label>
+    <p id="test-strip-id-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Test strip ID must be between 9 and 11 characters. You can only report free NHS tests.
+    </p>
+    <input class="govuk-input govuk-input--error" id="test-strip-ID" name="test-strip-ID-error" type="text" aria-describedby="test-strip-id-error">
+  </div>
 
-
-<div class="govuk-form-group"><label class="govuk-label" for="sampleIdConfirm">
-      Confirm test strip ID number
-    </label><input id="sampleIdConfirm" name="sampleIdConfirm" spellcheck="false" class="govuk-input"></div>
+  <div class="govuk-form-group">
+      <label class="govuk-label" for="sampleIdConfirm">
+        Confirm test strip ID number
+      </label>
+      <input id="sampleIdConfirm" name="sampleIdConfirm" spellcheck="false" class="govuk-input">
+  </div>
 
     {{ govukButton({
         text: "Continue",
