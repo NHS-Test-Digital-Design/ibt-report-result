@@ -1,0 +1,49 @@
+{% set pageTitle = "There is a problem" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <h2 class="govuk-heading-s">
+        If you're in the UK
+    </h2>
+
+    <p class="govuk-body">
+        Sorry, there is a problem with the service.
+    </p>
+
+    <p class="govuk-body">
+        Please try again later.
+    </p>
+
+    <p class="govuk-body">
+        If the problem continues, call 119 (free from mobiles and landlines).
+    </p>
+
+    <p class="govuk-body">
+        Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.
+    </p>
+
+    <h2 class="govuk-heading-s">
+        If you're outside the UK
+    </h2>
+
+    <p class="govuk-body">
+        You cannot access UK coronavirus services from outside the UK. For example, ordering a test, registering a test kit or reporting a result.
+    </p>
+
+
+    <p class="govuk-body">
+        <a href="#" class="govuk-link">Travel to the UK and how to get tested before you travel</a>.
+    </p>
+
+    {{ govukButton({
+        text: "Try again",
+        href: "#",
+        classes: "govuk-!-margin-top-4"
+    }) }}
+
+{% endblock %}
