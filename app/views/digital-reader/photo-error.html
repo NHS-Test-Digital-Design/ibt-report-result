@@ -1,0 +1,62 @@
+{% set version = "v33" %}
+{% set pageTitle = "We could not read the test result" %}
+
+{% extends "includes/layout-LFD.html" %}
+
+{% block beforeContent %}
+<!-- back link -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+
+     <!-- <h2 class="govuk-heading-s">There is a problem with the photo. Please try taking the photo again.</h2> -->
+    <p class="govuk-body">
+           There is a problem with the photo. Please try taking the photo again.
+         </p>
+
+         <p class="govuk-body">If you prefer, you can <a href="/self-report/choose-result">tell us the result without taking a photo</a>.</p>
+
+               <div class="permission">
+                 <img src="/public/images/scan-barcode.png" alt="The photo you took of the rapid lateral flow test strip. The Digital Read service has rejected this photo." width="150" height="300">
+               </div>
+
+               <div class="govuk-!-padding-bottom-6"></div>
+
+               <h3 class="govuk-heading-s">How to take a good photo</h3>
+
+               <p class="govuk-body">Lay the test strip on a flat surface.</p>
+
+
+               <p class="govuk-body">Make sure the photo:</p>
+               <ul class="govuk-list govuk-list--bullet">
+                 <li>shows the whole test strip</li>
+                 <li>is in focus with no shadows or bright lights on it</li>
+                 <li>is taken directly from above (not at an angle)</li>
+               </ul>
+
+        <!--  <div class="govuk-inset-text">
+          To take a good photo, hold your phone or tablet still until you see the ‘Check the photo’ screen.
+      </div>
+    <div class="permission-wrap">
+          <a href="photo-guidance-2">
+            <img src="/public/images/TakeaPhoto.png" alt="Illustration of how to take a good photo of a test device" style="width: 100%">
+          </a>
+      </div> -->
+
+
+      <div>
+        <br>
+        <a href="photo-guidance-2" class="govuk-button govuk-u-margin-bottom-8">
+          Take the photo again
+        </a>
+      </div>
+
+    </div>
+</div>
+
+{% endblock %}
