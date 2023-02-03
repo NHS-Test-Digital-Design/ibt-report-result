@@ -35,34 +35,19 @@
           {% endif %}
         </h1>
 
-        <br>
-
-
         <div
           <p class="govuk-body">
-            {% if data['whos-taking-the-test'] == "someone-else" %}
-              The technology we use to check the result guarantees a high level of accuracy. It's authorised by the UK health regulator, the Medicines and Healthcare products Regulatory Agency (MHRA).
-              <br>
-              <br>
-              If {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }} thinks we got your result wrong, they can <a href="https://coronavirus-yellowcard.mhra.gov.uk/" target="_blank" rel="noreferrer">report this to the MHRA (opens in new tab)</a>. On the homepage, they should enter ‘Lateral flow antigen test – uploaded photograph result’ in the search box and select the ‘Start report’ button.
-              <br>
-              <br>
-              They should follow the advice below to help stop the spread of the virus.
+            <p class="govuk-body">You may get an incorrect result if you took the photo:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+            <li>
+              without following the instructions on how to take a photo
+            </li>
+            <li>
+              before the test was fully developed (this is explained in your test kit guide)
+            </li>
+            </ul>
 
-             {% else %}
-              The technology we use to check the result guarantees a high level of accuracy. It's authorised by the UK health regulator, the Medicines and Healthcare products Regulatory Agency (MHRA).
-              <br>
-              <br>
-              If you think we got your result wrong, you can <a href="https://coronavirus-yellowcard.mhra.gov.uk/" target="_blank" rel="noreferrer">report this to the MHRA (opens in new tab)</a>. On the homepage, enter ‘Lateral flow antigen test – uploaded photograph result’ in the search box and select the ‘Start report’ button.
-              <br>
-              <br>
-              You should follow the advice below to help stop the spread of the virus.
-            {% endif %}
-          </p>
         </div>
-
-        <br>
-        <br>
 
 
         <div
