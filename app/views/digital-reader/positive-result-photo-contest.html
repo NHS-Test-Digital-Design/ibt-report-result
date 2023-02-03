@@ -93,35 +93,13 @@
   </p>
 </div>
 
-<br>
-
-<h3 class="govuk-heading-s">In England</h3>
-
-<div
-  <p class="govuk-body">
-    {% if data['whos-taking-the-test'] == "someone-else" %}
-      They should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-and-treatment/when-to-self-isolate-and-what-to-do/" target="_blank" rel="noreferrer"> Find out more about when to stay at home and what to do (opens in new tab)</a>.
-
-    {% else %}
-      You should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-and-treatment/when-to-self-isolate-and-what-to-do/" target="_blank" rel="noreferrer"> Find out more about when to stay at home and what to do (opens in new tab)</a>.
-
-    {% endif %}
-  </p>
-</div>
-
-<br>
-<h3 class="govuk-heading-s">In Scotland, Wales and Northern Ireland</h3>
-
-
-
-
 <div
 <p class="govuk-body">
   {% if data['whos-taking-the-test'] == "someone-else" %}
-  They should stay at home and avoid contact with other people (the following links open in a new tab):
+  They should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. The following links open in a new tab::
 
   {% else %}
-  You should stay at home and avoid contact with other people (the following links open in a new tab):
+  You should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. The following links open in a new tab::
 
 
   {% endif %}
@@ -130,6 +108,7 @@
 
 <div class="govuk-body">
 <ul>
+  <li><a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-and-treatment/when-to-self-isolate-and-what-to-do/" target="_blank" rel="noreferrer">England: find out when to stay at home and what to do</a></li>
   <li><a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19/coronavirus-covid-19/" target="_blank" rel="noreferrer">Scotland: find out when to stay at home and what to do</a></li>
   <li><a href="https://gov.wales/guidance-people-symptoms-respiratory-infection-including-covid-19" target="_blank" rel="noreferrer">Wales: find out when to stay at home and what to do</a></li>
   <li><a href="https://www.nidirect.gov.uk/articles/coronavirus-covid-19-testing-and-isolation-advice" target="_blank" rel="noreferrer">Northern Ireland: find out when to stay at home and what to do</a></li>
