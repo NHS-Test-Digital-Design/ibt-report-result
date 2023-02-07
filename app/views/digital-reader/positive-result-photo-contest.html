@@ -1,4 +1,4 @@
-{% set pageTitle = "You reported a negative coronavirus test result" %}
+{% set pageTitle = "You reported a positive coronavirus test result" %}
 {% extends "layout_question.html" %}
 {% block beforeContent %}
   <div class="govuk-phase-banner">
@@ -96,10 +96,10 @@
 <div
 <p class="govuk-body">
   {% if data['whos-taking-the-test'] == "someone-else" %}
-  They should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. The following links open in a new tab::
+  They should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. The following links open in a new tab:
 
   {% else %}
-  You should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. The following links open in a new tab::
+  You should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. The following links open in a new tab:
 
 
   {% endif %}
