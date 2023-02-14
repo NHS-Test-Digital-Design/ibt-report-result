@@ -1,0 +1,63 @@
+{% set pageTitle = "Check if the test is out of date" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        You can find the expiry date on the back or side of the box the tests came in.
+    </p>
+
+    <p class="govuk-body">
+        If you need help, ask a friend or family member to find the date.
+    </p>
+
+    <h2 class="govuk-heading-m">
+        How to find the expiry date
+    </h2>
+
+    <p class="govuk-body">
+        It may have the letters EXP or a picture of an egg timer next to it.
+    </p>
+
+    <p class="govuk-body">
+        It may have the year first, for example 2024-03-31.
+    </p>
+
+    <form class="form govuk-!-margin-top-8" action="out-of-date" method="post">
+    
+    {{ govukRadios({
+        idPrefix: "is-out-of-date",
+        name: "is-out-of-date",
+        fieldset: {
+            legend: {
+                text: "Is the test out of date?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+            }
+        },
+        items: [
+            {
+                value: "yes",
+                text: "Yes"
+            },
+            {
+                value: "no",
+                text: "No"
+            },
+            {
+                value: "dont-know",
+                text: "I don't know"
+            }
+        ]
+    }) }}
+
+    {{ govukButton({
+        text: "Continue"
+    }) }}
+    </form>
+
+{% endblock %}
