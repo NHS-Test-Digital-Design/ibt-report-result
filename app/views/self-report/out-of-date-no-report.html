@@ -1,0 +1,28 @@
+{% set pageTitle = "You cannot report this test result" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        The test is out of date.
+    </p>
+
+    <p class="govuk-body">
+        Dispose of any other tests in the box this test came from. Recycle what you can.
+    </p>
+
+    <h2 class="govuk-heading-m">
+        Take another test
+    </h2>
+    <p class="govuk-body">
+        If you can, take a new test from a box that's in date and report the result.
+    </p>
+    <p class="govuk-body">
+        If you need more tests, you may be eligible to <a href="https://www.gov.uk/order-coronavirus-rapid-lateral-flow-tests" class="govuk-link" rel="noreferrer noopener" target="_blank">order free NHS rapid lateral flow tests (opens in new tab)</a>.
+    </p>
+
+{% endblock %}

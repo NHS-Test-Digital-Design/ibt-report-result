@@ -1,0 +1,34 @@
+{% set pageTitle = "Test strip ID has been used before" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+      You cannot use the same test strip ID more than once.
+    </p>
+
+    <div class="govuk-inset-text">
+      <h5 class="govuk-heading-s">Test strip ID:</h5>
+      LIA40000010
+    </div>
+
+
+    <p class="govuk-body">
+        If you continue to have problems with the test strip ID, call 119 (free from mobiles and landlines).
+    </p>
+
+    <p class="govuk-body">
+        Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.
+    </p>
+
+    {{ govukButton({
+        text: "Change test strip ID",
+        href: "#",
+        classes: "govuk-!-margin-top-4"
+    }) }}
+
+{% endblock %}

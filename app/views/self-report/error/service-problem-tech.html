@@ -1,0 +1,30 @@
+{% set pageTitle = "There is a problem" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        Due to a technical error we are unable to complete this action. Please go back and try again.
+    </p>
+
+
+    <p class="govuk-body">
+        If the issue continues, call 119 (free from mobiles and landlines).
+    </p>
+
+    <p class="govuk-body">
+        Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.
+    </p>
+
+    {{ govukButton({
+        text: "Try again",
+        href: "#",
+        classes: "govuk-!-margin-top-4"
+    }) }}
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% set pageTitle = "There was a problem" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        The unique organisation number (UON) was not recognised.
+    </p>
+
+    <p class="govuk-body">
+        Try entering the 8-digit UON again.
+    </p>
+
+
+    <h2 class="govuk-heading-m">
+        Still need help?
+    </h2>
+
+    <p class="govuk-body">
+        Call 119 (free from mobiles and landlines).
+    </p>
+
+    <p class="govuk-body">
+        Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.
+    </p>
+
+    {{ govukButton({
+        text: "Try again",
+        href: "#",
+        classes: "govuk-!-margin-top-4"
+    }) }}
+
+{% endblock %}
