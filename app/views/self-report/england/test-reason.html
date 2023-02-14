@@ -33,8 +33,11 @@
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="reason-1" name="test-reason" type="radio" value="England" {{ checked("reason", "Symptoms") }}>
         <label class="govuk-label govuk-radios__label" for="reason-1">
-          I have symptoms and am eligible for COVID-19 treatments
+          I'm eligible for specific COVID-19 treatments and I have symptoms
         </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+        These treatments are different to vaccinations and are not available to everyone.
+        </div>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="reason-2" name="test-reason" type="radio" value="Scotland" {{ checked("reason", "Education") }}>
