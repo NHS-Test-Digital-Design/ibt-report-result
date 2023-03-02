@@ -48,7 +48,7 @@
 
 
 
-        <div
+        <div>
           <h2 class="govuk-heading-m">
             {% if data['whos-taking-the-test'] == "someone-else" %}
             What they should do
@@ -59,7 +59,7 @@
           </h2>
         </div>
 
-        <div
+        <div>
           <p class="govuk-body">
             {% if data['whos-taking-the-test'] == "someone-else" %}
               They should take another rapid lateral flow test today, or as soon as possible, and report the result.
@@ -72,18 +72,18 @@
 
         <br>
 
-        <div
+        <div>
           <h2 class="govuk-heading-m">
             {% if data['whos-taking-the-test'] == "someone-else" %}
             If {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }} thinks their result was positive
 
             {% else %}
-            If you think the test result was positive
+            If you think the result was positive
             {% endif %}
           </h2>
         </div>
 
-        <div
+        <div>
           <p class="govuk-body">
              {% if data['whos-taking-the-test'] == "someone-else" %}
              They should follow the guidance for the country they're in until they have the new test result.
@@ -95,7 +95,7 @@
           </p>
         </div>
 
-        <div
+        <div>
         <p class="govuk-body">
           {% if data['whos-taking-the-test'] == "someone-else" %}
           They should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. The following links open in a new tab:
@@ -117,7 +117,7 @@
         </div>
         <br>
 
-        <div
+        <div>
           <h2 class="govuk-heading-m">
             {% if data['whos-taking-the-test'] == "someone-else" %}
             What they should do
@@ -128,7 +128,7 @@
           </h2>
         </div>
 
-        <div
+        <div>
           <p class="govuk-body">
             {% if data['whos-taking-the-test'] == "someone-else" %}
               They should take another rapid lateral flow test today, or as soon as possible, and report the result.
@@ -145,7 +145,7 @@
 
 
         <div class="govuk-body">
-        <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/" target="_blank" rel="noreferrer">Get the latest NHS information and advice about COVID-19 (opens in a new tab)</a>
+        <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/" target="_blank" rel="noreferrer">Get the latest NHS information and advice about COVID-19 (opens in new tab)</a>
         </div>
 
 
