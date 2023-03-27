@@ -1,0 +1,23 @@
+{% set pageTitle = "The photo is too large to be uploaded" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        The largest photo we can process is 5MB.
+    </p>
+    <p class="govuk-body">
+        You can still report your result.
+    </p>
+
+    {{ govukButton({
+        text: "Tell us the result",
+        classes: "govuk-!-margin-top-4",
+        href: "#"
+    }) }}
+
+{% endblock %}
