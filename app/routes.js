@@ -141,6 +141,8 @@ router.post('/barcode-answer', function (req, res) {
         res.redirect('../digital-reader/can-not-report-entered')
     } else if (barcodeid == "ERROR000002") {
         res.redirect('../digital-reader/can-not-report-scanned')
+    } else if (barcodeid == "ABC11223344") {
+        res.redirect('../self-report/error/blocked-barcode')
     } else {
         res.redirect('self-report/login-choice')
     }
