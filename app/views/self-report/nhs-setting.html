@@ -1,0 +1,74 @@
+{% set pageTitle = "Select the area you work in" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+<form action="/nhs-setting-answer-answer" method="post">
+    {{ govukRadios({
+    idPrefix: "nhs-setting",
+    name: "nhs-setting",
+    fieldset: {
+        legend: {
+        text: pageTitle,
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+        }
+    },
+    items: [
+        {
+            value: "hospital-trust",
+            text: "Acute hospital trust"
+        },
+        {
+            value: "ambulance-service-trust",
+            text: "Ambulance service trust (England and Northern Ireland only)"
+        },
+        {
+            value: "board-trust-wales",
+            text: "Any Local Health Board in Wales or NHS Trust in Wales"
+        },
+        {
+            value: "community-trust",
+            text: "Community health trust"
+        },
+        {
+            value: "community-company",
+            text: "Community Interest Company"
+        },
+        {
+            value: "community-pharmacy",
+            text: "Community pharmacy"
+        },
+        {
+            value: "dentistry",
+            text: "Dentistry"
+        },
+        {
+            value: "gp",
+            text: "General Practice"
+        },
+        {
+            value: "mental-health",
+            text: "Mental health trust"
+        },
+        {
+            value: "optometry",
+            text: "Optometry"
+        },
+        {
+        divider: "or"
+        },
+        {
+            value: "other-nhs-org",
+            text: "Other NHS organisations and special health authorities"
+        }
+    ]
+    }) }}
+
+    {{ govukButton({
+    text: "Continue",
+    classes: "govuk-!-margin-top-4"
+    }) }}
+</form>
+
+{% endblock %}

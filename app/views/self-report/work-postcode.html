@@ -1,0 +1,25 @@
+{% set pageTitle = "Enter your work postcode" %}
+{% extends "layout_question.html" %}
+{% block content %}
+
+<form action="#" method="post" novalidate>
+    {{ govukInput({
+        id: "work-postcode",
+        name: "work-postcode",
+        label: {
+            text: pageTitle,
+            classes: "govuk-label--l",
+            isPageHeading: true
+        },
+        classes: "govuk-input--width-10"
+    }) }}
+
+    {# https://design-system.service.gov.uk/components/button/ #}
+    {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-top-4",
+        href: "england/test-date"
+    }) }}
+</form>
+
+{% endblock %}

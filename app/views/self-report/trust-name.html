@@ -1,0 +1,36 @@
+{% set pageTitle = "What's the name of the NHS Trust or Health Board?" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+    {# https://design-system.service.gov.uk/patterns/question-pages/ #}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+    <p class="govuk-body">
+        Start entering the name of the NHS trust or Health Board, then choose from the options provided. Make sure you use the full name. 
+    </p>
+    
+    <form action="#" method="post" novalidate>
+        
+        {# https://design-system.service.gov.uk/components/text-input/ #}
+        {{ govukInput({
+            id: "trust-name",
+            name: "trust-name",
+            label: {
+                text: "NHS trust or Health Board"
+            }
+        }) }}
+
+        <p class="govuk-body">
+            If you cannot find it in the list <a href="#" class="govuk-link">enter the name of the NHS trust or Health Board manually instead</a>
+        </p>
+        
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "england/test-date"
+        }) }}
+    </form>
+
+{% endblock %}

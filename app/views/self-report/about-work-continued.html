@@ -1,0 +1,52 @@
+{% set pageTitle = "Tell us about the work (continued)" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+<form action="/work-continued-answer" method="post">
+    {{ govukRadios({
+    idPrefix: "about-the-work-continued",
+    name: "about-the-work-continued",
+    fieldset: {
+        legend: {
+        text: pageTitle,
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+        }
+    },
+    items: [
+        {
+            value: "ihp",
+            text: "It's for an independent healthcare provider commissioned by the NHS "
+        },
+        {
+            value: "homelessness",
+            text: "It's for a homelessness service",
+            hint: {
+                text: "For example a hostel, night shelter, day or outreach centre"
+            }
+        },
+        {
+            value: "domestic",
+            text: "It's for a domestic abuse service",
+            hint: {
+                text: "For example a refuge or respite room"
+            }
+        },
+        {
+            divider: "or"
+        },
+        {
+            value: "not-listed",
+            text: "It's not listed"
+        }
+    ]
+    }) }}
+
+    {{ govukButton({
+    text: "Continue",
+    classes: "govuk-!-margin-top-4"
+    }) }}
+</form>
+
+{% endblock %}
