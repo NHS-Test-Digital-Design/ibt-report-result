@@ -1,0 +1,76 @@
+{% set pageTitle = "You reported a positive coronavirus test result" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    {{ govukPanel({
+        titleText: pageTitle,
+        html: "It's likely you were infectious when the test was done ",
+        classes: "govuk-panel--confirmation govuk-panel-lft-result"
+    }) }}
+
+    <p class="govuk-body">
+        This result has been reported to the NHS.
+    </p>
+
+    {% set warningText %}
+        <p class="govuk-body">
+            You should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. <a href="https://www.nhs.uk/conditions/covid-19/covid-19-symptoms-and-what-to-do/" class="govuk-link" rel="noreferrer noopener" target="_blank">Find out more about when to stay at home and what to do (opens in new tab)</a>.
+        </p>
+    {% endset %}
+
+    {{ govukWarningText({
+        html: warningText,
+        iconFallbackText: "Fallback text"
+    }) }}
+
+    <h2 class="govuk-heading-m">
+        COVID-19 treatments
+    </h2>
+
+    <p class="govuk-body">
+        If you're eligible for COVID-19 treatments the NHS will contact you. If you are not contacted within 24 hours call your GP, NHS 111 or your specialist (if you have one). <a href="https://www.nhs.uk/conditions/covid-19/treatments-for-covid-19/" class="govuk-link" rel="noreferrer noopener" target="_blank">Find out more about COVID-19 treatments (opens in new tab)</a>.
+    </p>
+
+    <h2 class="govuk-heading-m">
+        If you're worried
+    </h2>
+
+    <p class="govuk-body">
+        If you have <a href=" https://www.nhs.uk/conditions/covid-19/covid-19-symptoms-and-what-to-do/" class="govuk-link" rel="noreferrer noopener" target="_blank">COVID-19 symptoms (opens in new tab)</a> which are seriously affecting your everyday life, call NHS 111 or your GP. In an emergency call 999.
+    </p>
+
+    {{ govukButton({
+        text: "Report another result",
+        href: "barcode"
+    }) }}
+
+    {% set detailsContent %}
+        <p class="govuk-body">
+            If you're eligible for free rapid lateral flow tests and the test result was negative or void, take another one and report the result.
+        </p>
+        <p class="govuk-body">
+            Use a new test kit and do not reuse anything from the first test kit.
+        </p>
+        <h2 class="govuk-heading-m">
+            Get a new rapid lateral flow test kit
+        </h2>
+        <p class="govuk-body">
+            If you do not have another rapid lateral flow test available, you may be able to order a new test pack online for home delivery.
+        </p>
+    {% endset %}
+
+    {{ govukDetails({
+        summaryText: "The test result was reported incorrectly ",
+        html: detailsContent
+    }) }}
+
+    <h2 class="govuk-heading-m">
+        Help and advice
+    </h2>
+
+    <p class="govuk-body">
+        <a href="https://www.gov.uk/coronavirus" class="govuk-link" rel="noreferrer noopener" target="_blank">Find out what support you can get if you're affected by COVID-19 (opens in new tab)</a>.
+    </p>
+
+{% endblock %}

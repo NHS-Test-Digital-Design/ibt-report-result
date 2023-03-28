@@ -1,0 +1,36 @@
+{% set pageTitle = "Did your employer provide the test kit?" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+    {# https://design-system.service.gov.uk/patterns/question-pages/ #}
+    <form action="/employer-provided-answer" class="form" method="post">
+        {# https://design-system.service.gov.uk/components/radios/ #}
+        {{ govukRadios({
+            idPrefix: "employer-provided",
+            name: "employer-provided",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l  govuk-!-margin-bottom-6"
+                }
+            },
+            items: [
+                {
+                    value: "yes",
+                    text: "Yes"
+                },
+                {
+                    value: "no",
+                    text: "No"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% set pageTitle = "What's the name or postcode of the education provider?" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+    {# https://design-system.service.gov.uk/patterns/question-pages/ #}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+    <p class="govuk-body">
+        Enter the name or postcode of the education provider, and select from the options provided. 
+    </p>
+    <p class="govuk-body">
+        For example, this may include a nursery, school, college, university, childcare provider or other education provider. 
+    </p>
+    
+    <form action="#" method="post" novalidate>
+        
+        {# https://design-system.service.gov.uk/components/text-input/ #}
+        {{ govukInput({
+            id: "edu-provider-name",
+            name: "edu-provider-name",
+            label: {
+                text: "Name or postcode of education provider"
+            },
+            hint: {
+                text: "Enter 3 or more characters "
+            }
+        }) }}
+        
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4",
+            href: "england/test-date"
+        }) }}
+    </form>
+
+    <p class="govuk-body">
+        <a href="#" class="govuk-link">I cannot find the education provider</a>
+    </p>
+{% endblock %}

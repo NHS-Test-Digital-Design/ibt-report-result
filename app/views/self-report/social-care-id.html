@@ -1,0 +1,46 @@
+{% set pageTitle = "Enter the unique organisation number (UON)" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+    {# https://design-system.service.gov.uk/patterns/question-pages/ #}
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+    <p class="govuk-body">
+        This is a reference number for the employer, organisation or social care service. It is 8 digits and sometimes called a “UON”.
+    </p>
+
+    {% set detailsContent %}
+        <p class="govuk-body">
+            Get the UON from the social care service, employer or organisation that gave you the test kit.
+        </p>
+        <p class="govuk-body">
+            You can also <a href="https://organisation-number-lookup.test-for-coronavirus.service.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">find a care home's UON online (opens in a new tab)</a>
+        </p>
+        <p class="govuk-body">
+            If you still need help, call 119 (free from mobiles and landlines). Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.
+        </p>
+    {% endset %}
+
+    {{ govukDetails({
+        summaryText: "What to do if you cannot find this number ",
+        html: detailsContent
+    }) }}
+
+    <form action="england/test-date" method="post" novalidate>
+        {{ govukInput({
+            id: "uon",
+            name: "uon",
+            label: {
+                text: "Unique organisation number"
+            }
+        }) }}
+        
+        
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}
