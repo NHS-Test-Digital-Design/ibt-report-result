@@ -977,3 +977,12 @@ a.gem-c-modal-dialogue__close-button:hover {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
+/* Make Secondary button more accessible by increasing contrast on box shadow - based on external audit by DigInclusion in March 23 */
+
+.govuk-button--secondary {
+  box-shadow: 0 2px 0 #444 !important;
+}
+
+
