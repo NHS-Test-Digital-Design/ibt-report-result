@@ -1,7 +1,12 @@
 {% set pageTitle = "What's your mobile number?" %}
 {% extends "layout_question.html" %}
 
+
+
 {% block content %}
+
+
+
 
 <form action="/self-report/confirmation" method="post">
 
@@ -28,27 +33,25 @@
               <p class="govuk-body">If you are a parent or guardian reporting for a child, you can use your own mobile number.</p>
               <p class="govuk-body">For international numbers, include the country code (for example, +33).</p>
               <p class="govuk-body">Contact details are only used to send messages related to this service, such as a text message confirming a test result has been successfully reported.</p>
-            <!--  <p class="govuk-body">If a test result is positive, the NHS may also use the details you supply for
-              <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/testing-and-tracing/nhs-test-and-trace-if-youre-contacted-after-testing-positive-for-coronavirus/" class="govuk-link" rel="noreferrer noopener" target="_blank">contact tracing (opens in  new tab)</a>.</p> -->
+              <p class="govuk-body">If a test result is positive, the NHS may also use the details you supply for
+              <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/testing-and-tracing/nhs-test-and-trace-if-youre-contacted-after-testing-positive-for-coronavirus/" class="govuk-link" rel="noreferrer noopener" target="_blank">contact tracing (opens in  new tab)</a>.</p>
               {% endif %}
             </span>
 
                     <details class="govuk-details govuk-!-margin-top-6" data-module="govuk-details">
                       <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text">
-                          Don't have a mobile number?
+                          If you do not have a mobile number
                         </span>
                       </summary>
                       <div class="govuk-details__text">
-                           <p class="govuk-body">
-                              {% if data['whos-taking-the-test'] == "someone-else" %}
-                                <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">Find out when they can contact 119 to report their test result (opens in new tab)</a>. 
-                              If they need help from a British Sign Language (BSL) interpreter, they can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
-                              {% else %}
-                              <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">Find out when you can contact 119 to report your test result (opens in new tab)</a>. 
-                              If you need help from a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
-                              {% endif %}
-                            </p>
+                          <!--  <p class="govuk-body"><a class="govuk-link" href="https://nhstt.fra1.qualtrics.com/jfe/form/SV_bqskiabRU9HTFkO" rel="noreferrer">Report any problems online</a> or call the contact centre:</p>            <ul class="govuk-list govuk-list--bullet">
+                              <li>119 if you’re in England, Wales or Northern Ireland</li>
+                              <li>0300 303 2713 if you’re in Scotland</li>
+                            </ul>
+                            <p class="govuk-body">Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.</p> -->
+                            <p>You can also call 119 (free from mobiles and landlines). Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.</p>
+                            <p>Do not report a negative test result to 119 unless you need to because you're going into hospital.<p>
                       </div>
                     </details>
 
