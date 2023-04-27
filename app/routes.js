@@ -5,11 +5,34 @@ const router = express.Router()
 router.post('/work-answer', function (req, res) {
     var work = req.session.data['test-for-work']
     if (work == "yes"){
-        res.redirect('report-result/test-reason')
+        res.redirect('report-result/about-work')
     } else {
         res.redirect('/report-result/test-reason')
     }
 })
+
+
+// report-result/test-for-work.html routing.
+     router.post('/share-result-lateral-flow/v29/action/about-work-2', function (req, res) {
+          let result = req.session.data['about-work']
+
+          if (result == "It’s for a social care service"){
+            res.redirect('/share-result-lateral-flow/v29/about-work-3')
+          } else if(result == "It’s for an education provider") {
+            res.redirect('/share-result-lateral-flow/v29/school-name')
+          } else if(result == "It’s for the NHS in England or Northern Ireland") {
+            res.redirect('/share-result-lateral-flow/v29/nhs-primary')
+          } else if(result == "It’s for an independent healthcare provider commissioned by the NHS") {
+            res.redirect('/share-result-lateral-flow/v29/ihp')
+          } else if(result == "It’s for a homeless service") {
+            res.redirect('/share-result-lateral-flow/v29/employer-uon')
+          } else if(result == "It’s for a domestic abuse service") {
+            res.redirect('/share-result-lateral-flow/v29/employer-uon')
+          } else if(result == "It’s not listed") {
+            res.redirect('/share-result-lateral-flow/v29/employee-wtp')
+          }
+
+        })
 
 // report-result/test-date.html routing.
 router.post('/date-answer', function (req, res) {
@@ -48,15 +71,20 @@ router.post('/country-answer', function (req, res) {
 })
 
 
+////// START Me fixing this mess //////// 
 
-router.post('/test-job', function (req, res) {
-    var date = req.session.data['test-for-job']
-    if (date == "whos-taking-the-test-1"){
-        res.redirect('/self-report/england/test-reason')
+
+router.post('/test-for-work', function (req, res) {
+    var work = req.session.data['test-for-work']
+    if (work == "Yes"){
+      res.redirect('self-report//england/about-work')
     } else {
-        res.redirect('/self-report/england/test-reason')
+      res.redirect('self-report//england/test-reason')
     }
 })
+
+
+////// END Me fixing this mess //////// 
 
 
 
