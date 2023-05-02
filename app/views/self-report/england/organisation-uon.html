@@ -21,13 +21,22 @@
             <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
               {{ pageTitle }}
             </h1>
+
          <span id="enter-barcode-number-hint" class="govuk-body">
-            {% if data['whos-taking-the-test'] == "someone-else" %}
-                It's OK if they do not have one, they can still continue
+              {% if data['whos-taking-the-test'] == "someone-else" %}
+                The UON helps us to link to their employer or organisation if they're testing for work purposes.
                 {% else %}
-                It's OK if you do not have one, you can still continue
+                 The UON helps us to link to your employer or organisation if you're testing for work purposes.
                 {% endif %}
          </span>
+
+        <div class="govuk-inset-text">
+                {% if data['whos-taking-the-test'] == "someone-else" %}
+                It's OK if they do not have one, they can still continue.
+                {% else %}
+                It's OK if you do not have one, you can still continue.
+                {% endif %}
+        </div>
 
           <details class="govuk-details govuk-!-margin-top-6" data-module="govuk-details">
             <summary class="govuk-details__summary">
@@ -77,7 +86,11 @@
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="org-uon">
-              <strong>Unique organisation number</strong>
+               {% if data['whos-taking-the-test'] == "someone-else" %}
+                 <strong>What is their UON?</strong>
+                {% else %}
+                <strong>What is your UON?</strong>
+                {% endif %}
             </label>
                <div id="org-uon-hint" class="govuk-hint">
                 An 8 digit number like 12345678
