@@ -1,5 +1,5 @@
 <!-- {% set version = "v27" %} -->
-{% set pageTitle = "Enter the unique organisation number (UON)" %}
+{% set pageTitle = "Unique organisation number (UON)" %}
 
 {% extends "includes/layout-LFD.html" %}
 
@@ -22,7 +22,11 @@
               {{ pageTitle }}
             </h1>
          <span id="enter-barcode-number-hint" class="govuk-body">
-           This is a reference number for the employer, organisation or social care service. It is 8 digits and sometimes called a “UON”.
+            {% if data['whos-taking-the-test'] == "someone-else" %}
+                It's OK if they do not have one, they can still continue
+                {% else %}
+                It's OK if you do not have one, you can still continue
+                {% endif %}
          </span>
 
           <details class="govuk-details govuk-!-margin-top-6" data-module="govuk-details">
