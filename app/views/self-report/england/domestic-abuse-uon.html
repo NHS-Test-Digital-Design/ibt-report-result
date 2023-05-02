@@ -106,7 +106,11 @@
           Continue
         </button>
         <a class="govuk-link" href="social-care-uon-check">
-          Continue without UON
+                {% if data['whos-taking-the-test'] == "someone-else" %}
+                 <strong>They don't know the UON</strong>
+                {% else %}
+                <strong>I don't know the UON</strong>
+                {% endif %}
         </button>
       </div>
 
