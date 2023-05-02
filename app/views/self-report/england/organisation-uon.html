@@ -38,16 +38,16 @@
             <div class="govuk-details__text">
               <p class="govuk-body">
                 {% if data['whos-taking-the-test'] == "someone-else" %}
-                Get the UON from the social care service, employer or organisation that gave them the test kit.
+                Their employer or organisation may have given it to them with their test kit.
                 {% else %}
-                Get the UON from the social care service, employer or organisation that gave you the test kit.
+                Your employer or organisation may have given it to you with your test kit.
                 {% endif %}
               </p>
               <p>
                 {% if data['whos-taking-the-test'] == "someone-else" %}
-                They can also <a href="https://organisation-number-lookup.test-for-coronavirus.service.gov.uk/" target="_blank" rel="noopener noreferrer">find a care home’s UON online (opens in new tab)</a>.
+                They may also <a href="https://organisation-number-lookup.test-for-coronavirus.service.gov.uk/" target="_blank" rel="noopener noreferrer">find their UON online (opens in new tab)</a>.
                 {% else %}
-                You can also <a href="https://organisation-number-lookup.test-for-coronavirus.service.gov.uk/" target="_blank" rel="noopener noreferrer">find a care home’s UON online (opens in new tab)</a>.
+                You may also <a href="https://organisation-number-lookup.test-for-coronavirus.service.gov.uk/" target="_blank" rel="noopener noreferrer">find your UON online (opens in new tab)</a>.
                 {% endif %}
               </p>
               <p class="govuk-body">
@@ -72,16 +72,26 @@
           </a> -->
 
           <div class="govuk-form-group">
-            <label class="govuk-label" for="social-care-uon">
+            <label class="govuk-label" for="org-uon">
               <strong>Unique organisation number</strong>
             </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="social-care-uon" name="social-care-uon" type="text" value={{ data['social-care-uon'] }}>
+               <div id="org-uon-hint" class="govuk-hint">
+                An 8 digit number like 12345678
+              </div>
+            <input class="govuk-input govuk-!-width-two-thirds" id="org-uon" name="org-uon" aria-describedby="org-uon-hint" type="text" value={{ data['social-care-uon'] }}>
           </div>
 
         </fieldset>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Continue without UON
+        </button>
+      </div>
 
     </form>
 
