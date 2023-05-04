@@ -1,0 +1,26 @@
+{% set pageTitle = "There is a problem" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+
+<p class="govuk-body">We could not find your address.</p>
+
+     <p class="govuk-body">
+                {% if data['whos-taking-the-test'] == "someone-else" %}
+                 If the problem continues, <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">find out when they can contact 119 (opens in new tab)</a>. 
+                If they need a British Sign Language (BSL) interpreter, they can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                {% else %}
+                If the problem continues, <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">find out when you can contact 119 (opens in new tab)</a>. 
+                If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                {% endif %}
+              </p>
+
+
+<button class="govuk-button" data-module="govuk-button">
+    Try again
+</button>
+
+   
+{% endblock %}
