@@ -1,0 +1,25 @@
+{% set pageTitle = "There is a problem" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <p class="govuk-body">
+        There may be a problem with your test kit. You cannot report your result.
+    </p>
+
+   <p class="govuk-body">
+                {% if data['whos-taking-the-test'] == "someone-else" %}
+                  To get help, call 119. <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">Find out when they can contact 119 (opens in new tab)</a>. 
+                If they need a British Sign Language (BSL) interpreter, they can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                {% else %}
+                To get help, call 119. <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">Find out when you can contact 119 (opens in new tab)</a>. 
+                If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                {% endif %}
+              </p>
+
+
+{% endblock %}
