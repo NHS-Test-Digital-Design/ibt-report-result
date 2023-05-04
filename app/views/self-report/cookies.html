@@ -1,0 +1,28 @@
+
+{% set pageTitle = "Report a COVID-19 rapid lateral test result" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+        {% set html %}
+          <p class="govuk-body">Your cookie settings have been saved. <a class="govuk-notification-banner__link" href="javascript:window.history.go(-1);">Go back to the page you were looking at.</a> </p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: 'success'
+        }) }}
+
+      <p>We'll save your settings for a year.</p>
+
+      <p>We'll ask you if you're still OK with us using cookies when either:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>it's been a year since you last saved your settings</li>
+          <li>we add any new cookies or change the cookies we use</li>
+        </ul>
+
+      <p>You can also change your settings at any time using our <a href="#">cookies page</a>.</p>
+
+{% endblock %}
