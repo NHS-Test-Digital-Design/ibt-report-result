@@ -1,28 +1,98 @@
-
 {% set pageTitle = "Report a COVID-19 rapid lateral test result" %}
 {% extends "layout_question.html" %}
 
+
 {% block content %}
 
-      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-        {% set html %}
-          <p class="govuk-body">Your cookie settings have been saved. <a class="govuk-notification-banner__link" href="javascript:window.history.go(-1);">Go back to the page you were looking at.</a> </p>
-        {% endset %}
+<h2 class="govuk-heading-l">Choose which cookies we use</h2>
+<p class="govuk-body">Let us know which cookies we can use. We'll use a cookie to save your settings.</p>
 
-        {{ govukNotificationBanner({
-          html: html,
-          type: 'success'
-        }) }}
+<h2 class="govuk-heading-m">Cookies that measure website use (analytics cookies)</h2>
+<p class="govuk-body">These cookies store information about how you use our wesite, such as the links you click on. We use them to help make our website better.</p>
 
-      <p>We'll save your settings for a year.</p>
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      List of cookies that measure website use
+    </span>
+  </summary>
+  <div class="govuk-details__text">
 
-      <p>We'll ask you if you're still OK with us using cookies when either:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>it's been a year since you last saved your settings</li>
-          <li>we add any new cookies or change the cookies we use</li>
-        </ul>
+    {{ govukTable({
+      classes: "app-table--fixed",
+      caption: "Cookies relating to storing users' answers within prototypes",
+      captionClasses: "govuk-visually-hidden",
+      head: [
+        { text: "Name" },
+        { text: "Purpose" }
+      ],
 
-      <p>You can also change your settings at any time using our <a href="#">cookies page</a>.</p>
+      rows: [
+        [
+          { text: "AMCV_#" },
+          { text: "Used by Adobe Analytics. Tells us if you've used our site before" }
+        ],
+        [
+          { text: "AMCVS_#AdobeOrg" },
+          { text: "Used by Adobe Analytics. Tells us how you use our site" }
+        ],
+        [
+          { text: "com.adobe.reactor.dataElementCookiesMigrated" },
+          { text: "Used by Adobe Analytics. Includes data elements set to capture usage of our website" }
+        ],
+        [
+          { text: "demdex" },
+          { text: "Used by Adobe Analytics. Allows cross-domain analytics of NHS properties" }
+        ],
+        [
+          { text: "S_CC" },
+          { text: "Used by Adobe Analytics. Checks if cookies work in your web browser" }
+        ],
+        [
+          { text: "s_getNewRepeat" },
+          { text: "Used by Adobe Analytics. Tells us if you've used our website before" }
+        ],
+        [
+          { text: "s_PPn" },
+          { text: "Used by Adobe Analytics. Tells us how you use our website by reading the previous page you visited" }
+        ],
+        [
+          { text: "s_sq" },
+          { text: "Used by Adobe Analytics. Remembers the last link you clicked on" }
+        ]
+      ]
+    }) }}
+
+
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+  </div>
+</details>
+
+{{ govukRadios({
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+    }
+  },
+  items: [
+    {
+      value: "Use cookies to measure my website use",
+      text: "Use cookies to measure my website use"
+    },
+    {
+      value: "Do not use cookies to measure my website use",
+      text: "Do not use cookies to measure my website use"
+    }
+  ]
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Save my cookie preferences",
+  href: "cookies-confirm"
+}) }}
 
 {% endblock %}
