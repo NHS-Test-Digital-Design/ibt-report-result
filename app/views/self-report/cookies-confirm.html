@@ -4,27 +4,30 @@
 
 {% block content %}
 
-      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+            <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                  aria-labelledby="govuk-notification-banner-title"
+                  data-module="govuk-notification-banner">
+                  <div class="govuk-notification-banner__header">
+                    <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                      Success
+                    </h1>
+                  </div>
+                  <div class="govuk-notification-banner__content">
+                    <h3 class="govuk-notification-banner__heading">
+                      Your cookie settings have been saved.
+                    </h3>
+                    <p class="govuk-body"><a class="govuk-notification-banner__link" href="javascript:window.history.go(-1);"> Go back to the page you were looking at</a></p>
+                  </div>
+              </div>
 
-        {% set html %}
-        <p class="govuk-notification-banner__heading">
-          Your cookie settings have been saved. <a class="govuk-notification-banner__link" href="javascript:window.history.go(-1);"> Go back to the page you were looking at</a>.
-        </p>
-        {% endset %}
+            <p>We'll save your settings for a year.</p>
 
-        {{ govukNotificationBanner({
-        type: "success",
-        html: html
-        }) }}
+              <p>We'll ask you if you're still OK with us using cookies when either:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>it's been a year since you last saved your settings</li>
+                  <li>we add any new cookies or change the cookies we use</li>
+                </ul>
 
-      <p>We'll save your settings for a year.</p>
-
-      <p>We'll ask you if you're still OK with us using cookies when either:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>it's been a year since you last saved your settings</li>
-          <li>we add any new cookies or change the cookies we use</li>
-        </ul>
-
-      <p>You can also change your settings at any time using our <a href="javascript:window.history.go(-1);">cookies page</a>.</p>
+            <p>You can also change your settings at any time using our <a href="javascript:window.history.go(-1);">cookies page</a>.</p>
 
 {% endblock %}
