@@ -7,12 +7,14 @@
       {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
         {% set html %}
-          <p class="govuk-body">Your cookie settings have been saved. <a class="govuk-notification-banner__link" href="javascript:window.history.go(-1);">Go back to the page you were looking at.</a> </p>
+        <p class="govuk-notification-banner__heading">
+          Your cookie settings have been saved. <a class="govuk-notification-banner__link" href="javascript:window.history.go(-1);"> Go back to the page you were looking at</a>.
+        </p>
         {% endset %}
 
         {{ govukNotificationBanner({
-          html: html,
-          type: 'success'
+        type: "success",
+        html: html
         }) }}
 
       <p>We'll save your settings for a year.</p>
