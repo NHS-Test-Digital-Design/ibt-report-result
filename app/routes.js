@@ -48,7 +48,6 @@ router.post('/country-answer', function (req, res) {
 })
 
 
-
 router.post('/test-job', function (req, res) {
     var date = req.session.data['test-for-job']
     if (date == "whos-taking-the-test-1"){
@@ -59,8 +58,25 @@ router.post('/test-job', function (req, res) {
 })
 
 
-
+// Run this code when a form is submitted to 'test-reason'
 router.post('/test-reason', function (req, res) {
+    var reason = req.session.data['test-reason']
+    if (reason == "Symptoms"){
+        res.redirect('self-report/england/test-date')
+    } else if (reason == "Education") {
+        res.redirect('self-report/england/education-provider')
+    } else if (reason == "Positive"){
+        res.redirect('self-report/england/test-date')
+    } else if (reason == "SocialCare"){
+        res.redirect('self-report/england/test-date')
+    } else if (reason == "Healthcare"){
+        res.redirect('self-report/england/test-date')
+    } else if (reason == "Government"){
+        res.redirect('self-report/england/test-date')
+    }
+})
+
+/*router.post('/test-reason', function (req, res) {
     var country = req.session.data['where-do-you-live']
     if (country == "england"){
         res.redirect('self-report/england/test-date')
@@ -73,7 +89,8 @@ router.post('/test-reason', function (req, res) {
     } else {
         res.redirect('self-report/england/test-date')
     }
-})
+})*/
+
 
 
 router.post('/test-date', function (req, res) {

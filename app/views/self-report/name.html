@@ -1,4 +1,4 @@
-{% set pageTitle = "What’s your name?" %}
+{% set pageTitle = "What is your name?" %}
 {% extends "layout_question.html" %}
 
 {% block beforeContent %}
@@ -6,7 +6,7 @@
 <!-- div for include from content folder -->
 <div id="includedContent1"></div>
 
-<a class="govuk-back-link" href="/share-result-lateral-flow/{{version}}/barcode">Back</a>
+<a class="govuk-back-link" href="javascript:window.history.go(-1);">Back</a>
 
 
 {% endblock %}
@@ -17,7 +17,7 @@
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         {% if data['whos-taking-the-test'] == "someone-else" %}
-        What's the name of the person you're reporting a result for?
+        What is the name of the person you're reporting a result for?
         {% else %}
         {{ pageTitle }}
         {% endif %}
@@ -48,6 +48,7 @@
         </fieldset>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
+
 
       </form>
 
