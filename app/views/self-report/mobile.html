@@ -36,7 +36,11 @@
                     <details class="govuk-details govuk-!-margin-top-6" data-module="govuk-details">
                       <summary class="govuk-details__summary">
                         <span class="govuk-details__summary-text">
+                          {% if data['whos-taking-the-test'] == "someone-else" %}
+                          If they do not have a mobile number
+                          {% else %}
                           If you do not have a mobile number
+                          {% endif %}
                         </span>
                       </summary>
                       <div class="govuk-details__text">
