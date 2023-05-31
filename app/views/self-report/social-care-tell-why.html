@@ -1,0 +1,51 @@
+{% set pageTitle = "Tell us why you took this test" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+  <form action="/self-report/UON-number" method="post">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+        </legend>
+
+        <div class="govuk-radios">
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="SocialCare-1" name="Social-Care" type="radio" value="SocialCare" {{ checked("date", "SocialCare-1") }}>
+            <label class="govuk-label govuk-radios__label" for="SocialCare-1">
+              I have symptoms and live in a social care setting
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="SocialCare-2" name="Social-Care" type="radio" value="SocialCare" {{ checked("date", "SocialCare-2") }}>
+            <label class="govuk-label govuk-radios__label" for="SocialCare-2">
+              I'm going to live in a care home
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="SocialCare-3" name="Social-Care" type="radio" value="SocialCare" {{ checked("date", "SocialCare-3") }}>
+            <label class="govuk-label govuk-radios__label" for="SocialCare-3">
+              There's a COVID-19 outbreak in my care home
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="SocialCare-4" name="Social-Care" type="radio" value="SocialCare" {{ checked("date", "SocialCare-4") }}>
+            <label class="govuk-label govuk-radios__label" for="SocialCare-4">
+              Another reason
+            </label>
+          </div>
+
+
+        </div>
+        {# end govuk-radios #}
+      </fieldset>
+
+      <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Continue</button>
+    </div>
+    {# end govuk-form-group #}
+  </form>
+{% endblock %}

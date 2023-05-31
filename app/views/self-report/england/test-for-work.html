@@ -1,53 +1,40 @@
-{% set version = "v28" %}
-{% set pageTitle = "Did you take this test for your job?" %}
 
+{% set pageTitle = "Did you take this test for your job?" %}
 {% extends "layout_question.html" %}
 
-{% block beforeContent %}
-<form action="/test-job" method="post">
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      alpha
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
+{% block content %}
+<form action="/test-for-job" method="post">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="test-for-job-hint"">
+
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+    </legend>
+
+    <div id="test-for-job-hint" class="govuk-hint">
+      This also applies to temporary staff and volunteers
+    </div>
+
+  <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="yes" name="test-for-work" type="radio" value="yes" {{ checked("work", "yes") }}>
+        <label class="govuk-label govuk-radios__label" for="yes">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="no" name="test-for-work" type="radio" value="no" {{ checked("work", "no") }}>
+        <label class="govuk-label govuk-radios__label" for="no">
+          No
+        </label>
+      </div>
+  </div>
+  </fieldset>
 </div>
 
-  <a href="javascript:window.history.go(-1);" class="govuk-back-link">Back</a>
-{% endblock %}
-
-
-
-{% block content %}
-
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
-</legend>
-
-<span id="country-hint" class="govuk-body">
-    <p>This also applies to temporary staff and volunteers</p>
-  <span>
-  <div class="govuk-radios">
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="myself" name="test-for-job" type="radio" value="England" {{ checked("country", "England") }}>
-      <label class="govuk-label govuk-radios__label" for="country-1">
-        Yes
-      </label>
-    </div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="other" name="test-for-job" type="radio" value="England" {{ checked("country", "England") }}>
-      <label class="govuk-label govuk-radios__label" for="country-1">
-        No
-      </label>
-
-    </div>
-    <br>
-    <br>
     <button class="govuk-button" data-module="govuk-button">Continue</button>
-  </div>
+
 </form>
 
 

@@ -2,12 +2,12 @@ const express = require('express')
 const router = express.Router()
 
 // report-result/test-for-work.html routing.
-router.post('/work-answer', function (req, res) {
+router.post('/test-for-job', function (req, res) {
     var work = req.session.data['test-for-work']
     if (work == "yes"){
-        res.redirect('report-result/test-reason')
+        res.redirect('self-report/england/about-work')
     } else {
-        res.redirect('/report-result/test-reason')
+        res.redirect('self-report/england/test-reason')
     }
 })
 
@@ -15,7 +15,7 @@ router.post('/work-answer', function (req, res) {
 router.post('/date-answer', function (req, res) {
     var date = req.session.data['date-taken']
     if (date == "yesterday"){
-        res.redirect('report-result/barcode/option-a')
+        res.redirect('/report-result/barcode/option-a')
     } else {
         res.redirect('/report-result/barcode/option-b')
     }
@@ -25,7 +25,7 @@ router.post('/date-answer', function (req, res) {
 router.post('/registering-for', function (req, res) {
     var date = req.session.data['whos-taking-the-test']
     if (date == "whos-taking-the-test-1"){
-        res.redirect('report-result/barcode/option-a')
+        res.redirect('/report-result/barcode/option-a')
     } else {
         res.redirect('/report-result/barcode/option-b')
     }
@@ -62,15 +62,15 @@ router.post('/test-job', function (req, res) {
 router.post('/test-reason', function (req, res) {
     var reason = req.session.data['test-reason']
     if (reason == "Symptoms"){
-        res.redirect('self-report/england/test-date')
+        res.redirect('self-report/symptoms-date')
     } else if (reason == "Education") {
         res.redirect('self-report/england/education-provider')
     } else if (reason == "Positive"){
         res.redirect('self-report/england/test-date')
     } else if (reason == "SocialCare"){
-        res.redirect('self-report/england/test-date')
+        res.redirect('self-report/social-care-tell-why')
     } else if (reason == "Healthcare"){
-        res.redirect('self-report/england/test-date')
+        res.redirect('self-report/health-care-tell-why')
     } else if (reason == "Government"){
         res.redirect('self-report/england/test-date')
     }

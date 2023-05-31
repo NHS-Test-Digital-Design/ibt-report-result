@@ -1,0 +1,46 @@
+{% set pageTitle = "Enter the unique organisation number (UON)" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+<form action="/self-report/england/test-date" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+            </legend>
+
+            <div id="email-hint" class="govuk-body">
+              <p class="govuk-body">IThis is a reference number for the employer, organisation or social care service. It is 8 digits and sometimes called a “UON”.</p>
+            </div>
+
+            <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    What to do if you cannot find this number
+                  </span>
+                </summary>
+                  <div class="govuk-details__text">
+                    <p>Get the UON from the social care service, employer or organisation that gave you the test kit.</p>
+                    <p>You can also <a href="https://organisation-number-lookup.test-for-coronavirus.service.gov.uk" target="_blank" class="govuk-link">find a care home's UON online (opens in a new tab).</a></p>
+                    <p>If you still need help, call 119 (free from mobiles and landlines). Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.</p>
+                  </div>
+          </details>
+
+          <label class="govuk-label" for="event-name">
+            Unique organisation number
+          </label>
+          <input class="govuk-input" id="event-name" name="event-name" type="text">
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% set pageTitle = "Tell us about the work" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+    <form class="form" action="country" method="post">
+        {{ govukRadios({
+            idPrefix: "about-the-work",
+            name: "about-the-work",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+                }
+            },
+            items: [
+                {
+                    value: "socialCare",
+                    text: "It's for adult social care"
+
+                },
+                {
+                    value: "education",
+                    text: "It's for an education provider"
+
+                },
+                {
+                    value: "nhs",
+                    text: "It's for the NHS in England, Northern Ireland or Wales"
+                },
+                {
+                  divider: "or"
+                },
+                {
+                    value: "anotherReason",
+                    text: "Another reason"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+    </form>
+{% endblock %}

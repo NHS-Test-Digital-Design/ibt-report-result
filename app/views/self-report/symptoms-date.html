@@ -1,0 +1,89 @@
+{% set pageTitle = "When did these symptoms start?" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+  <form action="england/test-date" method="post">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="symptom-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+        </legend>
+
+          <div id="symptom-hint" class="govuk-hint">
+          If you cannot remember the exact date, select the date you think it was roughly.
+          </div>
+
+        <div class="govuk-radios">
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="date-1" name="When-did-symptoms-start" type="radio" value="date" {{ checked("date", "date-1") }}>
+            <label class="govuk-label govuk-radios__label" for="date-1">
+              Wednesday, 31 May 2023
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="date-2" name="When-did-symptoms-start" type="radio" value="date" {{ checked("date", "date-2") }}>
+            <label class="govuk-label govuk-radios__label" for="date-2">
+              Tuesday, 30 May 2023
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="date-3" name="When-did-symptoms-start" type="radio" value="date" {{ checked("date", "date-3") }}>
+            <label class="govuk-label govuk-radios__label" for="date-3">
+              Monday, 29 May 2023
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="date-4" name="When-did-symptoms-start" type="radio" value="date" {{ checked("date", "date-4") }}>
+            <label class="govuk-label govuk-radios__label" for="date-4">
+              Sunday, 28 May 2023
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="date-5" name="When-did-symptoms-start" type="radio" value="date" {{ checked("date", "date-5") }}>
+            <label class="govuk-label govuk-radios__label" for="date-5">
+              Saturday, 27 May 2023
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="date-6" name="When-did-symptoms-start" type="radio" value="date" {{ checked("date", "date-6") }}>
+            <label class="govuk-label govuk-radios__label" for="date-6">
+              Friday, 26 May 2023
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="date-7" name="When-did-symptoms-start" type="radio" value="date" {{ checked("date", "date-7") }}>
+            <label class="govuk-label govuk-radios__label" for="date-7">
+              Thursday, 25 May 2023
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="date-8" name="When-did-symptoms-start" type="radio" value="date" {{ checked("date", "date-8") }}>
+            <label class="govuk-label govuk-radios__label" for="date-8">
+              Wednesday, 24 May 2023
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="date-9" name="When-did-symptoms-start" type="radio" value="date" {{ checked("date", "date-9") }}>
+            <label class="govuk-label govuk-radios__label" for="date-9">
+              Before 24 May 2023
+            </label>
+          </div>
+
+        </div>
+        {# end govuk-radios #}
+      </fieldset>
+
+      <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Continue</button>
+    </div>
+    {# end govuk-form-group #}
+  </form>
+{% endblock %}

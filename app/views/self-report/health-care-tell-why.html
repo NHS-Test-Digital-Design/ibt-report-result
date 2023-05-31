@@ -1,0 +1,36 @@
+{% set pageTitle = "Tell us why you took this test" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+  <form action="/self-report/england/test-date" method="post">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+        </legend>
+
+        <div class="govuk-radios">
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="healthCare-1" name="health-Care" type="radio" value="SocialCare" {{ checked("date", "healthCare-1") }}>
+            <label class="govuk-label govuk-radios__label" for="healthCare-1">
+              A healthcare professional told me to get a test because I'm being admitted into hospital for a procedure or treatment
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="healthCare-2" name="health-Care" type="radio" value="SocialCare" {{ checked("date", "healthCare-2") }}>
+            <label class="govuk-label govuk-radios__label" for="healthCare-2">
+              A GP or healthcare professional recently told me to get a test
+            </label>
+          </div>
+
+        </div>
+        {# end govuk-radios #}
+      </fieldset>
+
+      <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Continue</button>
+    </div>
+    {# end govuk-form-group #}
+  </form>
+{% endblock %}
