@@ -1,4 +1,4 @@
-{% set pageTitle = "Enter the unique organisation number (UON)" %}
+{% set pageTitle = "Unique organisation number (UON)" %}
 {% extends "layout_question.html" %}
 
 {% block content %}
@@ -12,8 +12,12 @@
             </legend>
 
 
-              <p class="govuk-body">This is a reference number for the employer, organisation or social care service. It is 8 digits and sometimes called a “UON”.</p>
+              <p class="govuk-body">The UON helps us links to your employer or organisation if you're testing for work purposes.</p>
+          
 
+            <div class="govuk-inset-text">
+              It's OK if you do not have one, you can still continue.
+            </div>
 
             <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
@@ -29,14 +33,20 @@
           </details>
 
           <label class="govuk-label" for="event-name">
-            Unique organisation number
+            What is your UON?
           </label>
-          <input class="govuk-input" id="event-name" name="event-name" type="text">
+          <div id="event-name-hint" class="govuk-hint">
+          An 8 digit number like 12345678
+          </div>
+          <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
 
           </fieldset>
         </div>
 
+        <div class="govuk-button-group">
         <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="/self-report/england/test-date" class="govuk-link">I don't know the UON</a>
+        </div>
 
       </form>
 

@@ -1,11 +1,11 @@
-{% set pageTitle = "Tell us about the work" %}
+{% set pageTitle = "Select the area you work in" %}
 {% extends "layout_question.html" %}
 
 {% block content %}
-    <form class="form" action="/about-work" method="post">
+    <form class="form" action="/work-area" method="post">
         {{ govukRadios({
-            idPrefix: "about-the-work",
-            name: "about-the-work",
+            idPrefix: "work-area",
+            name: "work-area",
             fieldset: {
                 legend: {
                     text: pageTitle,
@@ -15,25 +15,53 @@
             },
             items: [
                 {
-                    value: "socialCare",
-                    text: "It's for adult social care"
+                    value: "aht",
+                    text: "Acute hospital trust"
 
                 },
                 {
-                    value: "education",
-                    text: "It's for an education provider"
+                    value: "ast",
+                    text: "Ambulance service trust (England and Northern Ireland only)"
 
                 },
                 {
-                    value: "nhs",
-                    text: "It's for the NHS in England, Northern Ireland or Wales"
+                    value: "nhsTrust",
+                    text: "Any Local Health Board in Wales or NHS Trust in Wales"
+                },
+                {
+                    value: "cht",
+                    text: "Community health trust"
+                },
+                {
+                    value: "cic",
+                    text: "Community Interest Company"
+                },
+                {
+                    value: "cp",
+                    text: "Community pharmacy"
+                },
+                {
+                    value: "dentist",
+                    text: "Dentistry"
+                },
+                {
+                    value: "gp",
+                    text: "General Practice"
+                },
+                {
+                    value: "mht",
+                    text: "Mental health trust"
+                },
+                {
+                    value: "opto",
+                    text: "Optometry"
                 },
                 {
                   divider: "or"
                 },
                 {
-                    value: "anotherReason",
-                    text: "Another reason"
+                    value: "other",
+                    text: "Other NHS organisations and special health authorities"
                 }
             ]
         }) }}

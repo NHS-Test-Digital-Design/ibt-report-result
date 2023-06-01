@@ -1,30 +1,26 @@
 
-{% set pageTitle = "Did you take this test for your job?" %}
+{% set pageTitle = "Did your employer provide the test kit?" %}
 {% extends "layout_question.html" %}
 
 {% block content %}
-<form action="/test-for-job" method="post">
+<form action="/test-kit" method="post">
 
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="test-for-job-hint">
+  <fieldset class="govuk-fieldset">
 
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
     </legend>
 
-    <div id="test-for-job-hint" class="govuk-hint">
-      This also applies to temporary staff and volunteers
-    </div>
-
   <div class="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="yes" name="test-for-work" type="radio" value="yes" {{ checked("work", "yes") }}>
+        <input class="govuk-radios__input" id="yes" name="test-kit" type="radio" value="yes" {{ checked("kit", "yes") }}>
         <label class="govuk-label govuk-radios__label" for="yes">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="no" name="test-for-work" type="radio" value="no" {{ checked("work", "no") }}>
+        <input class="govuk-radios__input" id="no" name="test-kit" type="radio" value="no" {{ checked("kit", "no") }}>
         <label class="govuk-label govuk-radios__label" for="no">
           No
         </label>

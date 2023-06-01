@@ -76,22 +76,83 @@ router.post('/test-reason', function (req, res) {
     }
 })
 
-/*router.post('/test-reason', function (req, res) {
-    var country = req.session.data['where-do-you-live']
-    if (country == "england"){
+// Run this code when a form is submitted to 'about work'
+router.post('/about-work', function (req, res) {
+    var work = req.session.data['about-the-work']
+    if (work == "socialCare"){
+        res.redirect('self-report/england/social-care-role')
+    } else if (work == "education") {
+        res.redirect('self-report/england/education-provider')
+    } else if (work == "nhs"){
+        res.redirect('self-report/england/area-of-work')
+    } else if (work == "anotherReason"){
+        res.redirect('self-report/england/another-reason')
+    }
+})
+
+// Run this code when a form is submitted to 'area of work'
+router.post('/work-area', function (req, res) {
+    var area = req.session.data['work-area']
+    if (area == "aht"){
+        res.redirect('self-report/england/primary')
+    } else if (area == "ast") {
+        res.redirect('self-report/england/primary')
+    } else if (area == "nhsTrust"){
+        res.redirect('self-report/england/primary')
+    } else if (area == "cht"){
+        res.redirect('self-report/england/primary')
+    } else if (area == "cic"){
+        res.redirect('self-report/england/primary')
+    } else if (area == "cp"){
+        res.redirect('self-report/england/secondary')
+    } else if (area == "dentist"){
+        res.redirect('self-report/england/secondary')
+    } else if (area == "gp"){
+        res.redirect('self-report/england/secondary')
+    } else if (area == "mht"){
+        res.redirect('self-report/england/primary')
+    } else if (area == "opto"){
+        res.redirect('self-report/england/secondary')
+    } else if (area == "other"){
+        res.redirect('self-report/england/secondary')
+    }
+})
+
+// Run this code when a form is submitted to 'another reason'
+router.post('/another-reason', function (req, res) {
+    var reason = req.session.data['another-reason']
+    if (reason == "IHP"){
+        res.redirect('self-report/IHP')
+    } else if (reason == "homeless") {
+        res.redirect('self-report/no-UON-number')
+    } else if (reason == "domestic"){
+        res.redirect('self-report/no-UON-number')
+    } else if (reason == "notListed"){
+        res.redirect('self-report/england/employer-testkit')
+    }
+})
+
+// Run this code when a form is submitted to 'social care role'
+router.post('/social-care', function (req, res) {
+    var care = req.session.data['social-care-role']
+    if (care == "socialCareWork"){
+        res.redirect('self-report/UON-number')
+    } else if (care == "professional") {
+        res.redirect('self-report/UON-number')
+    } else if (care == "organisation"){
         res.redirect('self-report/england/test-date')
-    } else if (country == "scotland") {
-        res.redirect('self-report/scotland/test-date')
-    } else if (country == "ni"){
-        res.redirect('self-report/ni/test-date')
-    } else if (country == "wales"){
-        res.redirect('self-report/wales/test-date')
+    }
+})
+
+// Run this code when a form is submitted to 'employer test kit'
+router.post('/test-kit', function (req, res) {
+    var kit = req.session.data['test-kit']
+    if (kit == "yes"){
+        res.redirect('self-report/no-UON-number')
     } else {
         res.redirect('self-report/england/test-date')
     }
-})*/
-
-
+})
 
 
 router.post('/test-date', function (req, res) {

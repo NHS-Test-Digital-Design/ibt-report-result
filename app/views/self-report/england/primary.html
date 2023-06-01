@@ -1,0 +1,35 @@
+{% set pageTitle = "What is the name of the NHS Trust or Health Board?" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+<form action="/self-report/england/test-date" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+            </legend>
+
+              <p class="govuk-body">Start entering the name of the NHS trust or Health Board, then choose from the options provided. Make sure you use the full name.</p>
+
+          <label class="govuk-label" for="event-name">
+            NHS trust or Health Board
+          </label>
+          <input class="govuk-input" id="event-name" name="event-name" type="text">
+
+          </fieldset>
+        </div>
+
+        <div>
+        <p class="govuk-body">If you cannot find it in the list <a href="/self-report/england/enter-primary" class="govuk-link">enter the name of the NHS trust or Health Board manually instead</a></p>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+
+
+{% endblock %}

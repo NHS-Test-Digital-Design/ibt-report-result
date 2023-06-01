@@ -1,0 +1,35 @@
+{% set pageTitle = "What is the name of the independent healthcare provider?" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+<form action="/self-report/england/test-date" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+            </legend>
+
+              <p class="govuk-body">Start entering the name of the provider, then choose from the options. Make sure you use the full name.</p>
+
+          <label class="govuk-label" for="event-name">
+            Independent healthcare provider
+          </label>
+          <input class="govuk-input" id="event-name" name="event-name" type="text">
+
+          </fieldset>
+        </div>
+
+        <div>
+        <p class="govuk-body">If you cannot find it in the list <a href="/self-report/enter-IHP" class="govuk-link">enter the name manually instead</a></p>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+
+
+{% endblock %}

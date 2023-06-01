@@ -1,0 +1,29 @@
+{% set pageTitle = "Enter the full name of the independent healthcare provider" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+<form action="/self-report/england/test-date" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+            </legend>
+
+          <label class="govuk-label" for="event-name">
+            Independent healthcare provider
+          </label>
+          <input class="govuk-input" id="event-name" name="event-name" type="text">
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+
+
+{% endblock %}

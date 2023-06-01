@@ -1,11 +1,11 @@
-{% set pageTitle = "Tell us about the work" %}
+{% set pageTitle = "Tell us about the work (continued)" %}
 {% extends "layout_question.html" %}
 
 {% block content %}
-    <form class="form" action="/about-work" method="post">
+    <form class="form" action="/another-reason" method="post">
         {{ govukRadios({
-            idPrefix: "about-the-work",
-            name: "about-the-work",
+            idPrefix: "another-reason",
+            name: "another-reason",
             fieldset: {
                 legend: {
                     text: pageTitle,
@@ -15,25 +15,30 @@
             },
             items: [
                 {
-                    value: "socialCare",
-                    text: "It's for adult social care"
+                    value: "IHP",
+                    text: "It's for an independent healthcare provider commissioned by the NHS"
 
                 },
                 {
-                    value: "education",
-                    text: "It's for an education provider"
-
+                    value: "homeless",
+                    text: "It's for a homelessness service",
+                    hint: {
+                    text: "For example a hostel, night shelter, day or outreach centre"
+                          }
                 },
                 {
-                    value: "nhs",
-                    text: "It's for the NHS in England, Northern Ireland or Wales"
+                    value: "domestic",
+                    text: "It's for a domestic abuse service",
+                    hint: {
+                    text: "For example a refuge or respite room"
+                          }
                 },
                 {
                   divider: "or"
                 },
                 {
-                    value: "anotherReason",
-                    text: "Another reason"
+                    value: "notListed",
+                    text: "It's not listed"
                 }
             ]
         }) }}
