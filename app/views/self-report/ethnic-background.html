@@ -1,8 +1,17 @@
-{% set pageTitle = "What is your ethnic group?" %}
+{% set pageTitle = "What is your ethnic background?" %}
 {% extends "layout_question.html" %}
 
 
 {% block content %}
+
+    <h1 class="govuk-heading-l">
+    {% if data['whos-taking-the-test'] == "someone-else" %}
+      What is their ethnic background?
+    {% else %}
+      {{ pageTitle }}
+    {% endif %}
+    </h1>
+
     <form action="/ethnic-background" class="form" method="post">
 {% if data['ethnic-group'] === "another" %}
     {% set radioItems = [
@@ -140,7 +149,7 @@
             name: "ethnic-background",
             fieldset: {
                 legend: {
-                    text: pageTitle,
+
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--l"
                 }

@@ -9,7 +9,13 @@
   <fieldset class="govuk-fieldset" aria-describedby="test-for-job-hint">
 
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+      <h1 class="govuk-heading-l">
+        {% if data['whos-taking-the-test'] == "someone-else" %}
+          Did they take this test for their job?
+        {% else %}
+          {{ pageTitle }}
+        {% endif %}
+      </h1>
     </legend>
 
     <div id="test-for-job-hint" class="govuk-hint">
