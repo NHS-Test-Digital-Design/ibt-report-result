@@ -1,30 +1,13 @@
-{% set version = "v28" %}
+
 {% set pageTitle = "Tell us why they took this test" %}
-
 {% extends "layout_question.html" %}
-
-{% block beforeContent %}
-<form action="/test-reason" method="post">
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      alpha
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
-
-  <a class="govuk-back-link" href="/report-covid19-result">Back</a>
-{% endblock %}
 
 {% block content %}
 
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 </legend>
-
+<form action="/test-reason" method="post">
     <div class="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="reason-1" name="test-reason" type="radio" value="England" {{ checked("reason", "Symptoms") }}>

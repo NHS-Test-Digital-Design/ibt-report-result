@@ -1,13 +1,9 @@
 {% set pageTitle = "Check the answers" %}
 {% extends "layout_question.html" %}
 
-
-
 {% block content %}
 
-
-
-
+  <form action="/self-report/choose-result" method="post" novalidate>
 <h1 class="govuk-heading-l govuk-!-margin-bottom-7">
       {% if data['whos-taking-the-test'] == "someone-else" %}
       Check the answers for {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }}
@@ -329,7 +325,7 @@
 
     </dl>
 
-    <form action="/digital-reader/mobile" method="post" novalidate>
+
 
       <input type="hidden" name="answers-checked" value="true">
 

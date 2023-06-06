@@ -1,97 +1,46 @@
-{% set pageTitle = "Take a photo of the test strip" %}
+{% set pageTitle = "Tell us the result" %}
 {% extends "layout_question.html" %}
 
-{% block beforeContent %}
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
-
-  <a class="govuk-back-link" href="/IBT/lfd-digital-reader/e2e-prototypes/{{version}}/using-mobile">Back</a>
-{% endblock %}
 
 {% block content %}
+    <form action="/choose-result" class="form" method="post">
+        {# https://design-system.service.gov.uk/components/radios/ #}
+        {{ govukRadios({
+            idPrefix: "choose-result",
+            name: "choose-result",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+                text: "If you had a problem taking the test"
+            },
+            items: [
+                {
+                    value: "positive",
+                    text: "Positive result (likely to be infectious)"
+                },
+                {
+                    value: "negative",
+                    text: "Negative result (not likely to be infectious)"
+                },
+                {
+                    value: "void",
+                    text: "Void or invalid result (the test did not work properly)"
+                }
 
+            ]
+        }) }}
 
-<form action="/choose-result" method="post">
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
-        Tell us the result
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
 
-      </h1>
-    </legend>
-    <span id="name-hint" class="govuk-body">
-      Use the test kit instructions to answer this.
-</span>
-    <div class="govuk-radios govuk-!-margin-top-5">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="test-result-1" name="test-result" type="radio" value="Positive" {{ checked("test-result", "Positive") }}>
-        <label class="govuk-label govuk-radios__label" for="test-result-1">
-          Positive result (likely to be infectious)
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="test-result-2" name="test-result" type="radio" value="Negative" {{ checked("test-result", "Negative") }}>
-        <label class="govuk-label govuk-radios__label" for="test-result-2">
-          Negative result (not likely to be infectious)
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="test-result-3" name="test-result" type="radio" value="Void" {{ checked("test-result", "Void") }}>
-        <label class="govuk-label govuk-radios__label" for="test-result-3">
-          Void or invalid result (the test did not work properly)
-        </label>
-      </div>
-    </div>
-  </fieldset>
-</div>
-
-
-
-      <form action="/share-result-lateral-flow/{{version}}/ethnic-group" method="post">
-
-
-
-    <button class="govuk-button" data-module="govuk-button">Continue</button>
-
-    <details class="govuk-details govuk-!-margin-top-6" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          {% if data['whos-taking-the-test'] == "someone-else" %}
-          If they had a problem taking the test
-          {% else %}
-          If you had a problem taking the test
-          {% endif %}
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-          <!--  <p class="govuk-body"><a class="govuk-link" href="https://nhstt.fra1.qualtrics.com/jfe/form/SV_bqskiabRU9HTFkO" rel="noreferrer">Report any problems online</a> or call the contact centre:</p>            <ul class="govuk-list govuk-list--bullet">
-              <li>119 if you’re in England, Wales or Northern Ireland</li>
-              <li>0300 303 2713 if you’re in Scotland</li>
-            </ul>
-            <p class="govuk-body">Lines are open 7am to 11pm.</p> -->
-            <p><a class="govuk-link" href="https://nhstt.fra1.qualtrics.com/jfe/form/SV_bqskiabRU9HTFkO" rel="noreferrer">Report any problems online</a> or call 119 (free from mobiles and landlines). Lines are open 7am to 11pm.</p>
-      </div>
-    </details>
 
     </form>
-    </div>
-  </div>
-
-        <!-- corresponding html file name included from content folder -->
-        <script>
-          $(function(){
-            $("#includedContent").load("../content/choose-result-ai-tactic-clarified-switch.html");
-          });
-        </script>
-
-
 {% endblock %}

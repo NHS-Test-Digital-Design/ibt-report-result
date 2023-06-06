@@ -1,8 +1,8 @@
-{% set pageTitle = "What is your ethnic group?" %}
-{% extends "layout_question.html" %}
+{% set pageTitle = "What is Joe Smith's ethnic group?" %}
+{% extends "layout_service_step.html" %}
 
 {% block content %}
-    <form action="/ethnic-group" class="form" method="post">
+    <form action="ethnic-background-other" class="form" method="post">
         {# https://design-system.service.gov.uk/components/radios/ #}
         {{ govukRadios({
             idPrefix: "ethnic-group",

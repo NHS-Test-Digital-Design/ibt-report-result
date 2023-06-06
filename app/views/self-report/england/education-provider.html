@@ -1,56 +1,41 @@
-{% set version = "v28" %}
+
 {% set pageTitle = "What is the name or postcode of the education provider?" %}
 {% extends "layout_question.html" %}
 
 
-{% block beforeContent %}
-
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
-
-  <a href="javascript:window.history.go(-1);" class="govuk-back-link">Back</a>
-
-{% endblock %}
 
 {% block content %}
 
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
         </legend>
-        <p class="govuk-body">
-          Enter the name or postcode of the education provider, and select from the options provided.
-        </p>
-        <p class="govuk-body">
-          For example, this may include a nursery, school, college, university, childcare provider or other education provider.
-        </p>
-        <form action="/self-report/england/test-date" method="post" novalidate>
-          <div class="govuk-form-group">
-            <label for="searchTerm" class="govuk-label">
-              Name or postcode of education provider
-            </label>
-            <span id="searchTerm-hint" class="govuk-hint">
-              Enter 3 or more characters
-            </span>
-            <div>
-            <input class="govuk-input" id="searchTerm" name="searchTerm" type="text" aria-describedby="searchTerm-hint">
-          </div>
-          </div>
+          <form action="/self-report/england/test-date" method="post" novalidate>
+            <p class="govuk-body">
+              Enter the name or postcode of the education provider, and select from the options provided.
+            </p>
+            <p class="govuk-body">
+              For example, this may include a nursery, school, college, university, childcare provider or other education provider.
+            </p>
 
-          <button class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
-          <p class="govuk-body">
-          <a class="govuk-link" href="/self-report/england/enter-education-provider">I cannot find the education provider</a>
-          </p>
-        </form>
+              <div class="govuk-form-group">
+                <label for="searchTerm" class="govuk-label">
+                  Name or postcode of education provider
+                </label>
+                <span id="searchTerm-hint" class="govuk-hint">
+                  Enter 3 or more characters
+                </span>
+                <div>
+                <input class="govuk-input" id="searchTerm" name="searchTerm" type="text" aria-describedby="searchTerm-hint">
+              </div>
+              </div>
+
+              <button class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+              <p class="govuk-body">
+              <a class="govuk-link" href="/self-report/england/enter-education-provider">I cannot find the education provider</a>
+              </p>
+          </form>
 
 
 

@@ -21,13 +21,13 @@ router.post('/date-answer', function (req, res) {
     }
 })
 
-
+// Run this code when a form is submitted to 'registering for'
 router.post('/registering-for', function (req, res) {
-    var date = req.session.data['whos-taking-the-test']
-    if (date == "whos-taking-the-test-1"){
-        res.redirect('/report-result/barcode/option-a')
-    } else {
-        res.redirect('/report-result/barcode/option-b')
+    var test = req.session.data['whos-taking-the-test']
+    if (test == "whos-taking-the-test-1"){
+        res.redirect('self-report/country')
+    } else if (test == "whos-taking-the-test-2") {
+        res.redirect('#')
     }
 })
 
@@ -37,11 +37,11 @@ router.post('/country-answer', function (req, res) {
     if (country == "england"){
         res.redirect('self-report/england/test-for-work')
     } else if (country == "scotland") {
-        res.redirect('self-report/scotland/test-for-work')
+        res.redirect('self-report/england/test-for-work')
     } else if (country == "ni"){
-        res.redirect('self-report/ni/test-for-work')
+        res.redirect('self-report/england/test-for-work')
     } else if (country == "wales"){
-        res.redirect('self-report/wales/test-for-work')
+        res.redirect('self-report/england/test-for-work')
     } else {
         res.redirect('self-report/england/test-for-work')
     }
@@ -165,33 +165,34 @@ router.post('/test-date', function (req, res) {
 })
 
 
-router.post('/gender', function (req, res) {
-    var country = req.session.data['gender']
-    if (country == "gender-1"){
-        res.redirect('self-report/ethnic-group')
-    } else if (country == "gender-2") {
-        res.redirect('self-report/ethnic-group')
+router.post('/ethnic-group', function (req, res) {
+    var group = req.session.data['ethnic-group']
+    if (group == "asian-british-asian"){
+        res.redirect('/self-report/ethnic-background')
+    } else if (group == "black") {
+        res.redirect('/self-report/ethnic-background')
+    } else if (group == "mixed"){
+        res.redirect('/self-report/ethnic-background')
+    } else if (group == "white"){
+        res.redirect('/self-report/ethnic-background')
+    } else if (group == "another"){
+        res.redirect('/self-report/ethnic-background')
     } else {
-        res.redirect('self-report/ethnic-group')
+        res.redirect('/self-report/ethnic-background')
     }
 })
 
-router.post('/ethnic-group', function (req, res) {
-    var country = req.session.data['ethnic-group']
-    if (country == "ethnic-group-1"){
-        res.redirect('self-report/occupation')
-    } else if (country == "ethnic-group-2") {
-        res.redirect('self-report/occupation')
-    } else if (country == "ethnic-group-3"){
-        res.redirect('self-report/occupation')
-    } else if (country == "ethnic-group-4"){
-        res.redirect('self-report/occupation')
-    } else if (country == "ethnic-group-5"){
-        res.redirect('self-report/occupation')
+router.post('/choose-result', function (req, res) {
+    var result = req.session.data['choose-result']
+    if (result == "positive"){
+        res.redirect('/self-report/england/england-positive')
+    } else if (result == "negative") {
+        res.redirect('/self-report/england/england-negative')
     } else {
-        res.redirect('self-report/occupation')
+        res.redirect('/self-report/england/england-invalid')
     }
 })
+
 
 
 router.post('/take-photo', function (req, res) {
@@ -203,16 +204,6 @@ router.post('/take-photo', function (req, res) {
     }
 })
 
-router.post('/choose-result', function (req, res) {
-    var country = req.session.data['test-result']
-    if (country == "test-result-1"){
-        res.redirect('self-report/NI/SR-Negative')
-    } else if (country == "test-result-2") {
-        res.redirect('self-report/NI/SR-Negative')
-    } else {
-        res.redirect('self-report/NI/SR-Negative')
-    }
-})
 
 router.post('/barcode-answer', function (req, res) {
     var barcodeid = req.session.data['test-id-number']

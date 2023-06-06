@@ -1,0 +1,29 @@
+{% set pageTitle = "There is a problem" %}
+{% extends "layout_question_noback.html" %}
+
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+
+      <h1 class="govuk-heading-l">There is a problem"</h1>
+      <h3 class="govuk-heading-s">If you're in the UK</h3>
+      <p class="govuk-body">Sorry, there is a problem.</p>
+      <p class="govuk-body">Please try again later.</p>
+      <p class="govuk-body">If the problem continues, call 119 (free from mobiles and landlines).</p>
+      <p class="govuk-body">Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.</p>
+
+      <h3 class="govuk-heading-s">If you're outside the UK</h3>
+      <p class="govuk-body">You cannot access UK coronavirus services from outside the UK. For example, ordering a test, registering a test kit or reporting a result.</p>
+      <p class="govuk-body"><a class="govuk-link" href="https://www.gov.uk/uk-border-control" target="_self">Travel to the UK and how to get tested before you travel.</p>
+      <p class="govuk-body">Error code: sampleId is null</p>
+
+
+      {{ govukButton({
+          text: "Try again",
+          href: "/self-report/report-covid19-result",
+          classes: "govuk-!-margin-top-4"
+      }) }}
+
+
+{% endblock %}
