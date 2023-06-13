@@ -41,6 +41,27 @@
             classes: "govuk-!-margin-top-4"
         }) }}
 
+        <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            {% if data['whos-taking-the-test'] == "someone-else" %}
+              If they had a problem taking the test
+            {% else %}
+              If you had a problem taking the test
+            {% endif %}
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          {% if data['whos-taking-the-test'] == "someone-else" %}
+          <p><a href="https://nhstt.fra1.qualtrics.com/jfe/form/SV_bqskiabRU9HTFkO" class="govuk-link" target="_blank">Report any problems online (opens in new tab)</a> or to 119.<a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" class="govuk-link" target="_blank">Find out when you can contact 119 to report your test result (opens in new tab)</a>. If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" class="govuk-link" target="_blank">use SignVideo to call 119 (opens in new tab)</a>.<p>
+
+          {% else %}
+          <p> You can use the postcode of a nearby reference address, such as your GP.</p>
+          <p><a href="#" class="govuk-link" target="_blank">Report any problems online (opens in new tab)</a> or to 119.<a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" class="govuk-link" target="_blank">find out when you can contact 119 to report your test result (opens in new tab)</a>. If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" class="govuk-link" target="_blank">use SignVideo to call 119 (opens in new tab)</a>.<p>
+          {% endif %}
+
+        </div>
+        </details>
 
     </form>
 {% endblock %}

@@ -36,12 +36,10 @@
                       </summary>
                       <div class="govuk-details__text">
                         {% if data['whos-taking-the-test'] == "someone-else" %}
-                        <p>You can also call 119 (free from mobiles and landlines). Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.</p>
-                        <p>Do not report a negative test result to 119 unless you need to because they're going into hospital.<p>
-                          {% else %}
-                            <p>You can also call 119 (free from mobiles and landlines). Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.</p>
-                            <p>Do not report a negative test result to 119 unless you need to because you're going into hospital.<p>
-                              {% endif %}
+                        <p><a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" class="govuk-link" target="_blank">Find out when you can contact 119 to report their test result (opens in new tab)</a>. If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" class="govuk-link" target="_blank">use SignVideo to call 119 (opens in new tab)</a>.<p>
+                        {% else %}
+                        <p><a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" class="govuk-link" target="_blank">Find out when you can contact 119 to report your test result (opens in new tab)</a>. If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" class="govuk-link" target="_blank">use SignVideo to call 119 (opens in new tab)</a>.<p>
+                        {% endif %}
                       </div>
                     </details>
 
