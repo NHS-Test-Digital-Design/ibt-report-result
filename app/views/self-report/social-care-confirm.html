@@ -1,0 +1,68 @@
+{% set pageTitle = "These are the details for the unique organisation number" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+<form action="/self-report/england/test-date" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+            </legend>
+
+<div class="govuk-inset-text">
+
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  NHS Digital
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                Postcode
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  LS1 6AE
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  UON
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  99925760
+                </dd>
+              </div>
+
+          </dl>
+</div>
+
+<details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If these details are not correct
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>You can go back and <a href="#" target="_blank" class="govuk-link">re-enter the unique organisation number.</a></p>
+        <p>If you need help, <a href="https://organisation-number-lookup.test-for-coronavirus.service.gov.uk" target="_blank" class="govuk-link">find out when you can contact 119 (opens in new tab).</a></p>
+        <p>If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" target="_blank" class="govuk-link">use SignVideo to call 119 (opens in new tab).</a></p>
+      </div>
+</details>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+
+
+{% endblock %}
