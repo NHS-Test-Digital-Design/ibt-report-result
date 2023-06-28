@@ -1,0 +1,90 @@
+{% set pageTitle = "Tell us about the work" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+    <form class="form" action="/about-work" method="post">
+        {{ govukRadios({
+            idPrefix: "about-the-work",
+            name: "about-the-work",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-6"
+                }
+            },
+            items: [
+                {
+                    value: "socialCare",
+                    text: "It's for adult social care"
+
+                },
+                {
+                    value: "education",
+                    text: "It's for an education provider"
+
+                },
+                {
+                    value: "nhs",
+                    text: "It's for the NHS in England, Northern Ireland or Wales"
+                },
+                {
+                  divider: "or"
+                },
+                {
+                    value: "anotherReason",
+                    text: "Another reason"
+                }
+            ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+
+      </form>
+  {% endblock %}
+
+        <!--<form action="/about-work" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+            </legend>
+
+          <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="yes" name="about-the-work" type="radio" value="socialCare" {{ checked("work", "socialCare") }}>
+                <label class="govuk-label govuk-radios__label" for="socialCare">
+                  It's for adult social care
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no" name="about-the-work" type="radio" value="education" {{ checked("work", "education") }}>
+                <label class="govuk-label govuk-radios__label" for="education">
+                  It's for an education provider
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no" name="about-the-work" type="radio" value="nhs" {{ checked("work", "nhs") }}>
+                <label class="govuk-label govuk-radios__label" for="nhs">
+                  It's for the NHS in England, Northern Ireland or Wales
+                </label>
+              </div>
+              <p>or</p>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no" name="about-the-work" type="radio" value="anotherReason" {{ checked("work", "anotherReason") }}>
+                <label class="govuk-label govuk-radios__label" for="anotherReason">
+                  Another reason
+                </label>
+              </div>
+          </div>
+          </fieldset>
+        </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>-->

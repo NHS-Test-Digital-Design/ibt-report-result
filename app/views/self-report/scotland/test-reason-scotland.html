@@ -1,0 +1,38 @@
+
+{% set pageTitle = "Tell us the main reason you took this test" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+<form action="/test-date" method="post">
+
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+  </legend>
+
+    <div class="govuk-radios">
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-2" name="test-reason" type="radio" value="Education" {{ checked("reason", "symptoms") }}>
+        <label class="govuk-label govuk-radios__label" for="reason-2">
+          I have symptoms and am eligible for COVID-19 treatments
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-3" name="test-reason" type="radio" value="Positive" {{ checked("reason", "another") }}>
+        <label class="govuk-label govuk-radios__label" for="reason-3">
+        Another reason
+        </label>
+      </div>
+
+      {{ govukButton({
+          text: "Continue",
+          href: "/self-report/scotland/test-date",
+          classes: "govuk-!-margin-top-4"
+      }) }}
+
+  </div>
+</form>
+
+
+{% endblock %}

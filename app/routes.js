@@ -11,6 +11,17 @@ router.post('/test-for-job', function (req, res) {
     }
 })
 
+// report-result/test-for-work.html Scotland routing.
+router.post('/test-for-job-scot', function (req, res) {
+    var work = req.session.data['test-for-work']
+    if (work == "yes"){
+        res.redirect('self-report/scotland/about-work-scotland')
+    } else {
+        res.redirect('self-report/scotland/test-reason-scotland')
+    }
+})
+
+
 // report-result/test-date.html routing.
 router.post('/date-answer', function (req, res) {
     var date = req.session.data['date-taken']
@@ -37,7 +48,7 @@ router.post('/country-answer', function (req, res) {
     if (country == "england"){
         res.redirect('self-report/england/test-for-work')
     } else if (country == "scotland") {
-        res.redirect('self-report/england/test-for-work')
+        res.redirect('self-report/scotland/test-for-work')
     } else if (country == "ni"){
         res.redirect('self-report/england/test-for-work')
     } else if (country == "wales"){
