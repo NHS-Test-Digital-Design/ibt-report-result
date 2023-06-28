@@ -53,9 +53,7 @@ router.post('/country-answer', function (req, res) {
         res.redirect('self-report/england/test-for-work')
     } else if (country == "wales"){
         res.redirect('self-report/england/test-for-work')
-    } else {
-        res.redirect('self-report/england/test-for-work')
-    }
+    } 
 })
 
 
