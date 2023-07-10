@@ -3,6 +3,13 @@
 
 
 {% block content %}
+    <h1 class="govuk-heading-l">
+    {% if data['whos-taking-the-test'] == "someone-else" %}
+      What is their ethnic group?
+    {% else %}
+      {{ pageTitle }}
+    {% endif %}
+    </h1>
     
     <form action="/ethnic-group" class="form" method="post">
         {# https://design-system.service.gov.uk/components/radios/ #}
@@ -11,7 +18,7 @@
             name: "ethnic-group",
             fieldset: {
                 legend: {
-                    text: "What is your ethnic group?",
+
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--l"
                 }

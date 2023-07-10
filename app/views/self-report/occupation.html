@@ -24,20 +24,14 @@
         <!--    <p>We may contact your employer to help us with contact tracing.</p> -->
           </span>
 
-          <label class="govuk-label" for="occupation">
+         <label class="govuk-label" for="occupation">
             Occupation
           </label>
-          <input class="govuk-input" id="event-name" name="event-name" type="text">
+          <div id="occupation-container" class="govuk-!-margin-top-1"></div>
 
        </fieldset>
       </div>
-      <!--<div class="govuk-form-group">
-        <label class="govuk-label" for="employer">
-          Employer (optional)
-        </label>
-        <input class="govuk-input govuk-!-width-three-quarters" id="employer" name="employer" type="text" value="{{ data['employer'] }}">
-      </div> -->
-<br>
+
       <button class="govuk-button" type="submit" data-module="govuk-button">
         Continue
       </button>
@@ -52,13 +46,13 @@
 .autocomplete__wrapper {
   position: relative;
   max-width: 35em;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-family: "GDS Transport",Arial,sans-serif;
 }
 
 @media (min-width: 40.0625em) {
   .autocomplete__wrapper {
-    margin-bottom: 30px;
+    margin-bottom: 5px;
   }
 }
 
