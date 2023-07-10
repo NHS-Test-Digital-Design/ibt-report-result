@@ -4,7 +4,7 @@
 {% block content %}
 <form action="/self-report/ethnic-group" method="post">
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
+  <fieldset class="govuk-fieldset" aria-describedby="name-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <!--h1 class="govuk-heading-l govuk-!-margin-bottom-6">
         Which of the following is on your medical records?
@@ -21,7 +21,7 @@
     </legend>
     <span id="name-hint" class="govuk-body">
       We are asking this question so in future, your result can be saved to your GP record.
-</span>
+    </span>
     <div class="govuk-radios govuk-!-margin-top-5">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="gender-1" name="gender" type="radio" value="Female" {{ checked("gender", "Female") }}>
