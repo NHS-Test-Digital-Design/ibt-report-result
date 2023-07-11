@@ -6,7 +6,7 @@
 <form class="form" action="/self-report/mobile" method="post">
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="email-address-hint">
+          <fieldset class="govuk-fieldset" aria-describedby="email-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
                 {% if data['whos-taking-the-test'] == "someone-else" %}
@@ -40,12 +40,12 @@
                   <!--  Make sure you’re happy for your test results to go to this email address. Do not use a work or shared email address unless you’re comfortable with others seeing your results.<br><br> -->
                     Email address
                   </label>
-                  <input class="govuk-input" id="email-address" name="email-address" type="text" value="{{ data['email-address'] }}" aria-describedby="conditional-email-address-hint">
+                  <input class="govuk-input" id="email-address" name="email-address" type="text" value="{{ data['email-address'] }}">
                 </div><br>
-                <label class="govuk-label" for="email-address">
+                <label class="govuk-label" for="confirm-email-address">
                     Confirm email address
                   </label>
-                  <input class="govuk-input" id="email-address" name="email-address" type="text" value="{{ data['email-address'] }}" aria-describedby="conditional-email-address-hint">
+                  <input class="govuk-input" id="confirm-email-address" name="confirm-email-address" type="text" value="{{ data['email-address'] }}">
                 </div>
               </div>
               <div class="govuk-radios__item">
