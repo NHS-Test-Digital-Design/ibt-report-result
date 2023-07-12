@@ -1,20 +1,7 @@
 {% set pageTitle = "You reported a negative coronavirus test result" %}
 {% extends "layout_question.html" %}
 
-{% block beforeContent %}
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
 
-  <!-- <a class="govuk-back-link" href="/share-result-lateral-flow/{{version}}/choose-result">Back</a> -->
-{% endblock %}
 
 {% block content %}
 
@@ -41,13 +28,11 @@
         </div>
 
 
-<div
-<br>
-</br>
+<div>
 
 <!-- <p class="govuk-body">This result has been reported to the NHS.</p> -->
 
-<div
+<div>
 <p class="govuk-body-l">
 This result has been reported to the NHS.
 </p>
@@ -57,11 +42,10 @@ This result has been reported to the NHS.
  COVID-19 treatments
 </h2>
 
-<div
+<div>
  <p class="govuk-body">
    {% if data['whos-taking-the-test'] == "someone-else" %}
      Follow the guidance on further testing if they have symptoms and they're eligible for COVID-19 treatments (the following links open in a new tab):
-
     {% else %}
      Follow the guidance on further testing if you have symptoms and you're eligible for COVID-19 treatments (the following links open in a new tab):
    {% endif %}
@@ -78,10 +62,7 @@ This result has been reported to the NHS.
  </ul>
 </div>
 
-<br>
-</br>
-
-<div
+<div>
 <h2 class="govuk-heading-m">
 {% if data['whos-taking-the-test'] == "someone-else" %}
 What {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }} needs to know
@@ -105,10 +86,6 @@ To stay safe:
 </ul>
 </div>
 
-<br>
-</br>
-
-
 <h3 class="govuk-heading-s">
 In Scotland, Wales and Northern Ireland
 </h3>
@@ -125,9 +102,6 @@ If you get symptoms, follow the guidance (the following links open in a new tab)
  <li> <a href="https://www.nidirect.gov.uk/articles/symptoms-respiratory-infections-including-covid-19" target="_blank" rel="noreferrer">Northern Ireland: symptoms guidance</a></li>
 </ul>
 </div>
-
-<br>
-</br>
 
 <h2 class="govuk-heading-m">
 {% if data['whos-taking-the-test'] == "someone-else" %}
@@ -176,8 +150,6 @@ If your symptoms get worse or you need medical help:
  {% endif %}
 
 
-
-
 <div class="govuk-warning-text">
 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
 <strong class="govuk-warning-text__text">
@@ -216,13 +188,12 @@ You should stay at home and avoid contact with other people (the following links
  <li><a href="https://www.nidirect.gov.uk/articles/coronavirus-covid-19-testing-and-stay-home-advice" target="_blank" rel="noreferrer">Northern Ireland: find out when to stay at home and what to do</a></li>
 </ul>
 </div>
-<br>
-<br>
+
 <h2 class="govuk-heading-m">
 The test result was void
 </h2>
 
-<div
+<div>
 <p class="govuk-body">
  {% if data['whos-taking-the-test'] == "someone-else" %}
  If the person who took the test is eligible for free rapid lateral flow tests and the test result was void, they should take another one.
@@ -237,9 +208,9 @@ The test result was void
   {% endif %}
 </p>
 
-<br>
 
-<h3 class="govuk-heading-s">Get a new lateral flow test kit
+<h3 class="govuk-heading-s">
+  Get a new lateral flow test kit
 </h3>
 
 <p class="govuk-body">
@@ -252,17 +223,14 @@ The test result was void
 </div>
 </details>
 </div>
-<br>
 
 
 <div>
 <h2 class="govuk-heading-m">Help and advice</h2>
-<p class="govuk-body"><a href="" target="_blank" rel="noreferrer"</a>Find out what support you can get if you’re affected by coronavirus (opens in a new tab)
+<p class="govuk-body"><a href="#" target="_blank" rel="noreferrer">Find out what support you can get if you’re affected by coronavirus (opens in a new tab)</a>
 </p>
 </div>
-      </form>
-    </div>
-  </div>
+</form>
 
   <!-- corresponding html file name included from content folder -->
   <script>

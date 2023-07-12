@@ -1,23 +1,23 @@
-{% set pageTitle = "You reported a positive coronavirus test" %}
+{% set pageTitle = "You reported a negative coronavirus test result" %}
 {% extends "layout_question.html" %}
 
 {% block content %}
 <div class="govuk-panel govuk-panel--confirmation govuk-panel-lft-result">
    <h1 class="govuk-panel__title">
      {% if data['whos-taking-the-test'] == "someone-else" %}
-     You reported {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }}'s coronavirus test result as positive
+     You reported {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }}'s coronavirus test result as negative
      {% else %}
-     You reported a positive coronavirus test result
+     You reported a negative coronavirus test result
      {% endif %}
    </h1>
    <div class="govuk-panel__body">
      {% if data['whos-taking-the-test'] == "someone-else" %}
-     It’s likely they were infectious when the test was done
+     It’s likely they were not infectious when the test was done
      {% else %}
-     It’s likely you were infectious when the test was done
+     It’s likely you were not infectious when the test was done
      {% endif %}
    </div>
-  </div>
+</div>
 
 
 <p class="govuk-body">
@@ -35,6 +35,7 @@
     {% endif %}
   </strong>
 </div>
+
 
 <h2 class="govuk-heading-m">
     COVID-19 treatments
@@ -104,6 +105,5 @@
 <p class="govuk-body">
     <a href="https://gov.wales/guidance-people-symptoms-respiratory-infection-including-covid-19#section-94422" class="govuk-link"rel="noreferrer noopener" target="_blank">Find out what support you can get if you're affected by COVID-19 (opens in new tab)</a>.
 </p>
-
 
 {% endblock %}
