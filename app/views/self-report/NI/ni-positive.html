@@ -4,7 +4,6 @@
 
 {% block content %}
 
-
       <form action="https://www.gov.uk/get-coronavirus-test/" method="post">
         <!-- div for include from content folder -->
         <div id="includedContent"></div>
@@ -25,8 +24,6 @@
              {% endif %}
            </div>
           </div>
-
-
 <!-- <p class="govuk-body">This result has been reported to the NHS.</p> -->
 
 <div class="govuk-warning-text">
@@ -92,9 +89,6 @@ What you need to do
    <p class="govuk-body">If you're eligible for free rapid lateral flow tests and the test result was positive, take another one as soon as possible and report the result.</p>
    <p class="govuk-body">Use a new test kit and do not reuse anything from the first kit.</p>
  {% endif %}
-
-
-
 
 <div class="govuk-warning-text">
 <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -169,19 +163,11 @@ The test result was void
 </div>
 </details>
 
-<div>
+
 <h2 class="govuk-heading-m">Help and advice</h2>
 <p class="govuk-body"><a href="#" target="_blank" rel="noreferrer">Find out what support you can get if you’re affected by coronavirus (opens in a new tab)</a>
 </p>
-</div>
+
 </form>
-
-
-  <!-- corresponding html file name included from content folder -->
-  <script>
-    $(function(){
-      $("#includedContent").load("../../content/negative-result-photo-NI.html");
-    });
-  </script>
 
 {% endblock %}
