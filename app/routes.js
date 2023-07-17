@@ -192,13 +192,15 @@ router.post('/ethnic-group', function (req, res) {
 })
 
 router.post('/choose-result', function (req, res) {
-    var result = req.session.data['choose-result']
-    if (result == "positive"){
-        res.redirect('/self-report/england/england-positive')
+    let country = req.session.data['where-do-you-live']
+    let result = req.session.data['choose-result']
+
+    if (country == "NI" || result == "positive"){
+        res.redirect('/self-report/NI/ni-positive')
     } else if (result == "negative") {
-        res.redirect('/self-report/england/england-negative')
-    } else {
-        res.redirect('/self-report/england/england-invalid')
+        res.redirect('/self-report/NI/ni-negative')
+    } else if (result == "void") {
+        res.redirect('/self-report/NI/ni-void')
     }
 })
 

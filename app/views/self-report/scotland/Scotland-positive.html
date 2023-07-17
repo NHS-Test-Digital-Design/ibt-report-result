@@ -1,36 +1,19 @@
-{% set version = "digital-read-report" %}
 {% set pageTitle = "You reported a positive coronavirus test result" %}
+{% extends "layout_question.html" %}
 
-{% extends "layout.html" %}
-
-{% block beforeContent %}
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
-
-  <!-- <a class="govuk-back-link" href="/share-result-lateral-flow/{{version}}/choose-result">Back</a> -->
-{% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="https://www.gov.uk/get-coronavirus-test/" method="post">
-
+      <form action="/self-report/barcode" method="post">
 
                    <div class="govuk-panel govuk-panel--confirmation govuk-panel-lft-result">
                       <h1 class="govuk-panel__title">
                         {% if data['whos-taking-the-test'] == "someone-else" %}
-                        {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }}'s coronavirus test result is positive
+                        You reported {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }}'s coronavirus test result as positive
                         {% else %}
-                        The coronavirus test result is positive
+                        You reported a positive coronavirus test result
                         {% endif %}
                       </h1>
                       <div class="govuk-panel__body">
@@ -41,10 +24,6 @@
                         {% endif %}
                       </div>
                    </div>
-
-
-          <div>
-          <br>
 
           <p class="govuk-body">This result has been reported to the NHS.</p>
 
@@ -63,20 +42,15 @@
             </strong>
           </div>
 
-          <div
-            <p class="govuk-body">
+          <div>
               {% if data['whos-taking-the-test'] == "someone-else" %}
-              If they're 18 or over, they should do this for 5 days after the day they took their test, or from the day their symptoms started, whichever was earlier.
-        <br>
-        <br>
-              If they're under 18, they should do this for 3 days after the day they took the test, or from the day their symptoms started, whichever was earlier.
+              <p class="govuk-body">If they're 18 or over, they should do this for 5 days after the day they took their test, or from the day their symptoms started, whichever was earlier.</p>
+              <p class="govuk-body">If they're under 18, they should do this for 3 days after the day they took the test, or from the day their symptoms started, whichever was earlier.</p>
+
                {% else %}
-              If you're 18 or over, do this for 5 days after the day you took your test, or from the day your symptoms started, whichever was earlier.
-        <br>
-        <br>
-              If you're under 18, do this for 3 days after the day you took the test, or from the day your symptoms started, whichever was earlier.
+              <p class="govuk-body">If you're 18 or over, do this for 5 days after the day you took your test, or from the day your symptoms started, whichever was earlier.</p>
+              <p class="govuk-body">If you're under 18, do this for 3 days after the day you took the test, or from the day your symptoms started, whichever was earlier.</p>
               {% endif %}
-            </p>
           </div>
 
           <h2 class="govuk-heading-m">
@@ -88,7 +62,7 @@
           </h2>
 
 
-          <div
+          <div>
             <p class="govuk-body">
               {% if data['whos-taking-the-test'] == "someone-else" %}
               They should tell anyone they were in close contact with in the 2 days before they had a positive test result, or got symptoms, that they've tested positive for COVID-19.
@@ -103,7 +77,7 @@
             COVID-19 treatments
           </h2>
 
-          <div
+          <div>
             <p class="govuk-body">
               {% if data['whos-taking-the-test'] == "someone-else" %}
               Some people are eligible for COVID-19 treatments. <a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19/coronavirus-covid-19-treatments" target="_blank" rel="noreferrer"> Find out if they are eligible for COVID-19 treatments and how to access them (opens in new tab)</a>.
@@ -123,21 +97,14 @@
             Most people do not need to confirm this result with a PCR test. 
           </p>
 
-          <div
+          <div>
             <p class="govuk-body">
               {% if data['whos-taking-the-test'] == "someone-else" %}
+              Most people do not need to confirm their result with a PCR test.
               They only need to confirm this result if they're eligible for COVID-19 treatments and have been asked to take a PCR test. 
-              <ul>
-
-              </ul>
-
               {% else %}
-
-              You only need to confirm this result if you’re eligible for COVID-19 treatments and have been asked to take a PCR test.
-              <ul>
-
-
-              </ul>
+              Most people do not need to confirm this result with a PCR test.
+              You only need to confirm this result if you're eligible for COVID-19 treatments and have been asked to take a PCR test.
               {% endif %}
             </p>
           </div>
@@ -151,7 +118,7 @@
             {% endif %}
           </h2>
 
-          <div
+          <div>
             <p class="govuk-body">
               {% if data['whos-taking-the-test'] == "someone-else" %}
               If they have <a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19/coronavirus-covid-19/" target="_blank" rel="noreferrer"> COVID-19 symptoms (opens in new tab)</a> which are seriously affecting their everyday life, they should call NHS 111 or their GP. In an emergency call 999.
@@ -162,12 +129,7 @@
             </p>
           </div>
 
-
-        <br>
-        <br>
         <button class="govuk-button" data-module="govuk-button">Report another result</button>
-
-       <br>
 
         <details class="govuk-details" data-module="govuk-details">
          <summary class="govuk-details__summary">
@@ -184,14 +146,8 @@
               </p>
               <p class="govuk-body">Use a new test kit and do not reuse anything from the first test kit.</p>
            {% endif %}
-
          </div>
        </details>
-
-
-
-        <br>
-
 
       </form>
     </div>

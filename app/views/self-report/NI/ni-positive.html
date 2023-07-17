@@ -4,9 +4,9 @@
 
 {% block content %}
 
-      <form action="https://www.gov.uk/get-coronavirus-test/" method="post">
+      <form action="/self-report/barcode" method="post">
         <!-- div for include from content folder -->
-        <div id="includedContent"></div>
+
 
         <div class="govuk-panel govuk-panel--confirmation govuk-panel-lft-result">
            <h1 class="govuk-panel__title">
@@ -20,7 +20,7 @@
              {% if data['whos-taking-the-test'] == "someone-else" %}
              It’s likely they were infectious when the test was done
              {% else %}
-             It’s likely you were infectious when the test was done
+             It's likely you were infectious when the test was done
              {% endif %}
            </div>
           </div>
@@ -148,8 +148,6 @@ The test result was void
   {% endif %}
 </p>
 
-<br>
-
 <h3 class="govuk-heading-s">Get a new lateral flow test kit
 </h3>
 
@@ -165,9 +163,10 @@ The test result was void
 
 
 <h2 class="govuk-heading-m">Help and advice</h2>
-<p class="govuk-body"><a href="#" target="_blank" rel="noreferrer">Find out what support you can get if you’re affected by coronavirus (opens in a new tab)</a>
+<p class="govuk-body"><a href="https://www.nhs.uk/conditions/covid-19/how-to-look-after-yourself-at-home-if-you-have-covid-19/" target="_blank" rel="noreferrer">Find out what support you can get if you’re affected by coronavirus (opens in a new tab)</a>
 </p>
 
 </form>
+
 
 {% endblock %}
