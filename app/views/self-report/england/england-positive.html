@@ -3,11 +3,26 @@
 
 {% block content %}
 
-      {{ govukPanel({
-          titleText: pageTitle,
-          html: "It’s likely you were infectious when the test was done",
-          classes: "govuk-!-margin-bottom-8 govuk-panel-lft-result"
-      }) }}
+<form action="/self-report/barcode" method="post">
+  <!-- div for include from content folder -->
+
+
+  <div class="govuk-panel govuk-panel--confirmation govuk-panel-lft-result">
+     <h1 class="govuk-panel__title">
+       {% if data['whos-taking-the-test'] == "someone-else" %}
+       You reported {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }}'s coronavirus test result as positive
+       {% else %}
+       You reported a positive coronavirus test result
+       {% endif %}
+     </h1>
+     <div class="govuk-panel__body">
+       {% if data['whos-taking-the-test'] == "someone-else" %}
+       It’s likely they were infectious when the test was done
+       {% else %}
+       It's likely you were infectious when the test was done
+       {% endif %}
+     </div>
+    </div>
 
       <p class="govuk-body">
           This result has been reported to the NHS.
@@ -35,11 +50,7 @@
         If you have <a href='https://www.nhs.uk/conditions/covid-19/covid-19-symptoms-and-what-to-do/' lass='govuk-link' target='_blank' rel='noreferrer'>COVID-19 symptoms(opens in new tab)</a> which are seriously affecting your everyday life, call NHS 111 or your GP. In an emergency call 999.
       </p>
 
-      {{ govukButton({
-          text: "Report another result",
-          href: "/self-report/report-covid19-result",
-          classes: "govuk-!-margin-top-4"
-      }) }}
+      <button class="govuk-button" data-module="govuk-button">Report another result</button>
 
       {% set detail %}
           <p class="govuk-body">
@@ -82,3 +93,11 @@
 
 
 {% endblock %}
+
+
+
+{% if data['whos-taking-the-test'] == "someone-else" %}
+
+{% else %}
+
+{% endif %}

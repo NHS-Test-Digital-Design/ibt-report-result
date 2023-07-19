@@ -206,7 +206,7 @@ router.post('/choose-result', function (req, res) {
 })
 
 // Run this code when a form is submitted for wales test results
-/*router.post('/choose-result', function (req, res) {
+router.post('/choose-result', function (req, res) {
     let country = req.session.data['where-do-you-live']
     let result = req.session.data['choose-result']
 
@@ -217,7 +217,7 @@ router.post('/choose-result', function (req, res) {
     } else if (result == "void") {
         res.redirect('/self-report/wales/wales-void')
     }
-})*/
+})
 
 router.post('/take-photo', function (req, res) {
     var date = req.session.data['take-photo']
