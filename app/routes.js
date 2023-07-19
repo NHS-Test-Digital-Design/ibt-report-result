@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-​
+
 // report-result/test-for-work.html routing.
 router.post('/test-for-job', function (req, res) {
     var work = req.session.data['test-for-work']
@@ -10,7 +10,7 @@ router.post('/test-for-job', function (req, res) {
         res.redirect('self-report/england/test-reason')
     }
 })
-​
+
 // report-result/test-for-work.html Scotland routing.
 router.post('/test-for-job-scot', function (req, res) {
     var work = req.session.data['test-for-work']
@@ -20,8 +20,8 @@ router.post('/test-for-job-scot', function (req, res) {
         res.redirect('self-report/scotland/test-reason-scotland')
     }
 })
-​
-​
+
+
 // report-result/test-date.html routing.
 router.post('/date-answer', function (req, res) {
     var date = req.session.data['date-taken']
@@ -31,7 +31,7 @@ router.post('/date-answer', function (req, res) {
         res.redirect('/report-result/barcode/option-b')
     }
 })
-​
+
 // Run this code when a form is submitted to 'registering for'
 router.post('/registering-for', function (req, res) {
     var test = req.session.data['whos-taking-the-test']
@@ -41,7 +41,7 @@ router.post('/registering-for', function (req, res) {
         res.redirect('#')
     }
 })
-​
+
 // Run this code when a form is submitted to 'country'
 router.post('/country', function (req, res) {
     var country = req.session.data['where-do-you-live']
@@ -55,8 +55,8 @@ router.post('/country', function (req, res) {
         res.redirect('self-report/england/test-for-work')
     }
 })
-​
-​
+
+
 router.post('/test-job', function (req, res) {
     var date = req.session.data['test-for-job']
     if (date == "whos-taking-the-test-1"){
@@ -65,8 +65,8 @@ router.post('/test-job', function (req, res) {
         res.redirect('/self-report/england/test-reason')
     }
 })
-​
-​
+
+
 // Run this code when a form is submitted to 'test-reason'
 router.post('/test-reason', function (req, res) {
     var reason = req.session.data['test-reason']
@@ -84,7 +84,7 @@ router.post('/test-reason', function (req, res) {
         res.redirect('self-report/england/test-date')
     }
 })
-​
+
 // Run this code when a form is submitted to 'about work'
 router.post('/about-work', function (req, res) {
     var work = req.session.data['about-the-work']
@@ -98,7 +98,7 @@ router.post('/about-work', function (req, res) {
         res.redirect('self-report/england/another-reason')
     }
 })
-​
+
 // Run this code when a form is submitted to 'area of work'
 router.post('/work-area', function (req, res) {
     var area = req.session.data['work-area']
@@ -126,7 +126,7 @@ router.post('/work-area', function (req, res) {
         res.redirect('self-report/england/secondary')
     }
 })
-​
+
 // Run this code when a form is submitted to 'another reason'
 router.post('/another-reason', function (req, res) {
     var reason = req.session.data['another-reason']
@@ -140,7 +140,7 @@ router.post('/another-reason', function (req, res) {
         res.redirect('self-report/england/employer-testkit')
     }
 })
-​
+
 // Run this code when a form is submitted to 'social care role'
 router.post('/social-care', function (req, res) {
     var care = req.session.data['social-care-role']
@@ -152,7 +152,7 @@ router.post('/social-care', function (req, res) {
         res.redirect('self-report/england/test-date')
     }
 })
-​
+
 // Run this code when a form is submitted to 'employer test kit'
 router.post('/test-kit', function (req, res) {
     var kit = req.session.data['test-kit']
@@ -162,8 +162,8 @@ router.post('/test-kit', function (req, res) {
         res.redirect('self-report/england/test-date')
     }
 })
-​
-​
+
+
 router.post('/test-date', function (req, res) {
     var date = req.session.data['day-of-test']
     if (date == "whos-taking-the-test"){
@@ -172,8 +172,8 @@ router.post('/test-date', function (req, res) {
         res.redirect('/self-report/name')
     }
 })
-​
-​
+
+
 router.post('/ethnic-group', function (req, res) {
     var group = req.session.data['ethnic-group']
     if (group == "asian-british-asian"){
@@ -190,20 +190,20 @@ router.post('/ethnic-group', function (req, res) {
         res.redirect('/self-report/ethnic-background')
     }
 })
-​
-​
-​
+
+
+
 router.post('/choose-result', function (req, res) {
-​
+
 const country = (req.session.data['country'] || 'unknown').toLowerCase()
 const result = (req.session.data['choose-result'] || 'void').toLowerCase()
-​
+
 res.redirect('/self-report/' + country + '/' + country + '-' + result)
-​
+
 } )
-​
-​
-​
+
+
+
 router.post('/take-photo', function (req, res) {
     var date = req.session.data['take-photo']
     if (date == "cancel"){
@@ -212,8 +212,8 @@ router.post('/take-photo', function (req, res) {
         res.redirect('/digital-reader/photo-guidance')
     }
 })
-​
-​
+
+
 router.post('/barcode-answer', function (req, res) {
     var barcodeid = req.session.data['test-id-number']
     if (barcodeid == "ERROR000001"){
@@ -224,8 +224,8 @@ router.post('/barcode-answer', function (req, res) {
         res.redirect('self-report/login-choice')
     }
 })
-​
-​
-​
-​
+
+
+
+
 module.exports = router
