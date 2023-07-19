@@ -43,7 +43,7 @@ router.post('/registering-for', function (req, res) {
 })
 
 // Run this code when a form is submitted to 'country'
-router.post('/country-answer', function (req, res) {
+router.post('/country', function (req, res) {
     var country = req.session.data['where-do-you-live']
     if (country == "england"){
         res.redirect('self-report/england/test-for-work')
@@ -191,10 +191,113 @@ router.post('/ethnic-group', function (req, res) {
     }
 })
 
+
 // Run this code when a form is submitted for NI test results
+
+/*
 router.post('/choose-result', function (req, res) {
-    let country = req.session.data['where-do-you-live']
-    let result = req.session.data['choose-result']
+    var country = req.session.data['country']
+    var result = req.session.data['choose-result']
+
+    if (country == "wales" && result == "positive") {
+        res.redirect('/self-report/wales/wales-positive')
+    } else if (result == "negative") {
+        res.redirect('/self-report/wales/wales-negative')
+    } else if (result == "void")  {
+        res.redirect('/self-report/wales/wales-void')
+    }
+
+    if (country == "NI" && result == "positive") {
+        res.redirect('/self-report/NI/ni-positive')
+    }  else if (result == "negative") {
+        res.redirect('/self-report/NI/ni-negative')
+    } else if (result == "void") {
+        res.redirect('/self-report/NI/ni-void')
+    }
+
+    if (country == "Scotland" && result == "positive") {
+        res.redirect('/self-report/scotland/scotland-positive')
+    }  else if (result == "negative") {
+        res.redirect('/self-report/scotland/scotland-negative')
+    } else if (result == "void") {
+        res.redirect('/self-report/scotland/scotland-void')
+    }
+
+} )
+
+router.post('/choose-result', function (req, res) {
+
+const country = req.session.data['country'].toLowerCase()
+const result = req.session.data['choose-result'].toLowerCase()
+
+if (country === "wales" ){
+    if (result === "positive") {
+        res.redirect('/self-report/wales/wales-positive')
+    } else if (result === "negative") {
+        res.redirect('/self-report/wales/wales-negative')
+    } else {
+        res.redirect('/self-report/wales/wales-void')
+    }
+}
+
+if (country === "scotland" ){
+    if (result === "positive") {
+        res.redirect('/self-report/scotland/scotland-positive')
+    } else if (result === "negative") {
+        res.redirect('/self-report/scotland/scotland-negative')
+    } else {
+        res.redirect('/self-report/scotland/scotland-void')
+    }
+}
+
+if (country === "ni" ){
+    if (result === "positive") {
+        res.redirect('/self-report/NI/ni-positive')
+    } else if (result === "negative") {
+        res.redirect('/self-report/NI/ni-negative')
+    } else {
+        res.redirect('/self-report/NI/ni-void')
+    }
+}
+
+} )
+
+router.post('/choose-result', function (req, res) {
+
+const country = (req.session.data['country'])
+const result = (req.session.data['choose-result'])
+
+res.redirect('/self-report/' + country + '/' + country + '-' + result)
+
+} ) */
+
+router.post('/choose-result', function (req, res) {
+
+const country = (req.session.data['country'] || 'unknown').toLowerCase()
+const result = (req.session.data['choose-result'] || 'void').toLowerCase()
+
+res.redirect('/self-report/' + country + '/' + country + '-' + result)
+
+} )
+
+
+/* if (country == "Scotland" ){
+ if (result == "positive") {
+   res.redirect('/self-report/scotland/scotland-positive')
+  } else if (result == "negative") {
+    res.redirect('/self-report/scotland/scotland-negative')
+  } else {
+    res.redirect('/self-report/scotland/scotland-void')
+  }
+} */
+
+
+
+
+// Run this code when a form is submitted for NI test results
+/* router.post('/choose-result', function (req, res) {
+    var country = req.session.data['country']
+    var result = req.session.data['choose-result']
 
     if (country == "NI" || result == "positive"){
         res.redirect('/self-report/NI/ni-positive')
@@ -203,21 +306,9 @@ router.post('/choose-result', function (req, res) {
     } else if (result == "void") {
         res.redirect('/self-report/NI/ni-void')
     }
-})
+}) */
 
-// Run this code when a form is submitted for wales test results
-router.post('/choose-result', function (req, res) {
-    let country = req.session.data['where-do-you-live']
-    let result = req.session.data['choose-result']
 
-    if (country == "Wales" || result == "positive"){
-        res.redirect('/self-report/wales/wales-positive')
-    } else if (result == "negative") {
-        res.redirect('/self-report/wales/wales-negative')
-    } else if (result == "void") {
-        res.redirect('/self-report/wales/wales-void')
-    }
-})
 
 router.post('/take-photo', function (req, res) {
     var date = req.session.data['take-photo']
