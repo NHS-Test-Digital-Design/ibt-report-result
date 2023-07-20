@@ -1,11 +1,9 @@
 {% set pageTitle = "You reported a negative coronavirus test result" %}
-{% extends "layout_question.html" %}
+{% extends "layout_question_noback.html" %}
 
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
       <form action="/self-report/barcode" method="post">
 
                    <div class="govuk-panel govuk-panel--confirmation govuk-panel-lft-result">
@@ -25,9 +23,15 @@
                       </div>
                    </div>
 
+                   <p class="govuk-body">
+                       This result has been reported to the NHS.
+                   </p>
+
+          <div>
           <h2 class="govuk-heading-m">
             COVID-19 treatments
           </h2>
+          </div>
 
           <div>
             <p class="govuk-body">
@@ -224,7 +228,6 @@
           </div>
 
       </form>
-    </div>
-  </div>
+
 
 {% endblock %}

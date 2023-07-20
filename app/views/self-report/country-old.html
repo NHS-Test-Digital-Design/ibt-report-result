@@ -1,0 +1,110 @@
+{% set pageTitle = "Where in the UK do you live?" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+  <form action="/country" method="post">
+
+        {# https://design-system.service.gov.uk/components/radios/ #}
+        {{ govukRadios({
+            idPrefix: "country",
+            name: "country",
+            fieldset: {
+                legend: {
+                    text: pageTitle,
+
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                }
+            },
+            hint: {
+              text: "If you do not live in the UK, select the country you are staying in while you're in the UK"
+            },
+            items: [
+                {
+                    value: "england",
+                    text: "England"
+                },
+                {
+                    value: "scotland",
+                    text: "Scotland"
+                },
+                {
+                    value: "ni",
+                    text: "Northern Ireland"
+                },
+                {
+                    value: "wales",
+                    text: "Wales"
+                }
+            ]
+        }) }}
+
+        {# https://design-system.service.gov.uk/components/button/ #}
+        {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-top-4"
+        }) }}
+
+
+
+  <!--  <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="country-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-heading-l">
+            {% if data['whos-taking-the-test'] == "someone-else" %}
+              Where in the UK do they live?
+            {% else %}
+              {{ pageTitle }}
+            {% endif %}
+            </h1>
+        </legend>
+
+          <div id="country-hint" class="govuk-hint">
+            {% if data['whos-taking-the-test'] == "someone-else" %}
+              If they do not live in the UK, select the country they are staying in while they're in the UK.
+            {% else %}
+              If you do not live in the UK, select the country you are staying in while you're in the UK.
+            {% endif %}
+
+          </div>
+
+        <div class="govuk-radios">
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="country-1" name="where-do-you-live" type="radio" value="england" {{ checked("country", "england") }}>
+            <label class="govuk-label govuk-radios__label" for="country-1">
+              England
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="country-2" name="where-do-you-live" type="radio" value="scotland" {{ checked("country", "scotland") }}>
+            <label class="govuk-label govuk-radios__label" for="country-2">
+              Scotland
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="country-3" name="where-do-you-live" type="radio" value="ni" {{ checked("country", "ni") }}>
+            <label class="govuk-label govuk-radios__label" for="country-3">
+              Northern Ireland
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="country-4" name="where-do-you-live" type="radio" value="wales" {{ checked("country", "wales") }}>
+            <label class="govuk-label govuk-radios__label" for="country-4">
+              Wales
+            </label>
+          </div>
+
+        </div>
+        {# end govuk-radios #}
+      </fieldset>
+
+      <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">Continue</button>
+    </div> -->
+
+    {# end govuk-form-group #}
+  </form>
+{% endblock %}
