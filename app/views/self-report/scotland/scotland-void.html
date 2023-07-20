@@ -27,13 +27,11 @@
 
 <!-- <p class="govuk-body">This result has been reported to the NHS.</p> -->
 
-      <div>
-      <p class="govuk-body-l">
-      This result has been reported to the NHS.
+      <p class="govuk-body">
+          This result has been reported to the NHS.
       </p>
-      </div>
 
-      <div>
+
       <h2 class="govuk-heading-m">
       {% if data['whos-taking-the-test'] == "someone-else" %}
       What {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }} needs to know
@@ -41,7 +39,7 @@
       What you need to know
       {% endif %}
       </h2>
-      </div>
+      
 
       <p class="govuk-body">
       To stay safe:
