@@ -46,13 +46,15 @@
           <li><a class="govuk-link" href="https://www.nidirect.gov.uk/articles/treatments-coronavirus-covid-19" target="_blank">Northern Ireland: COVID-19 treatments</a></li>
         </ul>
 
-      <h2 class="govuk-heading-m">
+        <div>
+        <h2 class="govuk-heading-m">
         {% if data['whos-taking-the-test'] == "someone-else" %}
-        What they need to know
+        What {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }} needs to do
         {% else %}
-        What you need to know
+        What you need to do
         {% endif %}
-      </h2>
+        </h2>
+        </div>
 
       <p class="govuk-body">To stay safe:</p>
 
