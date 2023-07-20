@@ -42,19 +42,6 @@ router.post('/registering-for', function (req, res) {
     }
 })
 
-// Run this code when a form is submitted to 'country'
-router.post('/country', function (req, res) {
-    var country = req.session.data['where-do-you-live']
-    if (country == "england"){
-        res.redirect('self-report/england/test-for-work')
-    } else if (country == "scotland") {
-        res.redirect('self-report/scotland/test-for-work')
-    } else if (country == "ni"){
-        res.redirect('self-report/england/test-for-work')
-    } else if (country == "wales"){
-        res.redirect('self-report/england/test-for-work')
-    }
-})
 
 
 router.post('/test-job', function (req, res) {
@@ -191,6 +178,20 @@ router.post('/ethnic-group', function (req, res) {
     }
 })
 
+
+// Run this code when a form is submitted to 'country'
+router.post('/country', function (req, res) {
+    var country = req.session.data['country']
+    if (country == "england"){
+        res.redirect('self-report/england/test-for-work')
+    } else if (country == "scotland") {
+        res.redirect('self-report/scotland/test-for-work')
+    } else if (country == "ni"){
+        res.redirect('self-report/england/test-for-work')
+    } else if (country == "wales"){
+        res.redirect('self-report/england/test-for-work')
+    }
+})
 
 
 router.post('/choose-result', function (req, res) {
