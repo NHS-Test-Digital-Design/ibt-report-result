@@ -29,7 +29,11 @@
       </p>
 
         <p class="govuk-body">
+          {% if data['whos-taking-the-test'] == "someone-else" %}
+          They should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. <a href='https://www.nhs.uk/conditions/covid-19/covid-19-symptoms-and-what-to-do/' class='govuk-link' target='_blank' rel='noreferrer'>Find out more about when to stay at home and what to do (opens in new tab)</a>.
+          {% else %}
           You should try to stay at home and avoid contact with other people, especially those who are at higher risk from COVID-19. <a href='https://www.nhs.uk/conditions/covid-19/covid-19-symptoms-and-what-to-do/' class='govuk-link' target='_blank' rel='noreferrer'>Find out more about when to stay at home and what to do (opens in new tab)</a>.
+          {% endif %}
         </p>
 
 
@@ -37,50 +41,85 @@
           COVID-19 treatments
       </h2>
 
-      {{ govukWarningText({
-          html: "The way to get COVID-19 treatments has changed. If you're <a href='https://www.nhs.uk/conditions/covid-19/treatments-for-covid-19/' target='_blank' rel='noreferrer'>eligible for COVID-19 treatments</a>, you should contact your GP, NHS 111 or hospital specialist as soon as possible, so you can be assessed for treatment.",
-          iconFallbackText: "warning"
-      }) }}
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          {% if data['whos-taking-the-test'] == "someone-else" %}
+            The way to get COVID-19 treatments has changed. If they're <a href='https://www.nhs.uk/conditions/covid-19/treatments-for-covid-19/' target='_blank' rel='noreferrer'>eligible for COVID-19 treatments</a>, they should contact their GP, NHS 111 or hospital specialist as soon as possible, so they can be assessed for treatment.
+           {% else %}
+             The way to get COVID-19 treatments has changed. If you're <a href='https://www.nhs.uk/conditions/covid-19/treatments-for-covid-19/' target='_blank' rel='noreferrer'>eligible for COVID-19 treatments</a>, you should contact your GP, NHS 111 or hospital specialist as soon as possible, so you can be assessed for treatment.
+          {% endif %}
+        </strong>
+      </div>
 
       <h2 class="govuk-heading-m">
+        {% if data['whos-taking-the-test'] == "someone-else" %}
+          If they're worried
+        {% else %}
           If you're worried
+        {% endif %}
       </h2>
 
-      <p class="govuk-body">
-        If you have <a href='https://www.nhs.uk/conditions/covid-19/covid-19-symptoms-and-what-to-do/' lass='govuk-link' target='_blank' rel='noreferrer'>COVID-19 symptoms(opens in new tab)</a> which are seriously affecting your everyday life, call NHS 111 or your GP. In an emergency call 999.
-      </p>
+      <div>
+        <p class="govuk-body">
+          {% if data['whos-taking-the-test'] == "someone-else" %}
+            If they have <a href='https://www.nhs.uk/conditions/covid-19/covid-19-symptoms-and-what-to-do/' lass='govuk-link' target='_blank' rel='noreferrer'>COVID-19 symptoms(opens in new tab)</a> which are seriously affecting their everyday life, call NHS 111 or your GP. In an emergency call 999.
+
+           {% else %}
+           If you have <a href='https://www.nhs.uk/conditions/covid-19/covid-19-symptoms-and-what-to-do/' lass='govuk-link' target='_blank' rel='noreferrer'>COVID-19 symptoms(opens in new tab)</a> which are seriously affecting your everyday life, call NHS 111 or your GP. In an emergency call 999.
+          {% endif %}
+        </p>
+      </div>
 
       <button class="govuk-button" data-module="govuk-button">Report another result</button>
 
-      {% set detail %}
-          <p class="govuk-body">
-            If you're eligible for free rapid lateral flow tests and the test result was negative or void, take another one and report the result.
-          </p>
+      <details class="govuk-details" data-module="govuk-details">
+       <summary class="govuk-details__summary">
+         <span class="govuk-details__summary-text">
+           The test result was reported incorrectly
+         </span>
+       </summary>
+       <div class="govuk-details__text">
+         {% if data['whos-taking-the-test'] == "someone-else" %}
+            <p class="govuk-body">If the person who took the test is eligible for free rapid lateral flow tests and the test result was negative or void, they should take another one and report the result.</p>
+            <p class="govuk-body">They should use a new test kit and not reuse anything from the first test kit.</p>
+         {% else %}
+            <p class="govuk-body">If you're eligible for free rapid lateral flow tests and the test result was negative or void, you should take another one and report the result.
+            </p>
+            <p class="govuk-body">Use a new test kit and do not reuse anything from the first test kit.</p>
+         {% endif %}
+       </div>
 
-          <p class="govuk-body">
-              Use a new test kit and do not reuse anything from the first test kit.
-          </p>
+       <h2 class="govuk-heading-m">
+         Get a new rapid lateral flow test kit
+       </h2>
+       <div class="govuk-details__text">
+         {% if data['whos-taking-the-test'] == "someone-else" %}
+            <p class="govuk-body">
+              If they do not have another rapid lateral flow test available, they may be able to order a new test pack online for home delivery.
+            </p>
 
-          <h2 class="govuk-heading-m">
-              Get a new rapid lateral flow test kit
-          </h2>
-
-          <p class="govuk-body">
+         {% else %}
+            <p class="govuk-body">
               If you do not have another rapid lateral flow test available, you may be able to order a new test pack online for home delivery.
-          </p>
-      {% endset %}
+            </p>
 
-      {{ govukDetails({
-          summaryText: "The test result was reported incorrectly ",
-          html: detail
-      }) }}
+         {% endif %}
+       </div>
+
+     </details>
 
       <h2 class="govuk-heading-m">
           Help and advice
       </h2>
 
       <p class="govuk-body">
-          <a href='https://www.gov.uk/coronavirus' class="govuk-link" rel="noreferrer noopener" target="_blank">Find out what support you can get if you're affected by COVID-19 (opens in new tab)</a>.
+        {% if data['whos-taking-the-test'] == "someone-else" %}
+        <a href='https://www.gov.uk/coronavirus' class="govuk-link" rel="noreferrer noopener" target="_blank">Find out what support they can get if they're affected by COVID-19 (opens in new tab)</a>.
+        {% else %}
+        <a href='https://www.gov.uk/coronavirus' class="govuk-link" rel="noreferrer noopener" target="_blank">Find out what support you can get if you're affected by COVID-19 (opens in new tab)</a>.
+        {% endif %}
       </p>
 
       <h2 class="govuk-heading-m">
@@ -88,16 +127,8 @@
       </h2>
 
       <p class="govuk-body">
-      As you have COVID-19, you may be eligible to take part in research. <a href='https://bepartofresearch.nihr.ac.uk/campaigns/Positive-test-result/' class="govuk-link" rel="noreferrer noopener" target="_self">Find out more on the National Institute for Health Research (NIHR) website (opens in new tab).</a>
+        As you have COVID-19, you may be eligible to take part in research. <a href='https://bepartofresearch.nihr.ac.uk/campaigns/Positive-test-result/' class="govuk-link" rel="noreferrer noopener" target="_self">Find out more on the National Institute for Health Research (NIHR) website (opens in new tab).</a>
       </p>
-
+</form>
 
 {% endblock %}
-
-
-
-{% if data['whos-taking-the-test'] == "someone-else" %}
-
-{% else %}
-
-{% endif %}
