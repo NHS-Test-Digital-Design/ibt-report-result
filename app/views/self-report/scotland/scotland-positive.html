@@ -1,12 +1,11 @@
 {% set pageTitle = "You reported a positive coronavirus test result" %}
-{% extends "layout_question.html" %}
+{% extends "layout_question_noback.html" %}
 
 
-{% block content %} 
+{% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <form action="/self-report/barcode" method="post"> 
+
+      <form action="/self-report/barcode" method="post">
 
                    <div class="govuk-panel govuk-panel--confirmation govuk-panel-lft-result">
                       <h1 class="govuk-panel__title">
@@ -150,7 +149,5 @@
        </details>
 
       </form>
-    </div>
-  </div>
 
 {% endblock %}
