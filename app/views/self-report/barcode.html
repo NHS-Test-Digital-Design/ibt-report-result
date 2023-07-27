@@ -18,9 +18,11 @@
         <div class="govuk-!-width-full">
     </div>
 
-    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    <a href="barcode-scan">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Scan test strip QR code
-    </button>
+        </button>
+     </a>   
 
     <form class="form" action="/barcode-answer" method="post">
         {{ govukInput({
