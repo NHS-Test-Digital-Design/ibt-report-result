@@ -6,11 +6,13 @@
 <form action="/self-report/england/test-date" method="post">
 
         <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+            </legend>
 
-              <span id="enter-barcode-number-hint" class="govuk-body">
-              The UON helps us to link to your employer or organisation if you're testing for work purposes.
-              </span>
+
+              <p class="govuk-body">The UON helps us links to your employer or organisation if you're testing for work purposes.</p>
 
 
             <div class="govuk-inset-text">
@@ -32,12 +34,12 @@
           </details>
 
           <label class="govuk-label" for="event-name">
-           <strong> What is your UON?</strong>
+            What is your UON?
           </label>
-          <div id="org-uon-hint" class="govuk-hint">
+          <div id="event-name-hint" class="govuk-hint">
           An 8 digit number like 12345678
           </div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text" aria-describedby="org-uon-hint">
+          <input class="govuk-input" id="event-name" name="event-name" type="text" aria-describedby="event-name-hint">
 
           </fieldset>
         </div>
