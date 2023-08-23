@@ -1,19 +1,35 @@
-
-{% set pageTitle = "Tell us why you took this test" %}
+{% set pageTitle = "Tell us the main reason you took this test" %}
 {% extends "layout_question.html" %}
+
+{% block beforeContent %}
+<form action="/test-reason" method="post">
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+
+  <a class="govuk-back-link" href="/report-covid19-result">Back</a>
+{% endblock %}
+
+
 
 {% block content %}
 
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+</legend>
 
-<form action="/test-reason" method="post">
 
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-    <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
-  </legend>
-  
+  <span>
     <div class="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="reason-1" name="test-reason" type="radio" value="Symptoms" {{ checked("reason", "Symptoms") }}>
+        <input class="govuk-radios__input" id="reason-1" name="test-reason" type="radio" value="England" {{ checked("reason", "Symptoms") }}>
         <label class="govuk-label govuk-radios__label" for="reason-1">
           I'm eligible for specific COVID-19 treatments and I have symptoms
         </label>
@@ -22,45 +38,47 @@
         </div>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="reason-2" name="test-reason" type="radio" value="Education" {{ checked("reason", "Education") }}>
+        <input class="govuk-radios__input" id="reason-2" name="test-reason" type="radio" value="Scotland" {{ checked("reason", "Education") }}>
         <label class="govuk-label govuk-radios__label" for="reason-2">
           To go to a place of education
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="reason-3" name="test-reason" type="radio" value="Positive" {{ checked("reason", "Positive") }}>
+        <input class="govuk-radios__input" id="reason-3" name="test-reason" type="radio" value="Northern Ireland" {{ checked("reason", "Positive") }}>
         <label class="govuk-label govuk-radios__label" for="reason-3">
           To check if my test result is still positive
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="reason-4" name="test-reason" type="radio" value="SocialCare" {{ checked("reason", "SocialCare") }}>
+        <input class="govuk-radios__input" id="reason-4" name="test-reason" type="radio" value="Wales" {{ checked("reason", "Social Care") }}>
         <label class="govuk-label govuk-radios__label" for="reason-4">
-          To get care or support from social services
+          For getting care or support from social care services
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="reason-5" name="test-reason" type="radio" value="Healthcare" {{ checked("reason", "Healthcare") }}>
+        <input class="govuk-radios__input" id="reason-5" name="test-reason" type="radio" value="Wales" {{ checked("reason", "Healthcare") }}>
         <label class="govuk-label govuk-radios__label" for="reason-5">
-          I've been asked to take a test by a healthcare professional
+          I have been asked to take a test by a healthcare professional
         </label>
       </div>
-
 
 <div>
 <p class="govuk-body">or</p>
 </div>
 
-
+<span>
   <div class="govuk-radios">
     <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="reason-6" name="test-reason" type="radio" value="Government" {{ checked("reason", "Government") }}>
+      <input class="govuk-radios__input" id="reason-6" name="test-reason" type="radio" value="England" {{ checked("reason", "Government") }}>
       <label class="govuk-label govuk-radios__label" for="reason-6">
-        Another reason
+        Another reason (for example, to follow NHS advice or Government guidance)
       </label>
     </div>
+
+
     </div>
-<p class="govuk-body"></p>
+    <br>
+    <br>
     <button class="govuk-button" data-module="govuk-button">Continue</button>
   </div>
 </form>

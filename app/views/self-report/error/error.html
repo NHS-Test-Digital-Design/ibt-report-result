@@ -1,0 +1,42 @@
+{% set pageTitle = "There is a problem" %}
+{% extends "layout_question.html" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-l">
+        {{ pageTitle }}
+    </h1>
+
+    <h2 class="govuk-heading-m">
+        If you're in the UK
+    </h2>
+
+    <p class="govuk-body">
+        Your settings make it look like you're located outside the UK. Change the settings or try again later.
+    </p>
+
+       <p class="govuk-body">
+                {% if data['whos-taking-the-test'] == "someone-else" %}
+                 If the problem continues, contact 119. <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">Find out when they can contact 119 (opens in new tab)</a>. 
+                If they need a British Sign Language (BSL) interpreter, they can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                {% else %}
+                If the problem continues, contact 119. <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">Find out when you can contact 119 (opens in new tab)</a>. 
+                If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                {% endif %}
+              </p>
+
+  <h2 class="govuk-heading-m">
+        If you're outside the UK
+    </h2>
+
+    <p class="govuk-body">
+        You cannot use this website to report a test result if you're outside the UK.
+    </p>
+
+    {{ govukButton({
+        text: "Try again",
+        href: "#",
+        classes: "govuk-!-margin-top-4"
+    }) }}
+
+{% endblock %}

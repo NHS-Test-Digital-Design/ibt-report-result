@@ -1,0 +1,71 @@
+{% set pageTitle = "What is your home address in the UK?" %}
+{% extends "layout_question.html" %}
+
+{% block beforeContent %}
+
+<!-- div for include from content folder -->
+<div id="includedContent1"></div>
+
+  <a class="govuk-back-link" href="/share-result-lateral-flow/{{version}}/name">Back</a>
+{% endblock %}
+
+{% block content %}
+
+        <form action="" method="post">
+
+
+                    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+                      {% if data['whos-taking-the-test'] == "someone-else" %}
+                      What is {{ data['first-name'] or "Pete" }} {{ data['last-name'] or "Smith" }}'s home address in the UK?
+                      {% else %}
+                      {{ pageTitle }}
+                      {% endif %}
+                    </h1>
+
+                <p class="govuk-body">If you do not have a home address in the UK, use the address where you're staying.</p>
+
+          <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-margin-top-3" for="postcode">
+                Postcode
+              </label>
+              <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="tel" value="{{ data['postcode'] }}">
+            </div>
+
+            <p class="govuk-body"><a href="#" class="govuk-link">Enter address manually</a></p>
+
+        <button class="govuk-button" data-module="govuk-button">Find address</button>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  If you do not have a fixed address
+                </span>
+              </summary>
+               <div class="govuk-details__text">
+                  <p>You can use the postcode of a nearby reference address, such as your GP.</p>
+                  <p>
+                  {% if data['whos-taking-the-test'] == "someone-else" %}
+                    If they need help, <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer"> find out when they can contact 119 (opens in new tab)</a>. 
+                  If they need a British Sign Language (BSL) interpreter, they can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                  {% else %}
+                  If you need help, <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer"> find out when you can contact 119 (opens in new tab)</a>. 
+                  If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                  {% endif %}
+                </p>
+              </div>
+            </details>
+            
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- corresponding html file name included from content folder -->
+  <script>
+    $(function(){
+      $("#includedContent1").load("/includes/LFD-account-menu.html");
+    });
+  </script>
+
+{% endblock %}

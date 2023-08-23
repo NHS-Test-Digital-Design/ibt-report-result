@@ -16,17 +16,20 @@
       LIA40000010
     </div>
 
+    <h2 class="govuk-heading-m">If you need help</h2>
 
-    <p class="govuk-body">
-        If you continue to have problems with the test strip ID, call 119 (free from mobiles and landlines).
-    </p>
-
-    <p class="govuk-body">
-        Lines are open Monday to Friday 8am to 6pm, Saturday and Sunday 9am to 1pm.
-    </p>
+   <p class="govuk-body">
+                {% if data['whos-taking-the-test'] == "someone-else" %}
+                 <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">Find out when they can contact 119 (opens in new tab)</a>. 
+                If they need a British Sign Language (BSL) interpreter, they can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                {% else %}
+                <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">Find out when you can contact 119 (opens in new tab)</a>. 
+                If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                {% endif %}
+              </p>
 
     {{ govukButton({
-        text: "Change test strip ID",
+        text: "Try again",
         href: "#",
         classes: "govuk-!-margin-top-4"
     }) }}

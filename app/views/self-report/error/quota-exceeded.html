@@ -1,4 +1,4 @@
-{% set pageTitle = "There is a problem" %}
+{% set pageTitle = "Sorry, there is a problem with the service" %}
 {% extends "layout_question.html" %}
 
 {% block content %}
@@ -8,28 +8,25 @@
     </h1>
 
     <p class="govuk-body">
-        The unique organisation number (UON) was not recognised.
+        You need to tell us the result
     </p>
 
-    <p class="govuk-body">
-        <a href="../england/social-care-uon">Try entering the 8-digit UON again</a>.
-    </p>
-
-
-    <h2 class="govuk-heading-m">
-        If you need help
-    </h2>
-
-            <p class="govuk-body">
+       <p class="govuk-body">
                 {% if data['whos-taking-the-test'] == "someone-else" %}
-                  <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">Find out when they can contact 119 (opens in new tab)</a>. 
+                 If you need help, <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">find out when they can contact 119 (opens in new tab)</a>. 
                 If they need a British Sign Language (BSL) interpreter, they can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
                 {% else %}
-                <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">Find out when you can contact 119 (opens in new tab)</a>. 
+                If you need help, <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer">find out when you can contact 119 (opens in new tab)</a>. 
                 If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
                 {% endif %}
               </p>
 
-  
+
+
+    {{ govukButton({
+        text: "Tell us the result",
+        href: "#",
+        classes: "govuk-!-margin-top-4"
+    }) }}
 
 {% endblock %}

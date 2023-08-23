@@ -1,0 +1,128 @@
+<!-- {% set version = "v27" %} -->
+{% set pageTitle = "Unique Organisation Number (UON)" %}
+
+{% extends "includes/layout-LFD.html" %}
+
+{% block beforeContent %}
+<!-- div for include from content folder -->
+<div id="includedContent1"></div>
+
+  <a class="govuk-back-link" href="javascript:history.go(-1)">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="social-care-uon-check" method="post">
+
+      <div class="govuk-form-group">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-6">
+              {{ pageTitle }}
+            </h1>
+
+         <span id="enter-barcode-number-hint" class="govuk-body">
+              {% if data['whos-taking-the-test'] == "someone-else" %}
+                The UON helps us to link them to their employer or organisation if they're testing for work purposes.
+                {% else %}
+                 The UON helps us to link you to your employer or organisation if you're testing for work purposes.
+                {% endif %}
+         </span>
+
+        <div class="govuk-inset-text">
+                {% if data['whos-taking-the-test'] == "someone-else" %}
+                It's OK if they do not have one, they can still continue.
+                {% else %}
+                It's OK if you do not have one, you can still continue.
+                {% endif %}
+        </div>
+
+          <details class="govuk-details govuk-!-margin-top-6" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                {% if data['whos-taking-the-test'] == "someone-else" %}
+                What to do if they cannot find this number
+                {% else %}
+                What to do if you cannot find this number
+                {% endif %}
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">
+                {% if data['whos-taking-the-test'] == "someone-else" %}
+                Their employer or organisation may have given it to them with their test kit.
+                {% else %}
+                Your employer or organisation may have given it to you with your test kit.
+                {% endif %}
+              </p>
+              <p>
+                {% if data['whos-taking-the-test'] == "someone-else" %}
+                They can also <a href="https://organisation-number-lookup.test-for-coronavirus.service.gov.uk/" target="_blank" rel="noopener noreferrer">find their UON online (opens in new tab)</a>.
+                {% else %}
+                You can also <a href="https://organisation-number-lookup.test-for-coronavirus.service.gov.uk/" target="_blank" rel="noopener noreferrer">find your UON online (opens in new tab)</a>.
+                {% endif %}
+              </p>
+              <p class="govuk-body">
+                {% if data['whos-taking-the-test'] == "someone-else" %}
+                  If they need help, <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer"> find out when they can contact 119 (opens in new tab)</a>. 
+                If they need a British Sign Language (BSL) interpreter, they can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                {% else %}
+                If you need help, <a href="https://www.nhs.uk/nhs-services/covid-19-services/when-to-call-119/" target="_blank" rel="noopener noreferrer"> find out when you can contact 119 (opens in new tab)</a>. 
+                If you need a British Sign Language (BSL) interpreter, you can <a href="http://signvideo.co.uk/nhs119/" target="_blank" rel="noopener noreferrer">use SignVideo to call 119 (opens in new tab)</a>.
+                {% endif %}
+              </p>
+                <!-- <ul class="govuk-list govuk-list--bullet">
+                  <li>119 if you’re in England, Wales or Northern Ireland</li>
+                  <li>0300 303 2713 if you’re in Scotland</li>
+                </ul>
+                <p class="govuk-body">Lines are open 7am to 11pm.</p> -->
+            </div>
+          </details>
+
+      <!--    <a href="/share-result-lateral-flow/{{version}}/scan-barcode" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Scan my barcode
+          </a> -->
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="org-uon">
+               {% if data['whos-taking-the-test'] == "someone-else" %}
+                 <strong>What is their UON?</strong>
+                {% else %}
+                <strong>What is your UON?</strong>
+                {% endif %}
+            </label>
+               <div id="org-uon-hint" class="govuk-hint">
+                An 8 digit number like 12345678
+              </div>
+            <input class="govuk-input govuk-!-width-two-thirds" id="org-uon" name="org-uon" aria-describedby="org-uon-hint" type="text" value={{ data['social-care-uon'] }}>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Continue without UON
+        </button>
+      </div>
+
+    </form>
+
+  <!--  <p><a href="/share-result-lateral-flow/{{version}}/postcode2">I cannot find the UON</a></p> -->
+
+  </div>
+</div>
+
+<!-- corresponding html file name included from content folder -->
+<script>
+  $(function(){
+    $("#includedContent1").load("/includes/LFD-account-menu.html");
+  });
+</script>
+
+
+{% endblock %}
