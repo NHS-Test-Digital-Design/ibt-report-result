@@ -1,5 +1,4 @@
-
-{% extends "index.html" %}
+{% extends "layout_question.html" %}
 
 {% block content %}
 
@@ -10,7 +9,7 @@
 
       <p class="govuk-body">We want as many people as possible to be able to use these websites. For example, this means you should be able to</p>
 
-      <ul class="govuk-list govuk-list--bullet">
+      <ul id="z-test" class="govuk-list govuk-list--bullet" style="position:static; z-index:-1;">
         <li>change colours, contrast levels and fonts using browser functionality</li>
         <li>zoom in up to 400% without the text disappearing off the screen</li>
         <li>complete the service using only a keyboard</li>
@@ -99,6 +98,5 @@
                   <p class="govuk-body">These websites were last externally audited for accessibility in February 2022. The test was carried out by <a href="https://www.nomensa.com/"> Nomensa</a>, The assessment identified some accessibility issues. We have fixed them all.</p>
 
                   <p class="govuk-body">The accessibility of these services is reviewed on a regular basis. We will update this accessibility statement with any relevant changes.</p>
-
 
 {% endblock %}
