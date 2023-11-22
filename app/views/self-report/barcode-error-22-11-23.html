@@ -9,7 +9,7 @@
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list pl-0">
         <li>
-        <a href="#sampleIdConfirm">Test strip ID must be between 9 and 11 characters</a>
+        <a href="#sampleIdConfirm">Test strip ID must be between 9 and 11 characters. You can only report free NHS tests.</a>
       </li>
       </ul>
     </div>
@@ -23,12 +23,9 @@
             Check the expiry date on the box the test came in. Do not report the result if the test is out of date. Take a new test from a box that is still in date.
         </div>
 
-    <p class="govuk-body">You cannot report a test result for:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>a free test kit you've got from a pharmacy in England because you're eligible for COVID-19 treatments</li>
-          <li>a test kit you've paid for</li>
-        </ul>
-    <p class="govuk-body">The ID number is printed on the test strip by the QR code.</p>
+    <p class="govuk-body">
+        The ID number is printed on the test strip by the QR code.
+    </p>
 
     <br>
     <br>
@@ -49,7 +46,7 @@
       Test strip ID number
     </label>
     <p id="test-strip-id-error" class="govuk-error-message">
-      <span class="govuk-visually-hidden">Error:</span> Test strip ID must be between 9 and 11 characters
+      <span class="govuk-visually-hidden">Error:</span> Test strip ID must be between 9 and 11 characters. You can only report free NHS tests.
     </p>
     <input class="govuk-input govuk-input--error" id="test-strip-ID" name="test-strip-ID-error" type="text" aria-describedby="test-strip-id-error">
   </div>
