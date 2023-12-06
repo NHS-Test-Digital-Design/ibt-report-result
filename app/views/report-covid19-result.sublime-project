@@ -2,7 +2,10 @@
 	"folders":
 	[
 		{
-			"path": "/Users/liz.hardy/Documents/GitHub/ibt-report-result"
-		}
-	]
+			"path": "/Users/liz.hardy/Documents/GitHub/ibt-report-result",
+		},
+		{
+			"path": "/Users/liz.hardy/Documents/GitHub/ibt-order-lfd"
+		},
+	],
 }
